@@ -1,0 +1,916 @@
+{
+    "primary": [
+        {
+            "name": "L85A2",
+            "properties": {
+                "damage": 47,
+                "suppressed_dmg": 39,
+                "firerate": 670,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Sledge/Thatcher",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "AR33",
+            "properties": {
+                "damage": 41,
+                "suppressed_dmg": 34,
+                "firerate": 749,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Thatcher/Flores",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "G36C",
+            "properties": {
+                "damage": 38,
+                "suppressed_dmg": 32,
+                "firerate": 780,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Ash/Iana",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "R4-C",
+            "properties": {
+                "damage": 39,
+                "suppressed_dmg": 33,
+                "firerate": 860,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Ash",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "556XI",
+            "properties": {
+                "damage": 47,
+                "suppressed_dmg": 39,
+                "firerate": 690,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Osa/Thermite",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "F2",
+            "properties": {
+                "damage": 37,
+                "suppressed_dmg": 31,
+                "firerate": 980,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Twitch",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "AK-12",
+            "properties": {
+                "damage": 45,
+                "suppressed_dmg": 38,
+                "firerate": 850,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Ace/Fuze",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "AUG A2",
+            "properties": {
+                "damage": 42,
+                "suppressed_dmg": 35,
+                "firerate": 720,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "IQ/Wamai",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "552 Commando",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": 40,
+                "firerate": 680,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "IQ",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "C8-SFW",
+            "properties": {
+                "damage": 40,
+                "suppressed_dmg": 34,
+                "firerate": 837,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Buck",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "MK17 CQB",
+            "properties": {
+                "damage": 40,
+                "suppressed_dmg": 34,
+                "firerate": 585,
+                "mobility": 50,
+                "capacity": 20
+            },
+            "ops": "Blackbeard",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "PARA-308",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": 40,
+                "firerate": 650,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Capitao",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "Type-89",
+            "properties": {
+                "damage": 40,
+                "suppressed_dmg": 34,
+                "firerate": 850,
+                "mobility": 50,
+                "capacity": 20
+            },
+            "ops": "Hibana",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "C7E",
+            "properties": {
+                "damage": 42,
+                "suppressed_dmg": 35,
+                "firerate": 800,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Jackal",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "M762",
+            "properties": {
+                "damage": 45,
+                "suppressed_dmg": 38,
+                "firerate": 730,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Zofia",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "V308",
+            "properties": {
+                "damage": 44,
+                "suppressed_dmg": 37,
+                "firerate": 700,
+                "mobility": 50,
+                "capacity": 50
+            },
+            "ops": "Lion",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "Spear .308",
+            "properties": {
+                "damage": 42,
+                "suppressed_dmg": 35,
+                "firerate": 700,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Finka/Thunderbird",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "M4",
+            "properties": {
+                "damage": 44,
+                "suppressed_dmg": 37,
+                "firerate": 750,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Maverick",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "AK-74M",
+            "properties": {
+                "damage": 44,
+                "suppressed_dmg": 37,
+                "firerate": 650,
+                "mobility": 50,
+                "capacity": 40
+            },
+            "ops": "Nomad",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "ARX200",
+            "properties": {
+                "damage": 47,
+                "suppressed_dmg": 39,
+                "firerate": 700,
+                "mobility": 50,
+                "capacity": 20
+            },
+            "ops": "Iana/Nomad",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "F90",
+            "properties": {
+                "damage": 38,
+                "suppressed_dmg": 21,
+                "firerate": 780,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Gridlock",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "416-C Carbine",
+            "properties": {
+                "damage": 38,
+                "suppressed_dmg": 32,
+                "firerate": 740,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Jager",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "Commando 9",
+            "properties": {
+                "damage": 36,
+                "suppressed_dmg": 30,
+                "firerate": 780,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Mozzie",
+            "type": "Assault Rifle"
+        },
+        {
+            "name": "417",
+            "properties": {
+                "damage": 69,
+                "suppressed_dmg": 58,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 20
+            },
+            "ops": "Lion/Twitch",
+            "type": "Marksman Rifle"
+        },
+        {
+            "name": "OTs-03",
+            "properties": {
+                "damage": 71,
+                "suppressed_dmg": 60,
+                "firerate": -1,
+                "mobility": 36,
+                "capacity": 15
+            },
+            "ops": "Glaz",
+            "type": "Marksman Rifle"
+        },
+        {
+            "name": "CAMRS",
+            "properties": {
+                "damage": 69,
+                "suppressed_dmg": 58,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 20
+            },
+            "ops": "Buck",
+            "type": "Marksman Rifle"
+        },
+        {
+            "name": "SR-25",
+            "properties": {
+                "damage": 61,
+                "suppressed_dmg": 51,
+                "firerate": -1,
+                "mobility": 38,
+                "capacity": 20
+            },
+            "ops": "Blackbeard/Flores",
+            "type": "Marksman Rifle"
+        },
+        {
+            "name": "Mk 14 EBR",
+            "properties": {
+                "damage": 60,
+                "suppressed_dmg": 51,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 20
+            },
+            "ops": "Aruni/Dokkaebi",
+            "type": "Marksman Rifle"
+        },
+        {
+            "name": "AR-15.50",
+            "properties": {
+                "damage": 62,
+                "suppressed_dmg": 52,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 10
+            },
+            "ops": "Maverick",
+            "type": "Marksman Rifle"
+        },
+        {
+            "name": "CSRX 300",
+            "properties": {
+                "damage": 127,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 5
+            },
+            "ops": "Kali",
+            "type": "Marksman Rifle"
+        },
+        {
+            "name": "6P41",
+            "properties": {
+                "damage": 46,
+                "suppressed_dmg": 39,
+                "firerate": 680,
+                "mobility": 50,
+                "capacity": 100
+            },
+            "ops": "Finka/Fuze",
+            "type": "LMG"
+        },
+        {
+            "name": "G8A1",
+            "properties": {
+                "damage": 37,
+                "suppressed_dmg": 31,
+                "firerate": 850,
+                "mobility": 50,
+                "capacity": 50
+            },
+            "ops": "Amaru/IQ",
+            "type": "LMG"
+        },
+        {
+            "name": "M249",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": -1,
+                "firerate": 650,
+                "mobility": 50,
+                "capacity": 100
+            },
+            "ops": "Capitao",
+            "type": "LMG"
+        },
+        {
+            "name": "T-95 LSW",
+            "properties": {
+                "damage": 46,
+                "suppressed_dmg": 39,
+                "firerate": 650,
+                "mobility": 50,
+                "capacity": 80
+            },
+            "ops": "Ying",
+            "type": "LMG"
+        },
+        {
+            "name": "LMG-E",
+            "properties": {
+                "damage": 41,
+                "suppressed_dmg": 34,
+                "firerate": 720,
+                "mobility": 50,
+                "capacity": 150
+            },
+            "ops": "Zofia",
+            "type": "LMG"
+        },
+        {
+            "name": "M249 SAW",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": -1,
+                "firerate": 650,
+                "mobility": 50,
+                "capacity": 60
+            },
+            "ops": "Gridlock",
+            "type": "LMG"
+        },
+        {
+            "name": "DP27",
+            "properties": {
+                "damage": 49,
+                "suppressed_dmg": -1,
+                "firerate": 550,
+                "mobility": 50,
+                "capacity": 70
+            },
+            "ops": "Tachanka",
+            "type": "LMG"
+        },
+        {
+            "name": "ALDA 5.56",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": 29,
+                "firerate": 900,
+                "mobility": 50,
+                "capacity": 80
+            },
+            "ops": "Maestro",
+            "type": "LMG"
+        },
+        {
+            "name": "M590A1",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 7
+            },
+            "ops": "Sledge/Thatcher/Smoke/Mute/Warden",
+            "type": "Shotgun"
+        },
+        {
+            "name": "M1014",
+            "properties": {
+                "damage": 34,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 8
+            },
+            "ops": "Sledge/Thatcher/Smoke/Mute/Warden",
+            "type": "Shotgun"
+        },
+        {
+            "name": "SG-CQB",
+            "properties": {
+                "damage": 53,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 7
+            },
+            "ops": "Doc/Lion/Rook/Twitch",
+            "type": "Shotgun"
+        },
+        {
+            "name": "Supernova",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": 40,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 7
+            },
+            "ops": "Amaru/Echo/Hibana",
+            "type": "Shotgun"
+        },
+        {
+            "name": "ITA12L",
+            "properties": {
+                "damage": 50,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 8
+            },
+            "ops": "Jackal/Mira",
+            "type": "Shotgun"
+        },
+        {
+            "name": "SIX12",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 6
+            },
+            "ops": "Ying",
+            "type": "Shotgun"
+        },
+        {
+            "name": "BOSG.12.2",
+            "properties": {
+                "damage": 125,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 2
+            },
+            "ops": "Dokkaebi/Vigil",
+            "type": "Shotgun"
+        },
+        {
+            "name": "SASG-12",
+            "properties": {
+                "damage": 50,
+                "suppressed_dmg": 42,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 10
+            },
+            "ops": "Finka/Kapkan",
+            "type": "Shotgun"
+        },
+        {
+            "name": "SIX12 SD",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 6
+            },
+            "ops": "Lesion/Nokk",
+            "type": "Shotgun"
+        },
+        {
+            "name": "M870",
+            "properties": {
+                "damage": 60,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 7
+            },
+            "ops": "Bandit/Jager/Thorn",
+            "type": "Shotgun"
+        },
+        {
+            "name": "Super 90",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 8
+            },
+            "ops": "Frost/Melusi",
+            "type": "Shotgun"
+        },
+        {
+            "name": "SPAS-12",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 7
+            },
+            "ops": "Valkyrie/Oryx",
+            "type": "Shotgun"
+        },
+        {
+            "name": "SPAS-15",
+            "properties": {
+                "damage": 30,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 6
+            },
+            "ops": "Caveira/Thunderbird",
+            "type": "Shotgun"
+        },
+        {
+            "name": "FO-12",
+            "properties": {
+                "damage": 25,
+                "suppressed_dmg": 21,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 10
+            },
+            "ops": "Ela",
+            "type": "Shotgun"
+        },
+        {
+            "name": "ACS12",
+            "properties": {
+                "damage": 69,
+                "suppressed_dmg": -1,
+                "firerate": 300,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Maestro/Alibi/Azami",
+            "type": "Shotgun"
+        },
+        {
+            "name": "TCSG12",
+            "properties": {
+                "damage": 63,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 10
+            },
+            "ops": "Kaid/Goyo",
+            "type": "Shotgun"
+        },
+        {
+            "name": "Le Roc Shield",
+            "properties": {
+                "damage": -1,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 28,
+                "capacity": -1
+            },
+            "ops": "Montagne",
+            "type": "Shield"
+        },
+        {
+            "name": "Ballistic Shield",
+            "properties": {
+                "damage": -1,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 30,
+                "capacity": -1
+            },
+            "ops": "Fuze",
+            "type": "Shield"
+        },
+        {
+            "name": "G52-Tactical Shield",
+            "properties": {
+                "damage": -1,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 30,
+                "capacity": -1
+            },
+            "ops": "Blitz",
+            "type": "Shield"
+        },
+        {
+            "name": "PDW9",
+            "properties": {
+                "damage": 34,
+                "suppressed_dmg": 28,
+                "firerate": 800,
+                "mobility": 50,
+                "capacity": 50
+            },
+            "ops": "Jackal/Osa",
+            "type": "SMG"
+        },
+        {
+            "name": "FMG-9",
+            "properties": {
+                "damage": 34,
+                "suppressed_dmg": 28,
+                "firerate": 800,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Nokk/Smoke",
+            "type": "SMG"
+        },
+        {
+            "name": "MP7",
+            "properties": {
+                "damage": 32,
+                "suppressed_dmg": 27,
+                "firerate": 900,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Bandit/Zero",
+            "type": "SMG"
+        },
+        {
+            "name": "MP5K",
+            "properties": {
+                "damage": 30,
+                "suppressed_dmg": 25,
+                "firerate": 800,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Mute/Wamai",
+            "type": "SMG"
+        },
+        {
+            "name": "UMP45",
+            "properties": {
+                "damage": 38,
+                "suppressed_dmg": 32,
+                "firerate": 600,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Castle/Pulse",
+            "type": "SMG"
+        },
+        {
+            "name": "MP5",
+            "properties": {
+                "damage": 27,
+                "suppressed_dmg": 22,
+                "firerate": 800,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Doc/Melusi/Rook",
+            "type": "SMG"
+        },
+        {
+            "name": "P90",
+            "properties": {
+                "damage": 22,
+                "suppressed_dmg": 18,
+                "firerate": 970,
+                "mobility": 50,
+                "capacity": 50
+            },
+            "ops": "Doc/Rook",
+            "type": "SMG"
+        },
+        {
+            "name": "9x19VSN",
+            "properties": {
+                "damage": 34,
+                "suppressed_dmg": 28,
+                "firerate": 750,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Azami/Kapkan",
+            "type": "SMG"
+        },
+        {
+            "name": "9mm C1",
+            "properties": {
+                "damage": 45,
+                "suppressed_dmg": 38,
+                "firerate": 575,
+                "mobility": 50,
+                "capacity": 34
+            },
+            "ops": "Frost",
+            "type": "SMG"
+        },
+        {
+            "name": "MPX",
+            "properties": {
+                "damage": 26,
+                "suppressed_dmg": 22,
+                "firerate": 830,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Valkyrie/Warden",
+            "type": "SMG"
+        },
+        {
+            "name": "M12",
+            "properties": {
+                "damage": 40,
+                "suppressed_dmg": 34,
+                "firerate": 550,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Caveira",
+            "type": "SMG"
+        },
+        {
+            "name": "MP5SD",
+            "properties": {
+                "damage": 30,
+                "suppressed_dmg": -1,
+                "firerate": 800,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Echo",
+            "type": "SMG"
+        },
+        {
+            "name": "Vector .45 ACP",
+            "properties": {
+                "damage": 23,
+                "suppressed_dmg": 19,
+                "firerate": 1200,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Mira/Goyo",
+            "type": "SMG"
+        },
+        {
+            "name": "Scorpion Evo 3 A1",
+            "properties": {
+                "damage": 23,
+                "suppressed_dmg": 19,
+                "firerate": 1080,
+                "mobility": 50,
+                "capacity": 40
+            },
+            "ops": "Ela",
+            "type": "SMG"
+        },
+        {
+            "name": "K1A",
+            "properties": {
+                "damage": 36,
+                "suppressed_dmg": 30,
+                "firerate": 720,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Vigil",
+            "type": "SMG"
+        },
+        {
+            "name": "Mx4 Storm",
+            "properties": {
+                "damage": 26,
+                "suppressed_dmg": 22,
+                "firerate": 950,
+                "mobility": 50,
+                "capacity": 30
+            },
+            "ops": "Alibi",
+            "type": "SMG"
+        },
+        {
+            "name": "AUG A3",
+            "properties": {
+                "damage": 36,
+                "suppressed_dmg": 30,
+                "firerate": 700,
+                "mobility": 50,
+                "capacity": 31
+            },
+            "ops": "Kaid",
+            "type": "SMG"
+        },
+        {
+            "name": "P10 RONI",
+            "properties": {
+                "damage": 26,
+                "suppressed_dmg": 22,
+                "firerate": 980,
+                "mobility": 50,
+                "capacity": 15
+            },
+            "ops": "Mozzie/Aruni",
+            "type": "SMG"
+        },
+        {
+            "name": "UZK50GI",
+            "properties": {
+                "damage": 44,
+                "suppressed_dmg": 37,
+                "firerate": 700,
+                "mobility": 50,
+                "capacity": 22
+            },
+            "ops": "Thorn",
+            "type": "SMG"
+        }
+    ]
+}

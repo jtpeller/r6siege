@@ -1,0 +1,1116 @@
+{
+    "def": [
+        {
+            "name": "Smoke",
+            "gender": "Male",
+            "organization": "NIGHTHAVEN/Rainbow/SAS",
+            "primary": [
+                {
+                    "name": "FMG-9",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "M590A1",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P226 Mk 25",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "SMG-11",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                },
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                }
+            ],
+            "special": "Remote Gas Grenade"
+        },
+        {
+            "name": "Mute",
+            "gender": "Male",
+            "organization": "SAS/Rainbow",
+            "primary": [
+                {
+                    "name": "MP5K",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "M590A1",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P226 Mk 25",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "SMG-11",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                },
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                }
+            ],
+            "special": "Signal Disruptor"
+        },
+        {
+            "name": "Castle",
+            "gender": "Male",
+            "organization": "Rainbow/FBI SWAT/GSUTR",
+            "primary": [
+                {
+                    "name": "UMP45",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "M1014",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "5.7 USG",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "Super Shorty",
+                    "type": "Shotgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                },
+                {
+                    "name": "Proximity Alarm",
+                    "count": 2
+                }
+            ],
+            "special": "Armor Panel"
+        },
+        {
+            "name": "Thermite",
+            "gender": "Male",
+            "organization": "NIGHTHAVEN/Rainbow (formerly)/FBI SWAT (formerly)",
+            "primary": [
+                {
+                    "name": "M1014",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "UMP45",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "M45 MEUSOC",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "5.7 USG",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Heartbeat Sensor"
+        },
+        {
+            "name": "Doc",
+            "gender": "Male",
+            "organization": "Rainbow/GIGN",
+            "primary": [
+                {
+                    "name": "SG-CQB",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "MP5",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "P90",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P9",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "LFP586",
+                    "type": "Revolver"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                }
+            ],
+            "special": "Stim Pistol"
+        },
+        {
+            "name": "Rook",
+            "gender": "Male",
+            "organization": "Rainbow/GIGN",
+            "primary": [
+                {
+                    "name": "P90",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "MP5",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "SG-CQB",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P9",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "LFP586",
+                    "type": "Revolver"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Proximity Alarm",
+                    "count": 2
+                },
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Armor Pack"
+        },
+        {
+            "name": "Kapkan",
+            "gender": "Male",
+            "organization": "Rainbow/Spetsnaz",
+            "primary": [
+                {
+                    "name": "9x19VSN",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "SASG-12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "PMM",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GSH-18",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Entry Denial Device"
+        },
+        {
+            "name": "Tachanka",
+            "gender": "Male",
+            "organization": "Rainbow/Spetsnaz",
+            "primary": [
+                {
+                    "name": "DP27",
+                    "type": "Light Machine Gun"
+                },
+                {
+                    "name": "9x19VSN",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "GSH-18",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "PMM",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                }
+            ],
+            "special": "Grenade Launcher"
+        },
+        {
+            "name": "Jager",
+            "gender": "Male",
+            "organization": "Rainbow/GSG 9",
+            "primary": [
+                {
+                    "name": "M870",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "416-C Carbine",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P12",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                },
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                }
+            ],
+            "special": "Flash Shield"
+        },       
+        {
+            "name": "Bandit",
+            "gender": "Male",
+            "organization": "Rainbow/GSG 9/GSUTR",
+            "primary": [
+                {
+                    "name": "M870",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "MP7",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P12",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Shock Wire"
+        },
+        {
+            "name": "Frost",
+            "gender": "Female",
+            "organization": "Rainbow/JTF2/Rhodes Island",
+            "primary": [
+                {
+                    "name": "Super 90",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "9mm C1",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Mk1 9mm",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                },
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                }
+            ],
+            "special": "Welcome Mat"
+        },
+        {
+            "name": "Valkyrie",
+            "gender": "Female",
+            "organization": "Rainbow/Navy SEALs",
+            "primary": [
+                {
+                    "name": "MPX",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "SPAS-12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "D-50",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Black Eye"
+        },
+        {
+            "name": "Caveira",
+            "gender": "Female",
+            "organization": "Rainbow/BOPE/GSUTR",
+            "primary": [
+                {
+                    "name": "M12",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "SPAS-15",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Luison",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Proximity Alarm",
+                    "count": 2
+                }
+            ],
+            "special": "Silent Step"
+        },
+        {
+            "name": "Echo",
+            "gender": "Male",
+            "organization": "Rainbow/SAT",
+            "primary": [
+                {
+                    "name": "SuperNova",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "MP5SD",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P229",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "Bearing 9",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                }
+            ],
+            "special": "Yokai"
+        },
+        {
+            "name": "Mira",
+            "gender": "Female",
+            "organization": "Rainbow/GEO",
+            "primary": [
+                {
+                    "name": "Vector .45 ACP",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "ITA12L",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "USP40",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Proximity Alarm",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Black Mirror"
+        },
+        {
+            "name": "Lesion",
+            "gender": "Male",
+            "organization": "CBRN Threat Unit/Rainbow/SDU",
+            "primary": [
+                {
+                    "name": "SIX12",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "T-5 SMG",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Q-929",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                }
+            ],
+            "special": "Gu"
+        },
+        {
+            "name": "Zofia",
+            "gender": "Female",
+            "organization": "NIGHTHAVEN/Rainbow/GROM",
+            "primary": [
+                {
+                    "name": "Scorpion EVO 3 A1",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "FO-12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "RG15",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                }
+            ],
+            "special": "Grzmot Mine"
+        },
+        {
+            "name": "Vigil",
+            "gender": "Male",
+            "organization": "Rainbow/707th SMB",
+            "primary": [
+                {
+                    "name": "K1A",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "BOSG.12.2",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "C75 Auto",
+                    "type": "Machine Pistol"
+                },
+                {
+                    "name": "SMG-12",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                },
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "ERC-7"
+        },
+        {
+            "name": "Maestro",
+            "gender": "Male",
+            "organization": "Rainbow/GIS",
+            "primary": [
+                {
+                    "name": "ALDA 5.56",
+                    "type": "Light Machine Gun"
+                },
+                {
+                    "name": "ACS12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Bailiff 410",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "Keratos .357",
+                    "type": "Revolver"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Evil Eye"
+        },
+        {
+            "name": "Alibi",
+            "gender": "Female",
+            "organization": "Rainbow/GIS/GSUTR",
+            "primary": [
+                {
+                    "name": "Mx4 Storm",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "ACS12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Keratos .357",
+                    "type": "Revolver"
+                },
+                {
+                    "name": "Bailiff 410",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                }
+            ],
+            "special": "Prisma"
+        },
+        {
+            "name": "Clash",
+            "gender": "Female",
+            "organization": "Rainbow/GSUTR/MPS",
+            "primary": [
+                {
+                    "name": "CCE Shield",
+                    "type": "Shield"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Super Shorty",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "SPSMG9",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                }
+            ],
+            "special": "CCE Shield"
+        },
+        {
+            "name": "Kaid",
+            "gender": "Male",
+            "organization": "Rainbow/GIGR",
+            "primary": [
+                {
+                    "name": "AUG A3",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "TCSG12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": ".44 Mag Semi-Auto",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "LFP586",
+                    "type": "Revolver"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Rtila Electroclaw"
+        },
+        {
+            "name": "Mozzie",
+            "gender": "Male",
+            "organization": "Rainbow/SASR",
+            "primary": [
+                {
+                    "name": "Commando 9",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "P10 RONI",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "SDP 9mm",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Pest Launcher"
+        },
+        {
+            "name": "Warden",
+            "gender": "Male",
+            "organization": "Rainbow/Secret Service",
+            "primary": [
+                {
+                    "name": "M590A1",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "MPX",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P-10C",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "SMG-12",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                },
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                }
+            ],
+            "special": "Glance Smart Glasses"
+        },
+        {
+            "name": "Goyo",
+            "gender": "Male",
+            "organization": "Rainbow/FES",
+            "primary": [
+                {
+                    "name": "Vector .45 ACP",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "TCSG12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P229",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                },
+                {
+                    "name": "Proximity Alarm",
+                    "count": 2
+                }
+            ],
+            "special": "Volcan Canister"
+        },
+        {
+            "name": "Wamai",
+            "gender": "Male",
+            "organization": "NIGHTHAVEN/Rainbow (formerly)",
+            "primary": [
+                {
+                    "name": "AUG A2",
+                    "type": "Assault Rifle"
+                },
+                { 
+                    "name": "MP5K",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Keratos .357",
+                    "type": "Revolver"
+                },
+                {
+                    "name": "P12",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Proximity Alarm",
+                    "count": 2
+                },
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Mag-NET"
+        },
+        {
+            "name": "Oryx",
+            "gender": "Male",
+            "organization": "Rainbow/GIGR (unofficially)",
+            "primary": [
+                {
+                    "name": "T-5 SMG",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "SPAS-12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Bailiff 410",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "USP40",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Proximity Alarm",
+                    "count": 2
+                }
+            ],
+            "special": "Remah Dash"
+        },
+        {
+            "name": "Melusi",
+            "gender": "Female",
+            "organization": "Rainbow/Inkaba Task Force/SANDF (formerly)",
+            "primary": [
+                {
+                    "name": "MP5",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "Super 90",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "RG15",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                }
+            ],
+            "special": "Banshee Sonic Defense"
+        },
+        {
+            "name": "Aruni",
+            "gender": "Female",
+            "organization": "NIGHTHAVEN/Rainbow (formerly)/Royal Thai Police (formerly)",
+            "primary": [
+                {
+                    "name": "P10 RONI",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "Mk 14 EBR",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "PRB92",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Bulletproof Camera",
+                    "count": 1
+                }
+            ],
+            "special": "Surya Laser Gate"
+        },
+        {
+            "name": "Thunderbird",
+            "gender": "Female",
+            "organization": "Rainbow/STAR-NET Aviation/Royal Canadian Air Force (formerly)",
+            "primary": [
+                {
+                    "name": "Spear .308",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "SPAS-15",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Q-929",
+                    "type": "Handgun"
+                },
+                { 
+                    "name": "Bearing 9",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Nitro Cell",
+                    "count": 1
+                }
+            ],
+            "special": "Kona Station"
+        },
+        {
+            "name": "Thorn",
+            "gender": "Female",
+            "organization": "Rainbow/Garda ERU",
+            "primary": [
+                {
+                    "name": "UZK50GI",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "M870",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "1911 TACOPS",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "C75 Auto",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Deployable Shield",
+                    "count": 1
+                }
+            ],
+            "special": "Razorbloom Shell"
+        },
+        {
+            "name": "Azami",
+            "gender": "Female",
+            "organization": "Rainbow/Tokyo MPD (formerly)",
+            "primary": [
+                {
+                    "name": "9x19VSN",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "ACS12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "D-50",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Barbed Wire",
+                    "count": 2
+                },
+                {
+                    "name": "Impact Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Kiba Barrier"
+        }
+    ]
+}

@@ -1,0 +1,364 @@
+{
+    "secondary": [
+        {
+            "name": "P226 MK 25",
+            "properties": {
+                "damage": 50,
+                "suppressed_dmg": 42,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 15
+            },
+            "ops": "Sledge/Thatcher/Smoke/Mute",
+            "type": "Handgun"
+        },
+        {
+            "name": "M45 MEUSOC",
+            "properties": {
+                "damage": 58,
+                "suppressed_dmg": 49,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 7
+            },
+            "ops": "Ash/Pulse/Thermite",
+            "type": "Handgun"
+        },
+        {
+            "name": "5.7 USG",
+            "properties": {
+                "damage": 42,
+                "suppressed_dmg": 35,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 20
+            },
+            "ops": "Ash/Castle/Nokk/Pulse/Thermite/Zero",
+            "type": "Handgun"
+        },
+        {
+            "name": "P9",
+            "properties": {
+                "damage": 45,
+                "suppressed_dmg": 38,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 16
+            },
+            "ops": "Doc/Montagne/Rook/Twitch/Ace",
+            "type": "Handgun"
+        },
+        {
+            "name": "LFP586",
+            "properties": {
+                "damage": 78,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 6
+            },
+            "ops": "Ash/Castle/Nokk/Pulse/Thermite/Zero",
+            "type": "Handgun"
+        },
+        {
+            "name": "PMM",
+            "properties": {
+                "damage": 61,
+                "suppressed_dmg": 51,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 8
+            },
+            "ops": "Osa/Finka/Fuze/Glaz/Kapkan/Tachanka",
+            "type": "Handgun"
+        },
+        {
+            "name": "GSH-18",
+            "properties": {
+                "damage": 44,
+                "suppressed_dmg": 37,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 18
+            },
+            "ops": "Fuze/Kapkan/Tachanka/Flores",
+            "type": "Handgun"
+        },
+        {
+            "name": "P12",
+            "properties": {
+                "damage": 44,
+                "suppressed_dmg": 37,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 15
+            },
+            "ops": "Bandit/Blitz/IQ/Jager/Wamai",
+            "type": "Handgun"
+        },
+        {
+            "name": "Mk1 9mm",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": 40,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 13
+            },
+            "ops": "Buck/Frost/Iana",
+            "type": "Handgun"
+        },
+        {
+            "name": "D-50",
+            "properties": {
+                "damage": 71,
+                "suppressed_dmg": 60,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 7
+            },
+            "ops": "Azami/Blackbeard/Nokk/Valkyrie",
+            "type": "Handgun"
+        },
+        {
+            "name": "PRB92",
+            "properties": {
+                "damage": 42,
+                "suppressed_dmg": 35,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 15
+            },
+            "ops": "Aruni/Capitao/Nomad",
+            "type": "Handgun"
+        },
+        {
+            "name": "P229",
+            "properties": {
+                "damage": 51,
+                "suppressed_dmg": 43,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 12
+            },
+            "ops": "Echo/Goyo/Hibana",
+            "type": "Handgun"
+        },
+        {
+            "name": "USP40",
+            "properties": {
+                "damage": 48,
+                "suppressed_dmg": 40,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 12
+            },
+            "ops": "Jackal/Mira/Oryx",
+            "type": "Handgun"
+        },
+        {
+            "name": "Q-929",
+            "properties": {
+                "damage": 60,
+                "suppressed_dmg": 51,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 10
+            },
+            "ops": "Lesion/Thunderbird/Ying",
+            "type": "Handgun"
+        },
+        {
+            "name": "RG15",
+            "properties": {
+                "damage": 38,
+                "suppressed_dmg": 32,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 15
+            },
+            "ops": "Ela/Melusi/Zofia",
+            "type": "Handgun"
+        },
+        {
+            "name": "1911 TACOPS",
+            "properties": {
+                "damage": 55,
+                "suppressed_dmg": 46,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 8
+            },
+            "ops": "Maverick/Thorn",
+            "type": "Handgun"
+        },
+        {
+            "name": ".44 Mag Semi-Auto",
+            "properties": {
+                "damage": 54,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 7
+            },
+            "ops": "Nomad/Kaid",
+            "type": "Handgun"
+        },
+        {
+            "name": "Luison",
+            "properties": {
+                "damage": 65,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 12
+            },
+            "ops": "Caveira",
+            "type": "Handgun"
+        },
+        {
+            "name": "Bailiff 410",
+            "properties": {
+                "damage": 30,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 5
+            },
+            "ops": "Maestro/Alibi/Oryx",
+            "type": "Handgun"
+        },
+        {
+            "name": "Keratos .357",
+            "properties": {
+                "damage": 78,
+                "suppressed_dmg": 66,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 6
+            },
+            "ops": "Maestro/Alibi/Wamai",
+            "type": "Handgun"
+        },
+        {
+            "name": "SDP 9mm",
+            "properties": {
+                "damage": 47,
+                "suppressed_dmg": 39,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 16
+            },
+            "ops": "Mozzie",
+            "type": "Handgun"
+        },
+        {
+            "name": "P-10C",
+            "properties": {
+                "damage": 40,
+                "suppressed_dmg": 34,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 16
+            },
+            "ops": "Mozzie",
+            "type": "Handgun"
+        },
+        {
+            "name": "GONNE-6",
+            "properties": {
+                "damage": 10,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 1
+            },
+            "ops": "Amaru/Dokkaebi/Lion/Finka/Gridlock/Iana/Zero/Glaz",
+            "type": "Hand Cannon"
+        },
+        {
+            "name": "Bearing 9",
+            "properties": {
+                "damage": 33,
+                "suppressed_dmg": 28,
+                "firerate": 1100,
+                "mobility": 50,
+                "capacity": 25
+            },
+            "ops": "Echo/Hibana/Thunderbird",
+            "type": "Machine Pistol"
+        },
+        {
+            "name": "SMG-11",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": 29,
+                "firerate": 1270,
+                "mobility": 50,
+                "capacity": 16
+            },
+            "ops": "Amaru/Mute/Smoke",
+            "type": "Machine Pistol"
+        },
+        {
+            "name": "SMG-12",
+            "properties": {
+                "damage": 28,
+                "suppressed_dmg": -1,
+                "firerate": 1270,
+                "mobility": 50,
+                "capacity": 32
+            },
+            "ops": "Dokkaebi/Vigil/Warden",
+            "type": "Machine Pistol"
+        },
+        {
+            "name": "SPSMG9",
+            "properties": {
+                "damage": 33,
+                "suppressed_dmg": 28,
+                "firerate": 980,
+                "mobility": 50,
+                "capacity": 20
+            },
+            "ops": "Clash/Kali",
+            "type": "Machine Pistol"
+        },
+        {
+            "name": "C75 Auto",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": 29,
+                "firerate": 1000,
+                "mobility": 50,
+                "capacity": 26
+            },
+            "ops": "Kali/Thorn/Vigil",
+            "type": "Machine Pistol"
+        },
+        {
+            "name": "ITA12S",
+            "properties": {
+                "damage": 70,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 5
+            },
+            "ops": "Frost/Jackal/Mira",
+            "type": "Secondary Shotty"
+        },
+        {
+            "name": "Super Shorty",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 50,
+                "capacity": 3
+            },
+            "ops": "Castle/Clash/Gridlock",
+            "type": "Secondary Shotty"
+        }
+    ]
+}

@@ -1,0 +1,1081 @@
+{
+    "atk": [
+        {
+            "name": "Sledge",
+            "gender": "Male",
+            "organization": "SAS",
+            "primary": [
+                {
+                    "name": "M590A1",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "L85A2",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P226 Mk 25",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Frag Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                }
+            ],
+            "special": "Tactical Breaching Hammer"
+        },
+        {
+            "name": "Thatcher",
+            "gender": "Male",
+            "organization": "SAS",
+            "primary": [
+                {
+                    "name": "AR33",
+                    "type":"Assault Rifle"
+                },
+                {
+                    "name": "L85A2",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "M590A1",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P226 Mk 25",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Claymore",
+                    "count": 1
+                },
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                }
+            ],
+            "special": "EMP Grenade"
+        },
+        {
+            "name": "Ash",
+            "gender": "Female",
+            "organization": "FBI SWAT",
+            "primary": [
+                {
+                    "name": "G36C",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "R4-C",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "M45 MEUSOC",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "5.7 USG",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "Breaching Rounds"
+        },
+        {
+            "name": "Thermite",
+            "gender": "Male",
+            "organization": "FBI SWAT",
+            "primary": [
+                {
+                    "name": "M1014",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "556xi",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "M45 MEUSOC",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "5.7 USG",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                },
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Exothermic Charge"
+        },
+        {
+            "name": "Twitch",
+            "gender": "Female",
+            "organization": "GIGN",
+            "primary": [
+                {
+                    "name": "F2",
+                    "type":"Assault Rifle"
+                },
+                {
+                    "name": "417",
+                    "type": "Marksman Rifle"
+                },
+                {
+                    "name": "SG-CQB",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P9",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "LFP586",
+                    "type": "Revolver"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "Shock Drone"
+        },
+        {
+            "name": "Montagne",
+            "gender": "Male",
+            "organization": "GIGN",
+            "primary": [
+                {
+                    "name": "Extendable Shield",
+                    "type": "Shield"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P9",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "LFP586",
+                    "type": "Revolver"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                },
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Le Roc"
+        },
+        {
+            "name": "Glaz",
+            "gender": "Male",
+            "organization": "Spetsnaz",
+            "primary": [
+                {
+                    "name": "OTs-03",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "PMM",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Frag Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Flip Sight"
+        },
+        {
+            "name": "Fuze",
+            "gender": "Male",
+            "organization": "Spetsnaz",
+            "primary": [
+                {
+                    "name": "Ballistic Shield",
+                    "type": "Shield"
+                },
+                {
+                    "name": "6P41",
+                    "type": "Light Machine Gun"
+                },
+                {
+                    "name": "AK-12",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "PMM",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GSH-18",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                }
+            ],
+            "special": "Cluster Charge"
+        },
+        {
+            "name": "Blitz",
+            "gender": "Male",
+            "organization": "GSG 9",
+            "primary": [
+                {
+                    "name": "G52-Tactical Shield",
+                    "type": "Shield"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P12",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                }
+            ],
+            "special": "Flash Shield"
+        },       
+        {
+            "name": "IQ",
+            "gender": "Female",
+            "organization": "GSG 9/NIGHTHAVEN",
+            "primary": [
+                {
+                    "name": "AUG A2",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "552 Commando",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "G8A1",
+                    "type": "Light Machine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P12",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "Electronics Detector"
+        },
+        {
+            "name": "Buck",
+            "gender": "Male",
+            "organization": "JTF2",
+            "primary": [
+                {
+                    "name": "C8-SFW",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "CAMRS",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Mk1 9mm",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                },
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                }
+            ],
+            "special": "Skeleton Key"
+        },
+        {
+            "name": "Blackbeard",
+            "gender": "Male",
+            "organization": "Navy SEALs",
+            "primary": [
+                {
+                    "name": "Mk17 CQB",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "SR-25",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "D-50",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                }
+            ],
+            "special": "Rifle-Shield"
+        },
+        
+        {
+            "name": "Capitao",
+            "gender": "Male",
+            "organization": "BOPE",
+            "primary": [
+                {
+                    "name": "PARA-308",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "M249",
+                    "type": "Light Machine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "PRB92",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Claymore",
+                    "count": 1
+                },
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                }
+            ],
+            "special": "Tactical Crossbow"
+        },
+        {
+            "name": "Hibana",
+            "gender": "Female",
+            "organization": "SAT",
+            "primary": [
+                {
+                    "name": "Type-89",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "SuperNova",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P229",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "Bearing 9",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                },
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                }
+            ],
+            "special": "X-KAIROS"
+        },
+        {
+            "name": "Jackal",
+            "gender": "Male",
+            "organization": "GEO",
+            "primary": [
+                {
+                    "name": "C7E",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "PDW9",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "ITA12L",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "USP40",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Claymore",
+                    "count": 1
+                },
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Eyenox Model III"
+        },
+        {
+            "name": "Ying",
+            "gender": "Female",
+            "organization": "SDU/GSUTR",
+            "primary": [
+                {
+                    "name": "T-95 LSW",
+                    "type": "Light Machine Gun"
+                },
+                {
+                    "name": "SIX12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Q-929",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                },
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Candela"
+        },
+        {
+            "name": "Zofia",
+            "gender": "Female",
+            "organization": "GROM",
+            "primary": [
+                {
+                    "name": "LMG-E",
+                    "type": "Light Machine Gun"
+                },
+                {
+                    "name": "M762",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "RG15",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "KS79 LIFELINE"
+        },
+        {
+            "name": "Dokkaebi",
+            "gender": "Female",
+            "organization": "707th SMB",
+            "primary": [
+                {
+                    "name": "Mk 14 EBR",
+                    "type": "Marksman Rifle"
+                },
+                {
+                    "name": "BOSG.12.2",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                },
+                {
+                    "name": "SMG-12",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                }
+            ],
+            "special": "Logic Bomb"
+        },
+        {
+            "name": "Lion",
+            "gender": "Male",
+            "organization": "CBRN Threat Unit/GIGN",
+            "primary": [
+                {
+                    "name": "V308",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "417",
+                    "type": "Marksman Rifle"
+                },
+                {
+                    "name": "SG-CQB",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                },
+                {
+                    "name": "LFP586",
+                    "type": "Revolver"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "EE-ONE-D"
+        },
+        {
+            "name": "Finka",
+            "gender": "Female",
+            "organization": "CBRN Threat Unit/Spetsnaz",
+            "primary": [
+                {
+                    "name": "Spear .308",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "6P41",
+                    "type": "Light Machine Gun"
+                },
+                {
+                    "name": "SASG-12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "PMM",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Frag Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                }
+            ],
+            "special": "Adrenal Surge"
+        },
+        {
+            "name": "Maverick",
+            "gender": "Male",
+            "organization": "GSUTR/Delta Force",
+            "primary": [
+                {
+                    "name": "AR-15.50",
+                    "type": "Marksman Rifle"
+                },
+                {
+                    "name": "M4",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "1911 TACOPS",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Claymore",
+                    "count": 1
+                },
+                {
+                    "name": "Frag Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Breaching Torch"
+        },
+        {
+            "name": "Nomad",
+            "gender": "Female",
+            "organization": "GIGR",
+            "primary": [
+                {
+                    "name": "AK-74M",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "ARX200",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": ".44 Mag Semi-Auto",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "PRB92",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                }
+            ],
+            "special": "Airjab Launcher"
+        },
+        {
+            "name": "Gridlock",
+            "gender": "Female",
+            "organization": "SASR",
+            "primary": [
+                {
+                    "name": "F90",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "M249 SAW",
+                    "type": "Light Machine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Super Shorty",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Smoke Grenade",
+                    "count": 3
+                },
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                }
+            ],
+            "special": "Trax Stingers"
+        },
+        {
+            "name": "Nokk",
+            "gender": "Female",
+            "organization": "Jaeger Corps",
+            "primary": [
+                {
+                    "name": "FMG-9",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "SIX12 SD",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "5.7 USG",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "D-50",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Frag Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                }
+            ],
+            "special": "HEL Presence Reduction"
+        },
+        {
+            "name": "Amaru",
+            "gender": "Female",
+            "organization": "APCA",
+            "primary": [
+                {
+                    "name": "G8A1",
+                    "type": "Light Machine Gun"
+                },
+                {
+                    "name": "SuperNova",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                },
+                {
+                    "name": "SMG-11",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                },
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                }
+            ],
+            "special": "Garra Hook"
+        },
+        {
+            "name": "Kali",
+            "gender": "Female",
+            "organization": "NIGHTHAVEN",
+            "primary": [
+                {
+                    "name": "CSRX 300",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "C76 Auto",
+                    "type": "Machine Pistol"
+                },
+                {
+                    "name": "SPSMG9",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "LV Explosive Lance"
+        },
+        {
+            "name": "Iana",
+            "gender": "Female",
+            "organization": "REU",
+            "primary": [
+                {
+                    "name": "ARX200",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "G36C",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Mk1 9mm",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Frag Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                }
+            ],
+            "special": "Gemini Replicator"
+        },
+        {
+            "name": "Ace",
+            "gender": "Male",
+            "organization": "NIGHTHAVEN",
+            "primary": [
+                {
+                    "name": "AK-12",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "M1014",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P9",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Breach Charge",
+                    "count": 3
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "S.E.L.M.A. AQUA BREACHER"
+        },
+        {
+            "name": "Zero",
+            "gender": "Male",
+            "organization": "ROS/Fourth Echelon",
+            "primary": [
+                {
+                    "name": "SC3000K",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "MP7",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "5.7 USG",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Claymore",
+                    "count": 1
+                },
+                {
+                    "name": "Hard Breach Charge",
+                    "count": 2
+                }
+            ],
+            "special": "ARGUS LAUNCHER"
+        },
+        {
+            "name": "Flores",
+            "gender": "Male",
+            "organization": "FBI",
+            "primary": [
+                {
+                    "name": "AR33",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "SR-25",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "GSH-18",
+                    "type": "Hand Cannon"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Stun Grenade",
+                    "count": 3
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "RCE-Ratero Charge"
+        },
+        {
+            "name": "Osa",
+            "gender": "Female",
+            "organization": "NIGHTHAVEN",
+            "primary": [
+                {
+                    "name": "556XI",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "PDW9",
+                    "type": "Submachine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "PMM",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Smoke Grenade",
+                    "count": 2
+                },
+                {
+                    "name": "Claymore",
+                    "count": 1
+                }
+            ],
+            "special": "Talon-8 Clear Shield"
+        }
+    ]
+}
