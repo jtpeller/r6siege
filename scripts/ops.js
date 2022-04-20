@@ -179,7 +179,7 @@ function initRandomOps() {
 					.style('width', '10rem')
 					.style('height', '10rem')
 					.attr('src', fetchOpImage(selected.name))
-					.attr('alt', selected.name + "_logo.png")
+					.attr('alt', selected.name + "_logo.svg")
 
 				var body = rop_output.append('div')
 					.classed('card-body', true)
