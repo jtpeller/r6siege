@@ -35,7 +35,7 @@ function isDefender(opname) {
     
     let brand = navdiv.append('a')
         .classed('navbar-brand', true)
-        .attr('href', 'r6siege.html')
+        .attr('href', 'index.html')
         .text('R6 Randomizer');
     
     //
