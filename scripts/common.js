@@ -108,7 +108,7 @@ function initFooter(footer) {
  * @return link         the link for this image
  */
 function fetchOpImage(op) {
-    return `/r6siege/resources/ops/png/${op}.png`;
+    return `/r6siege/resources/ops/png/${op.toLowerCase()}.png`;
 }
 
 /**
