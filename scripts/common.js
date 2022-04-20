@@ -101,3 +101,25 @@ function initFooter(footer) {
         .text('jtpeller')
 
 }
+
+/**
+ * fetchOpImage() -- grabs an image link using buildLink
+ * @param op        the op i'm trying to fetch
+ * @return link         the link for this image
+ */
+function fetchOpImage(op) {
+    return `/r6siege/resources/ops/png/${op}.png`;
+}
+
+/**
+ * fetchGunImage() -- grabs an image link using buildLink
+ * @param gun       the gun i'm trying to fetch
+ * @return link     the link for this image
+ */
+function fetchGunImage(gun) {
+    return `/r6siege/resources/guns/${gun}.png`;
+}
+
+
+console.log(fetchOpImage('ace'))
+console.log(fetchGunImage('417'));

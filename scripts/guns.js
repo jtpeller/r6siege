@@ -187,7 +187,7 @@ function initGuns() {
 				rgun_output.append('img')
 					.classed('center gun-img', true)
 					.style('width', '10rem')
-					.attr('src', `resources/guns/${selected.name.includes(".44 Mag") ? selected.name.slice(1) : selected.name}.png`)
+					.attr('src', fetchGunImage(selected.name.includes(".44 Mag") ? selected.name.slice(1) : selected.name))
 					.attr('alt', selected.name + "_logo.png")
 
 				var body = rgun_output.append('div')
@@ -211,8 +211,6 @@ function initGuns() {
 
                 // format ops
                 var ops = selected.ops.split('/');
-
-
                 
                 var body_text = `
                 	<b>Type</b>: ${selected.type}<br>
@@ -232,7 +230,7 @@ function initGuns() {
                     imgdiv.append('img')
                         //.classed('center', true)
                         .style('width', '4rem')
-                        .attr('src', `resources/ops/png/${ops[i]}.png`)
+                        .attr('src', buildLink(`resources/ops/png/${ops[i]}.png`))
                         .attr('alt', ops[i] + "_logo.png")
                 }
                 

@@ -178,7 +178,7 @@ function initRandomOps() {
 					.classed('center', true)
 					.style('width', '10rem')
 					.style('height', '10rem')
-					.attr('src', `resources/ops/png/${selected.name}.png`)
+					.attr('src', fetchOpImage(selected.name))
 					.attr('alt', selected.name + "_logo.png")
 
 				var body = rop_output.append('div')
