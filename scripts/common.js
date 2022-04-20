@@ -108,6 +108,7 @@ function initFooter(footer) {
  * @return link         the link for this image
  */
 function fetchOpImage(op) {
+    console.log(op.toLowerCase());
     return `/r6siege/resources/ops/png/${op.toLowerCase()}.png`;
 }
 
@@ -121,5 +122,5 @@ function fetchGunImage(gun) {
 }
 
 
-console.log(fetchOpImage('ace'))
+console.log(fetchOpImage('Ace'))
 console.log(fetchGunImage('417'));
