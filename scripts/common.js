@@ -1,34 +1,16 @@
 // =================================================================
-// = utils.js
+// = common.js
 // =  Description   : utility functions
 // =  Author        : jtpeller
 // =  Date          : March 29, 2022
 // =================================================================
-
-function isAttacker(opname) { 
-    for (var i = 0; i < atkops.length; i++) {
-        if (atkops[i].name == opname) {
-            return true;
-        }
-    }
-    return false;
-}
-
-function isDefender(opname) {
-    for (var i = 0; i < defops.length; i++) {
-        if (defops[i].name == opname) {
-            return true;
-        }
-    }
-    return false;
-}
 
 /**
  * initHeader() -- initializes the navbar for navigating the site
  */
  function initNavbar(header) {
     let nav = header.append('nav')
-    nav.classed('navbar navbar-expand-lg navbar-dark bg-dark', true)
+    nav.classed('navbar navbar-expand-lg navbar-dark my-bg-dark', true)
 
     let navdiv = nav.append('div')
         .classed('container-fluid', true);
@@ -36,7 +18,7 @@ function isDefender(opname) {
     let brand = navdiv.append('a')
         .classed('navbar-brand', true)
         .attr('href', 'index.html')
-        .text('R6 Randomizer');
+        .text('R6 Roulette');
     
     //
     // add the hamburger menu button for mobile/thin
@@ -67,11 +49,11 @@ function isDefender(opname) {
     let links = [
         {
             html: 'ops.html',
-            link: 'Op Randomizer'
+            link: 'Operator Roulette'
         },
         {
             html: 'guns.html',
-            link: 'Gun Randomizer'
+            link: 'Gun Roulette'
         }
     ]
 
@@ -88,7 +70,7 @@ function isDefender(opname) {
 
 function initFooter(footer) {
     let elem = footer.append('footer')
-        .classed('footer text-center text-lg-start mt-auto bg-dark', true)
+        .classed('footer text-center text-lg-start mt-auto my-bg-dark', true)
         .style('height', '5em');
 
     let div = elem.append('div')
@@ -99,7 +81,6 @@ function initFooter(footer) {
         .attr('href', 'https://www.github.com/jtpeller')
         .classed('text-light', true)
         .text('jtpeller')
-
 }
 
 /**
@@ -108,7 +89,7 @@ function initFooter(footer) {
  * @return link         the link for this image
  */
 function fetchOpImage(op) {
-    return `/r6siege/resources/ops/svg/${op.toLowerCase()}.svg`;
+    return `resources/ops/svg/${op.toLowerCase()}.svg`;
 }
 
 /**
@@ -117,5 +98,19 @@ function fetchOpImage(op) {
  * @return link     the link for this image
  */
 function fetchGunImage(gun) {
-    return `/r6siege/resources/guns/${gun}.png`;
+    return `resources/guns/${gun}.png`;
+}
+
+/**
+ * getCondition() -- returns the state (t/f) of the condition
+ *  (name) in conditions
+ * @param conditions  the list of conditions, each entry is of the form {idx: "", val: ""}
+ * @param name        the condition to check (this is the idx)
+ */
+function getCondition(conditions, name) {
+    for (var i = 0; i < conditions.length; i++) {
+        if (conditions[i].idx === name) {
+            return conditions[i].val;
+        }
+    }
 }

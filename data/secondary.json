@@ -10,6 +10,7 @@
                 "capacity": 15
             },
             "ops": "Sledge/Thatcher/Smoke/Mute",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -22,6 +23,7 @@
                 "capacity": 7
             },
             "ops": "Ash/Pulse/Thermite",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -34,6 +36,7 @@
                 "capacity": 20
             },
             "ops": "Ash/Castle/Nokk/Pulse/Thermite/Zero",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -46,6 +49,7 @@
                 "capacity": 16
             },
             "ops": "Doc/Montagne/Rook/Twitch/Ace",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -58,6 +62,7 @@
                 "capacity": 6
             },
             "ops": "Ash/Castle/Nokk/Pulse/Thermite/Zero",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -70,6 +75,7 @@
                 "capacity": 8
             },
             "ops": "Osa/Finka/Fuze/Glaz/Kapkan/Tachanka",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -82,6 +88,7 @@
                 "capacity": 18
             },
             "ops": "Fuze/Kapkan/Tachanka/Flores",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -94,6 +101,7 @@
                 "capacity": 15
             },
             "ops": "Bandit/Blitz/IQ/Jager/Wamai",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -106,6 +114,7 @@
                 "capacity": 13
             },
             "ops": "Buck/Frost/Iana",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -118,6 +127,7 @@
                 "capacity": 7
             },
             "ops": "Azami/Blackbeard/Nokk/Valkyrie",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -130,6 +140,7 @@
                 "capacity": 15
             },
             "ops": "Aruni/Capitao/Nomad",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -142,6 +153,7 @@
                 "capacity": 12
             },
             "ops": "Echo/Goyo/Hibana",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -154,6 +166,7 @@
                 "capacity": 12
             },
             "ops": "Jackal/Mira/Oryx",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -166,6 +179,7 @@
                 "capacity": 10
             },
             "ops": "Lesion/Thunderbird/Ying",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -178,6 +192,7 @@
                 "capacity": 15
             },
             "ops": "Ela/Melusi/Zofia",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -190,6 +205,7 @@
                 "capacity": 8
             },
             "ops": "Maverick/Thorn",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -202,6 +218,7 @@
                 "capacity": 7
             },
             "ops": "Nomad/Kaid",
+            "team": "Attacker/Defender",
             "type": "Handgun"
         },
         {
@@ -214,6 +231,7 @@
                 "capacity": 12
             },
             "ops": "Caveira",
+            "team": "Defender",
             "type": "Handgun"
         },
         {
@@ -226,6 +244,7 @@
                 "capacity": 5
             },
             "ops": "Maestro/Alibi/Oryx",
+            "team": "Defender",
             "type": "Handgun"
         },
         {
@@ -238,6 +257,7 @@
                 "capacity": 6
             },
             "ops": "Maestro/Alibi/Wamai",
+            "team": "Defender",
             "type": "Handgun"
         },
         {
@@ -250,6 +270,7 @@
                 "capacity": 16
             },
             "ops": "Mozzie",
+            "team": "Defender",
             "type": "Handgun"
         },
         {
@@ -261,7 +282,8 @@
                 "mobility": 45,
                 "capacity": 16
             },
-            "ops": "Mozzie",
+            "ops": "Warden",
+            "team": "Defender",
             "type": "Handgun"
         },
         {
@@ -274,6 +296,7 @@
                 "capacity": 1
             },
             "ops": "Amaru/Dokkaebi/Lion/Finka/Gridlock/Iana/Zero/Glaz",
+            "team": "Attacker",
             "type": "Hand Cannon"
         },
         {
@@ -286,6 +309,7 @@
                 "capacity": 25
             },
             "ops": "Echo/Hibana/Thunderbird",
+            "team": "Attacker/Defender",
             "type": "Machine Pistol"
         },
         {
@@ -298,6 +322,7 @@
                 "capacity": 16
             },
             "ops": "Amaru/Mute/Smoke",
+            "team": "Attacker/Defender",
             "type": "Machine Pistol"
         },
         {
@@ -310,6 +335,7 @@
                 "capacity": 32
             },
             "ops": "Dokkaebi/Vigil/Warden",
+            "team": "Attacker/Defender",
             "type": "Machine Pistol"
         },
         {
@@ -322,6 +348,7 @@
                 "capacity": 20
             },
             "ops": "Clash/Kali",
+            "team": "Attacker/Defender",
             "type": "Machine Pistol"
         },
         {
@@ -334,6 +361,7 @@
                 "capacity": 26
             },
             "ops": "Kali/Thorn/Vigil",
+            "team": "Attacker/Defender",
             "type": "Machine Pistol"
         },
         {
@@ -346,6 +374,7 @@
                 "capacity": 5
             },
             "ops": "Frost/Jackal/Mira",
+            "team": "Attacker/Defender",
             "type": "Secondary Shotty"
         },
         {
@@ -358,6 +387,7 @@
                 "capacity": 3
             },
             "ops": "Castle/Clash/Gridlock",
+            "team": "Attacker/Defender",
             "type": "Secondary Shotty"
         }
     ]

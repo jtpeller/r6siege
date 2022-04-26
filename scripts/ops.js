@@ -16,47 +16,35 @@ var content
 	footer;
 
 // data
-var atkops, defops;
+var atkops, defops, gadgets;
+window.data = [];       // subset of ops to be built based on conditions
 
 //
 // build the page
 //
 document.addEventListener("DOMContentLoaded", function() {
+    // select all elements
+    header = d3.select(hid);
+    content = d3.select(cid);
+    footer = d3.select(fid);
+
+    // init the navbar and footer first (data promise delays load times)
+    initNavbar(header);
+    initFooter(footer);
+
 	// load all data w/ d3 utils
 	Promise.all([
 		d3.json('data/atk.json'),
-		d3.json('data/def.json')
+		d3.json('data/def.json'),
+        d3.json('data/gadgets.json')
 	]).then(function(values) {
-		// select all elements
-		header = d3.select(hid);
-		content = d3.select(cid);
-		footer = d3.select(fid);
-
 		// set all necessary data
 		atkops = values[0].atk
 		defops = values[1].def
-
-		init();
+        gadgets = values[2]
+		initRandomOps();
 	})
 })
-
-function init() {
-	console.log('atkops', atkops)
-	console.log('defops', defops)
-
-	//
-	// initialize the page
-	//
-
-	// initialize header
-    initNavbar(header);
-
-	// randomized ops (rng an op meeting filters/options)
-	initRandomOps();
-	
-    // initialize the tiny little footer
-    initFooter(footer);
-}
 
 function initRandomOps() { 
 	//
@@ -68,7 +56,7 @@ function initRandomOps() {
 	
 	// title and separator
 	ops.append('h2')
-		.html("Randomize Ops")
+		.html("Operator Roulette")
 		.append('hr');
 
 	// ops left side
@@ -96,11 +84,15 @@ function initRandomOps() {
 			.attr('value', '')
 			.attr('id', 'r-op-check-'+i)
 			.property('checked', true)  // set all as selected
+            .on('click', buildData)
 		div.append('label')
 			.classed('form-check-label', true)
 			.attr('for', 'r-op-check-'+i)
 			.text(conditions[i]);
 	}
+    buildData();
+
+    left.append('hr');
 
 	// button and selected op button
 	let rop_submit = left.append('div')
@@ -114,59 +106,16 @@ function initRandomOps() {
 		.attr('id', 'r-op-output');
 
 	rop_submit.append('button')
-		.text('Generate an Op!')
-		.classed('btn btn-light', true)
+		.text('Generate')
+		.classed('btn btn-outline-light', true)
 		.on('click', function() {
-			//
-			// first, get the conditions
-			//
-			var elems = rop_form.selectAll('.form-check-input')._groups[0]
-			//console.log(elems);
-			
-			// use these options to make an object
-			var cond = {
-				atk: elems[0].checked,
-                def: elems[1].checked,
-				male: elems[2].checked,
-				female: elems[3].checked,
-			}
-            console.log(cond);
-
-            //
-			// use the filters to modify the op-set for rng
-            // 
-
-            // filter with atk/def
-            let data;
-            if (cond.atk && cond.def) {
-                data = [...atkops, ...defops];
-            } else if (cond.atk) {
-                data = [...atkops];
-            } else if (cond.def) {
-                data = [...defops];
-            } else {
-                data = [];
-            }
-
-            // remove other filters
-			for (var i = 0; i < data.length; i++) { 
-				if ( data[i].gender.includes('Male') && !cond.male ) {
-					data.splice(i, 1);
-                    i--;
-				} else if ( data[i].gender.includes('Female') && !cond.female) {
-					data.splice(i, 1);
-                    i--;
-				}
-			}
-			console.log(data);
-
-			if (data.length <= 0) {
+			if (window.data.length <= 0) {
 				rop_output.text("No ops match this filter/option set. Try another combination.");
 			} else {
 				// generate rng for selected ops
-				var rng = Math.floor(Math.random() * data.length);
+				var rng = Math.floor(Math.random() * window.data.length);
 
-				var selected = data[rng];
+				var selected = window.data[rng];
 				//rchosenop.text('Here is your selected op');
 				rop_output.html('');
 
@@ -208,11 +157,11 @@ function initRandomOps() {
 				stext += "</ul>";
 
 				// format gadgets
-				var gadgets = selected.gadget;
+				var gg = selected.gadget;
 				var gtext = "<ul>";
-				for (var i = 0; i < gadgets.length; i++) {
-					gtext += "<li>" + gadgets[i].name + " x"
-					gtext += gadgets[i].count + "<br></li>"
+				for (var i = 0; i < gg.length; i++) {
+					gtext += "<li>" + gg[i].name + " x"
+					gtext += getGadgetCount(gg[i].name) + "<br></li>"
 				}
 				gtext += "</ul>";
 				
@@ -236,4 +185,55 @@ function initRandomOps() {
 			}
 		})
 	
+    /**
+     * this function builds the dataset based on the selected conditions
+     * and filters the user can modify.
+     */
+    function buildData() {
+        //
+        // first, get the conditions
+        //
+        var elems = rop_form.selectAll('.form-check-input')._groups[0]
+        //console.log(elems);
+        
+        // use these options to make an object
+        var cond = {
+            atk: elems[0].checked,
+            def: elems[1].checked,
+            male: elems[2].checked,
+            female: elems[3].checked,
+        }
+        console.log(cond);
+
+        //
+        // use the filters to modify the op-set for rng
+        // 
+
+        // filter with atk/def
+        if (cond.atk && cond.def) {
+            window.data = [...atkops, ...defops];
+        } else if (cond.atk) {
+            window.data = [...atkops];
+        } else if (cond.def) {
+            window.data = [...defops];
+        } else {
+            window.data = [];
+        }
+
+        // remove other filters
+        for (var i = 0; i < data.length; i++) { 
+            if ( window.data[i].gender.includes('Male') && !cond.male ) {
+                window.data.splice(i, 1);
+                i--;
+            } else if ( window.data[i].gender.includes('Female') && !cond.female) {
+                window.data.splice(i, 1);
+                i--;
+            }
+        }
+        console.log(window.data);
+    }
+}
+
+function getGadgetCount(gadget) {
+    return gadgets[gadget.toLowerCase().replaceAll(' ', '_')];
 }

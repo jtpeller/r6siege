@@ -22,12 +22,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Frag Grenade",
-                    "count": 2
+                    "name": "Frag Grenade"
                 },
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 }
             ],
             "special": "Tactical Breaching Hammer"
@@ -58,12 +56,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 },
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 }
             ],
             "special": "EMP Grenade"
@@ -94,12 +90,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "Breaching Rounds"
@@ -130,12 +124,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 },
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 }
             ],
             "special": "Exothermic Charge"
@@ -170,12 +162,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "Shock Drone"
@@ -202,12 +192,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 },
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 }
             ],
             "special": "Le Roc"
@@ -234,12 +222,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 },
                 {
-                    "name": "Frag Grenade",
-                    "count": 2
+                    "name": "Frag Grenade"
                 }
             ],
             "special": "Flip Sight"
@@ -274,12 +260,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 },
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 }
             ],
             "special": "Cluster Charge"
@@ -302,12 +286,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 },
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 }
             ],
             "special": "Flash Shield"
@@ -338,12 +320,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "Electronics Detector"
@@ -370,12 +350,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 },
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 }
             ],
             "special": "Skeleton Key"
@@ -402,12 +380,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Claymore"
                 },
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 }
             ],
             "special": "Rifle-Shield"
@@ -435,12 +411,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 },
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 }
             ],
             "special": "Tactical Crossbow"
@@ -471,12 +445,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 },
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 }
             ],
             "special": "X-KAIROS"
@@ -511,12 +483,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 },
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 }
             ],
             "special": "Eyenox Model III"
@@ -543,12 +513,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 },
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 }
             ],
             "special": "Candela"
@@ -575,12 +543,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "KS79 LIFELINE"
@@ -611,12 +577,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 },
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 }
             ],
             "special": "Logic Bomb"
@@ -651,12 +615,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "EE-ONE-D"
@@ -691,12 +653,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Frag Grenade",
-                    "count": 2
+                    "name": "Frag Grenade"
                 },
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 }
             ],
             "special": "Adrenal Surge"
@@ -723,12 +683,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 },
                 {
-                    "name": "Frag Grenade",
-                    "count": 2
+                    "name": "Frag Grenade"
                 }
             ],
             "special": "Breaching Torch"
@@ -759,12 +717,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 },
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 }
             ],
             "special": "Airjab Launcher"
@@ -795,12 +751,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Smoke Grenade",
-                    "count": 3
+                    "name": "Smoke Grenade"
                 },
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 }
             ],
             "special": "Trax Stingers"
@@ -831,12 +785,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Frag Grenade",
-                    "count": 2
+                    "name": "Frag Grenade"
                 },
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 }
             ],
             "special": "HEL Presence Reduction"
@@ -867,12 +819,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 },
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 }
             ],
             "special": "Garra Hook"
@@ -899,12 +849,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "LV Explosive Lance"
@@ -935,12 +883,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Frag Grenade",
-                    "count": 2
+                    "name": "Frag Grenade"
                 },
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 }
             ],
             "special": "Gemini Replicator"
@@ -967,12 +913,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Breach Charge",
-                    "count": 3
+                    "name": "Breach Charge"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "S.E.L.M.A. AQUA BREACHER"
@@ -1003,12 +947,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 },
                 {
-                    "name": "Hard Breach Charge",
-                    "count": 2
+                    "name": "Hard Breach Charge"
                 }
             ],
             "special": "ARGUS LAUNCHER"
@@ -1035,12 +977,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Stun Grenade",
-                    "count": 3
+                    "name": "Stun Grenade"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "RCE-Ratero Charge"
@@ -1067,12 +1007,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Smoke Grenade",
-                    "count": 2
+                    "name": "Smoke Grenade"
                 },
                 {
-                    "name": "Claymore",
-                    "count": 1
+                    "name": "Claymore"
                 }
             ],
             "special": "Talon-8 Clear Shield"

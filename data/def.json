@@ -26,12 +26,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 },
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 }
             ],
             "special": "Remote Gas Grenade"
@@ -62,12 +60,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 },
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 }
             ],
             "special": "Signal Disruptor"
@@ -98,12 +94,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 },
                 {
-                    "name": "Proximity Alarm",
-                    "count": 2
+                    "name": "Proximity Alarm"
                 }
             ],
             "special": "Armor Panel"
@@ -134,12 +128,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Heartbeat Sensor"
@@ -174,12 +166,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 }
             ],
             "special": "Stim Pistol"
@@ -214,12 +204,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Proximity Alarm",
-                    "count": 2
+                    "name": "Proximity Alarm"
                 },
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 }
             ],
             "special": "Armor Pack"
@@ -250,12 +238,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Entry Denial Device"
@@ -286,12 +272,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 }
             ],
             "special": "Grenade Launcher"
@@ -318,12 +302,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 },
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 }
             ],
             "special": "Flash Shield"
@@ -350,12 +332,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Shock Wire"
@@ -386,12 +366,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 },
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 }
             ],
             "special": "Welcome Mat"
@@ -418,12 +396,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Black Eye"
@@ -450,12 +426,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Proximity Alarm",
-                    "count": 2
+                    "name": "Proximity Alarm"
                 }
             ],
             "special": "Silent Step"
@@ -486,12 +460,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 }
             ],
             "special": "Yokai"
@@ -522,12 +494,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Proximity Alarm",
-                    "count": 2
+                    "name": "Proximity Alarm"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Black Mirror"
@@ -554,12 +524,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 }
             ],
             "special": "Gu"
@@ -586,12 +554,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 }
             ],
             "special": "Grzmot Mine"
@@ -622,12 +588,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 },
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 }
             ],
             "special": "ERC-7"
@@ -658,12 +622,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 }
             ],
             "special": "Evil Eye"
@@ -694,12 +656,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 }
             ],
             "special": "Prisma"
@@ -726,12 +686,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 }
             ],
             "special": "CCE Shield"
@@ -762,12 +720,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Rtila Electroclaw"
@@ -794,12 +750,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Pest Launcher"
@@ -830,12 +784,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 },
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 }
             ],
             "special": "Glance Smart Glasses"
@@ -862,12 +814,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 },
                 {
-                    "name": "Proximity Alarm",
-                    "count": 2
+                    "name": "Proximity Alarm"
                 }
             ],
             "special": "Volcan Canister"
@@ -898,12 +848,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Proximity Alarm",
-                    "count": 2
+                    "name": "Proximity Alarm"
                 },
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 }
             ],
             "special": "Mag-NET"
@@ -934,12 +882,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Proximity Alarm",
-                    "count": 2
+                    "name": "Proximity Alarm"
                 }
             ],
             "special": "Remah Dash"
@@ -966,12 +912,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 }
             ],
             "special": "Banshee Sonic Defense"
@@ -998,12 +942,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Bulletproof Camera",
-                    "count": 1
+                    "name": "Bulletproof Camera"
                 }
             ],
             "special": "Surya Laser Gate"
@@ -1034,12 +976,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 },
                 {
-                    "name": "Nitro Cell",
-                    "count": 1
+                    "name": "Nitro Cell"
                 }
             ],
             "special": "Kona Station"
@@ -1070,12 +1010,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Deployable Shield",
-                    "count": 1
+                    "name": "Deployable Shield"
                 }
             ],
             "special": "Razorbloom Shell"
@@ -1102,12 +1040,10 @@
             ],
             "gadget": [
                 {
-                    "name": "Barbed Wire",
-                    "count": 2
+                    "name": "Barbed Wire"
                 },
                 {
-                    "name": "Impact Grenade",
-                    "count": 2
+                    "name": "Impact Grenade"
                 }
             ],
             "special": "Kiba Barrier"

@@ -11,53 +11,37 @@ var cid = "#content"
 	hid = "#header"
 	fid = "#footer"
 
-var content
-	header
-	footer;
+var content, header, footer;
 
-// data
+// data (embedded on window for ease of access)
 window.primaries = []
 window.secondaries = [];
+window.data = [];
 
 //
 // build the page
 //
 document.addEventListener("DOMContentLoaded", function() {
+    // select all elements
+    header = d3.select(hid);
+    content = d3.select(cid);
+    footer = d3.select(fid);
+
+    // init the navbar and footer first (data promise delays load times)
+    initNavbar(header);
+    initFooter(footer);
+
 	// load all data w/ d3 utils
 	Promise.all([
 		d3.json('data/primary.json'),
 		d3.json('data/secondary.json')
 	]).then(function(values) {
-		// select all elements
-		header = d3.select(hid);
-		content = d3.select(cid);
-		footer = d3.select(fid);
-
 		// set all necessary data
 		window.primaries = values[0].primary
 		window.secondaries = values[1].secondary
-
-		init();
+		initGuns();
 	})
 })
-
-function init() {
-	console.log('primary', window.primaries)
-	console.log('secondary', window.secondaries)
-
-	//
-	// initialize the page
-	//
-
-	// initialize header
-    initNavbar(header);
-
-	// randomized guns (guns meeting some criteria)
-	initGuns();
-	
-    // initialize the tiny little footer
-    initFooter(footer);
-}
 
 function initGuns() { 
 	//
@@ -96,11 +80,15 @@ function initGuns() {
 			.attr('value', '')
 			.attr('id', 'r-gun-check-'+i)
 			.property('checked', true)  // set all as selected
+            .on('click', buildData)
 		div.append('label')
 			.classed('form-check-label', true)
 			.attr('for', 'r-gun-check-'+i)
 			.text(gcond[i]);
 	}
+    buildData();
+
+    left.append('hr');
 
 	// button and selected gun button
 	let rgun_submit = left.append('div')
@@ -114,70 +102,16 @@ function initGuns() {
 		.attr('id', 'r-gun-output');
 
 	rgun_submit.append('button')
-		.text('Generate a gun!')
-		.classed('btn btn-light', true)
+		.text('Generate')
+		.classed('btn btn-outline-light', true)
 		.on('click', function() {
-			//
-			// first, get the conditions
-			//
-			var elems = rgun_form.selectAll('.form-check-input')._groups[0]
-			//console.log(elems);
-			
-			// use these options to make an object
-            let cond = [];
-            for (var j = 0; j < elems.length; j++) {
-                cond.push({
-                    idx: gcond[j],
-                    val: elems[j].checked
-                })
-            }
-            console.log(cond);
-
-            //
-			// use the filters to modify the gun-set for rng
-            // 
-            let p = window.primaries;
-            let s = window.secondaries
-
-            // filter based on types of primaries
-            let data = [];
-            var conds_to_check = [];        // use a subset to speed up runtime
-            if (cond[0].val && cond[1].val) {   // primary && secondary
-                data = [...p, ...s];
-                conds_to_check = cond.slice(4);
-            } else if (cond[0].val) {
-                data = [...p];
-                conds_to_check = cond.slice(4, 10);
-            } else if (cond[1].val) {
-                data = [...s];
-                conds_to_check = cond.slice(11);
-            }
-            console.log('conds_to_check', conds_to_check);
-
-            // TODO: filter based on atk/def as well
-            
-            // filter based on conds_to_check
-            for (var j = 0; j < data.length; j++) {
-                for (var k = 0; k < conds_to_check.length; k++) {
-                    if (data[j].type.includes(conds_to_check[k].idx) && !conds_to_check[k].val) { 
-                        data.splice(j, 1);
-                        j--;
-                        if (j <= 0) {
-                            break;
-                        }
-                    }
-                }
-            }
-            console.log(data);
-
-			if (data.length <= 0) {
+			if (window.data.length <= 0) {
 				rgun_output.text("No guns match this filter/option set. Try another combination.");
 			} else {
 				// generate rng for selected guns
-				var rng = Math.floor(Math.random() * data.length);
+				var rng = Math.floor(Math.random() * window.data.length);
 
-				var selected = data[rng];
-				//rchosenop.text('Here is your selected gun');
+				var selected = window.data[rng];
 				rgun_output.html('');
 
 				// now, format the card accordingly
@@ -186,7 +120,7 @@ function initGuns() {
 				// add the card's image
 				rgun_output.append('img')
 					.classed('center gun-img', true)
-					.style('width', '10rem')
+					.style('height', 'calc(50vh - 25rem')
 					.attr('src', fetchGunImage(selected.name.includes(".44 Mag") ? selected.name.slice(1) : selected.name))
 					.attr('alt', selected.name + "_logo.png")
 
@@ -195,7 +129,11 @@ function initGuns() {
 				
 				body.append('h3')
 					.text(selected.name)
-					.classed('text-center', true)
+					.classed('text-center', true);
+
+                body.append('h5')
+                    .text(isPrimary(selected.name) ? 'Primary' : 'Secondary')
+                    .classed('text-center', true)
 					.append('hr')
 
                 // format properties
@@ -230,7 +168,7 @@ function initGuns() {
                     imgdiv.append('img')
                         //.classed('center', true)
                         .style('width', '4rem')
-                        .attr('src', buildLink(`resources/ops/png/${ops[i]}.png`))
+                        .attr('src', fetchOpImage(ops[i]))
                         .attr('alt', ops[i] + "_logo.png")
                 }
                 
@@ -239,4 +177,101 @@ function initGuns() {
 			}
 		}.bind(this))
 	
+    /**
+     * this function builds the dataset based on the selected conditions
+     * and filters the user can modify.
+     */
+    function buildData() {
+        //
+        // first, get the conditions
+        //
+        var elems = rgun_form.selectAll('.form-check-input')._groups[0]
+        
+        // use these options to make an object
+        let cond = [];
+        for (var j = 0; j < elems.length; j++) {
+            cond.push({
+                idx: gcond[j],          // name of the filter type
+                val: elems[j].checked   // whether it is checked
+            })
+        }
+        console.log('cond', cond);
+
+        //
+        // use the filters to modify the gun-set for rng
+        // 
+        let p = window.primaries;
+        let s = window.secondaries
+
+        // filter based on types of primaries
+        var conds_to_check = [];        // use a subset to speed up runtime
+        if (cond[0].val && cond[1].val) {   // primary && secondary
+            window.data = [...p, ...s];
+            conds_to_check = cond.slice(4);
+        } else if (cond[0].val) {
+            window.data = [...p];
+            conds_to_check = cond.slice(4, 10);
+        } else if (cond[1].val) {
+            window.data = [...s];
+            conds_to_check = cond.slice(11);
+        } else {
+            window.data = [];       // no guns at all
+            conds_to_check = [];
+        }
+
+        // filter based on conds_to_check
+        for (var j = 0; j < window.data.length; j++) {
+            for (var k = 0; k < conds_to_check.length; k++) {
+                if (window.data[j].type.includes(conds_to_check[k].idx) && !conds_to_check[k].val) { 
+                    window.data.splice(j, 1);
+                    j--;
+                    if (j <= 0) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        // filter based on atk/def
+        var atk = getCondition(cond, "Attacker");
+        var def = getCondition(cond, "Defender");
+        console.log('atk', atk, 'def', def);
+        if (atk && def) {
+            // attacker AND defenders checked, do nothing
+        }
+        if (!atk) {
+            // attackers is checked, eliminate all guns WITHOUT attackers in team
+            for (var i = 0; i < window.data.length; i++) {
+                var team = window.data[i].team.split('/');
+                if (!team.includes('Attacker')) {
+                    window.data.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+        if (!def) {
+            // defenders is checked, eliminate all guns without defenders in team
+            for (var i = 0; i < window.data.length; i++) {
+                var team = window.data[i].team.split('/');
+                if (!team.includes('Defender')) {
+                    window.data.splice(i, 1);
+                    i--;
+                }
+            }
+        } 
+        if (!atk && !def) {
+            window.data = [];       // nothing matches this selection
+        }
+
+        console.log(window.data);
+    }
+}
+
+function isPrimary(gun) {
+    for (var i = 0; i < window.primaries.length; i++) {
+        if (window.primaries[i].name == gun) {
+            return true;
+        }
+    }
+    return false;
 }
