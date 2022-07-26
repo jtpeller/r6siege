@@ -53,7 +53,7 @@ function initGuns() {
 	
 	// title and separator
 	guns.append('h2')
-		.html("Randomize guns")
+		.html("Gun Roulette")
 		.append('hr');
 
 	// guns left side
@@ -177,6 +177,21 @@ function initGuns() {
 			}
 		}.bind(this))
 	
+    
+    rgun_submit.append('button')
+        .text('Toggle All Filters')
+		.classed('btn btn-outline-light', true)
+        .on('click', function() {
+            var x = rgun_form.selectAll('input[type=checkbox]').property('checked');
+            rgun_form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
+            if (x) {    // if x was true, then all the filters have just been unchecked, so data is now empty
+                window.data = [];
+            } else {
+                buildData();
+            }
+        })
+
+
     /**
      * this function builds the dataset based on the selected conditions
      * and filters the user can modify.
@@ -195,7 +210,7 @@ function initGuns() {
                 val: elems[j].checked   // whether it is checked
             })
         }
-        console.log('cond', cond);
+        //console.log('cond', cond);
 
         //
         // use the filters to modify the gun-set for rng
@@ -235,7 +250,7 @@ function initGuns() {
         // filter based on atk/def
         var atk = getCondition(cond, "Attacker");
         var def = getCondition(cond, "Defender");
-        console.log('atk', atk, 'def', def);
+        //console.log('atk', atk, 'def', def);
         if (atk && def) {
             // attacker AND defenders checked, do nothing
         }
@@ -263,7 +278,7 @@ function initGuns() {
             window.data = [];       // nothing matches this selection
         }
 
-        console.log(window.data);
+        //console.log(window.data);
     }
 }
 

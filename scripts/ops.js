@@ -184,6 +184,19 @@ function initRandomOps() {
 				rop_output.classed('my-card', true)
 			}
 		})
+
+    rop_submit.append('button')
+        .text('Toggle All Filters')
+		.classed('btn btn-outline-light', true)
+        .on('click', function() {
+            var x = rop_form.selectAll('input[type=checkbox]').property('checked');
+            rop_form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
+            if (x) {    // if x was true, then all the filters have just been unchecked, so data is now empty
+                window.data = [];
+            } else {
+                buildData();
+            }
+        })
 	
     /**
      * this function builds the dataset based on the selected conditions
