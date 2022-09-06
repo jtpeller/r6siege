@@ -26,6 +26,9 @@
                 },
                 {
                     "name": "Stun Grenade"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "Tactical Breaching Hammer"
@@ -196,6 +199,9 @@
                 },
                 {
                     "name": "Smoke Grenade"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "Le Roc"
@@ -384,6 +390,9 @@
                 },
                 {
                     "name": "Stun Grenade"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "Rifle-Shield"
@@ -581,6 +590,9 @@
                 },
                 {
                     "name": "Stun Grenade"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "Logic Bomb"
@@ -619,6 +631,9 @@
                 },
                 {
                     "name": "Claymore"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "EE-ONE-D"
@@ -755,6 +770,9 @@
                 },
                 {
                     "name": "Breach Charge"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "Trax Stingers"
@@ -789,6 +807,9 @@
                 },
                 {
                     "name": "Hard Breach Charge"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "HEL Presence Reduction"
@@ -1011,9 +1032,76 @@
                 },
                 {
                     "name": "Claymore"
+                },
+                {
+                    "name": "Impact EMP Grenade"
                 }
             ],
             "special": "Talon-8 Clear Shield"
+        },
+        {
+            "name": "Sens",
+            "gender": "Non-binary",
+            "organization": "Wolfguard",
+            "primary": [
+                {
+                    "name": "POF9",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "417",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "SDP 9MM",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Hard Breach Charge"
+                },
+                {
+                    "name": "Claymore"
+                }
+            ],
+            "special": "R.O.U. Projector System"
+        },
+        {
+            "name": "Grim",
+            "gender": "Male",
+            "organization": "NIGHTHAVEN",
+            "primary": [
+                {
+                    "name": "552 Commando",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "SG-CQB",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P229",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                {
+                    "name": "Hard Breach Charge"
+                },
+                {
+                    "name": "Claymore"
+                }
+            ],
+            "special": "Kawan Hive Launcher"
         }
     ]
 }

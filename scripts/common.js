@@ -18,7 +18,7 @@
     let brand = navdiv.append('a')
         .classed('navbar-brand', true)
         .attr('href', 'index.html')
-        .text('R6 Roulette');
+        .text('R6S Roulette');
     
     //
     // add the hamburger menu button for mobile/thin

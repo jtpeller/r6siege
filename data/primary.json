@@ -300,6 +300,19 @@
             "type": "Assault Rifle"
         },
         {
+            "name": "POF-9",
+            "properties": {
+                "damage": 35,
+                "suppressed_dmg": 0,
+                "firerate": 740,
+                "mobility": 50,
+                "capacity": 50
+            },
+            "ops": "Sens",
+            "team": "Attacker",
+            "type": "Assault Rifle"
+        },
+        {
             "name": "417",
             "properties": {
                 "damage": 69,

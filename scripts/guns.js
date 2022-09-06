@@ -138,9 +138,10 @@ function initGuns() {
 
                 // format properties
                 var props = selected.properties;
+                // y7s3 removed all suppressor dmg penalty: (${props.suppressed_dmg == -1 ? "N/A" : props.suppressed_dmg})
                 var ptext = `
                     <ul>
-                        <li><b>Damage</b>: ${props.damage} (${props.suppressed_dmg == -1 ? "N/A" : props.suppressed_dmg})<br></li>
+                        <li><b>Damage</b>: ${props.damage} <br></li>
                         <li><b>Firerate</b>: ${props.firerate == -1 ? "N/A" : props.firerate}<br></li>
                         <li><b>Mobility</b>: ${props.mobility}<br></li>
                         <li><b>Capacity</b>: ${props.capacity}<br></li>
