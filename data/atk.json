@@ -3,6 +3,8 @@
         {
             "name": "Sledge",
             "gender": "Male",
+            "role": ["Soft Breach", "Flank"],
+            "speed": 2,
             "organization": "SAS",
             "primary": [
                 {
@@ -36,6 +38,8 @@
         {
             "name": "Thatcher",
             "gender": "Male",
+            "role": ["Gadget Denial"],
+            "speed": 2,
             "organization": "SAS",
             "primary": [
                 {
@@ -70,6 +74,8 @@
         {
             "name": "Ash",
             "gender": "Female",
+            "role": ["Soft Breach", "Flank", "Gadget Denial"],
+            "speed": 3,
             "organization": "FBI SWAT",
             "primary": [
                 {
@@ -104,6 +110,8 @@
         {
             "name": "Thermite",
             "gender": "Male",
+            "role": ["Hard Breach"],
+            "speed": 2,
             "organization": "FBI SWAT",
             "primary": [
                 {
@@ -138,6 +146,8 @@
         {
             "name": "Twitch",
             "gender": "Female",
+            "role": ["Gadget Denial", "Intel Gatherer"],
+            "speed": 2,
             "organization": "GIGN",
             "primary": [
                 {
@@ -176,6 +186,8 @@
         {
             "name": "Montagne",
             "gender": "Male",
+            "role": ["Shield"],
+            "speed": 1,
             "organization": "GIGN",
             "primary": [
                 {
@@ -209,6 +221,8 @@
         {
             "name": "Glaz",
             "gender": "Male",
+            "role": ["Soft Breach", "Roam Denial"],
+            "speed": 3,
             "organization": "Spetsnaz",
             "primary": [
                 {
@@ -239,6 +253,8 @@
         {
             "name": "Fuze",
             "gender": "Male",
+            "role": ["Shield", "Area Denial", "Gadget Denial"],
+            "speed": 1,
             "organization": "Spetsnaz",
             "primary": [
                 {
@@ -277,6 +293,8 @@
         {
             "name": "Blitz",
             "gender": "Male",
+            "role": ["Shield", "Crowd Control", "Roam Denial"],
+            "speed": 2,
             "organization": "GSG 9",
             "primary": [
                 {
@@ -303,6 +321,8 @@
         {
             "name": "IQ",
             "gender": "Female",
+            "role": ["Gadget Denial", "Flank", "Intel Gatherer"],
+            "speed": 3,
             "organization": "GSG 9/NIGHTHAVEN",
             "primary": [
                 {
@@ -337,6 +357,8 @@
         {
             "name": "Buck",
             "gender": "Male",
+            "role": ["Flank", "Soft Breach"],
+            "speed": 2,
             "organization": "JTF2",
             "primary": [
                 {
@@ -367,6 +389,8 @@
         {
             "name": "Blackbeard",
             "gender": "Male",
+            "role": ["Shield"],
+            "speed": 2,
             "organization": "Navy SEALs",
             "primary": [
                 {
@@ -401,6 +425,8 @@
         {
             "name": "Capitao",
             "gender": "Male",
+            "role": ["Area Denial", "Flank"],
+            "speed": 3,
             "organization": "BOPE",
             "primary": [
                 {
@@ -431,6 +457,8 @@
         {
             "name": "Hibana",
             "gender": "Female",
+            "role": ["Hard Breach"],
+            "speed": 3,
             "organization": "SAT",
             "primary": [
                 {
@@ -465,6 +493,8 @@
         {
             "name": "Jackal",
             "gender": "Male",
+            "role": ["Roam Denial", "Intel Gatherer"],
+            "speed": 2,
             "organization": "GEO",
             "primary": [
                 {
@@ -503,6 +533,8 @@
         {
             "name": "Ying",
             "gender": "Female",
+            "role": ["Crowd Control"],
+            "speed": 2,
             "organization": "SDU/GSUTR",
             "primary": [
                 {
@@ -533,6 +565,8 @@
         {
             "name": "Zofia",
             "gender": "Female",
+            "role": ["Soft Breach", "Roam Denial", "Gadget Denial", "Crowd Control", "Flank"],
+            "speed": 2,
             "organization": "GROM",
             "primary": [
                 {
@@ -563,6 +597,8 @@
         {
             "name": "Dokkaebi",
             "gender": "Female",
+            "role": ["Intel Denial", "Intel Gatherer", "Roam Denial"],
+            "speed": 2,
             "organization": "707th SMB",
             "primary": [
                 {
@@ -600,6 +636,8 @@
         {
             "name": "Lion",
             "gender": "Male",
+            "role": ["Roam Denial", "Intel Gatherer", "Crowd Control"],
+            "speed": 2,
             "organization": "CBRN Threat Unit/GIGN",
             "primary": [
                 {
@@ -641,6 +679,8 @@
         {
             "name": "Finka",
             "gender": "Female",
+            "role": ["Buffer"],
+            "speed": 2,
             "organization": "CBRN Threat Unit/Spetsnaz",
             "primary": [
                 {
@@ -679,6 +719,8 @@
         {
             "name": "Maverick",
             "gender": "Male",
+            "role": ["Gadget Denial", "Flank", "Hard Breach"],
+            "speed": 3,
             "organization": "GSUTR/Delta Force",
             "primary": [
                 {
@@ -709,6 +751,8 @@
         {
             "name": "Nomad",
             "gender": "Female",
+            "role": ["Roam Denial", "Area Denial", "Crowd Control", "Trap"],
+            "speed": 2,
             "organization": "GIGR",
             "primary": [
                 {
@@ -743,6 +787,8 @@
         {
             "name": "Gridlock",
             "gender": "Female",
+            "role": ["Roam Denial", "Area Denial", "Crowd Control"],
+            "speed": 1,
             "organization": "SASR",
             "primary": [
                 {
@@ -780,6 +826,8 @@
         {
             "name": "Nokk",
             "gender": "Female",
+            "role": ["Flank", "Intel Denial"],
+            "speed": 2,
             "organization": "Jaeger Corps",
             "primary": [
                 {
@@ -817,6 +865,8 @@
         {
             "name": "Amaru",
             "gender": "Female",
+            "role": ["Flank"],
+            "speed": 2,
             "organization": "APCA",
             "primary": [
                 {
@@ -851,6 +901,8 @@
         {
             "name": "Kali",
             "gender": "Female",
+            "role": ["Gadget Denial"],
+            "speed": 2,
             "organization": "NIGHTHAVEN",
             "primary": [
                 {
@@ -881,6 +933,8 @@
         {
             "name": "Iana",
             "gender": "Female",
+            "role": ["Intel Denial", "Intel Gatherer"],
+            "speed": 2,
             "organization": "REU",
             "primary": [
                 {
@@ -915,6 +969,8 @@
         {
             "name": "Ace",
             "gender": "Male",
+            "role": ["Hard Breach"],
+            "speed": 2,
             "organization": "NIGHTHAVEN",
             "primary": [
                 {
@@ -945,6 +1001,8 @@
         {
             "name": "Zero",
             "gender": "Male",
+            "role": ["Intel Denial", "Intel Gatherer"],
+            "speed": 2,
             "organization": "ROS/Fourth Echelon",
             "primary": [
                 {
@@ -979,6 +1037,8 @@
         {
             "name": "Flores",
             "gender": "Male",
+            "role": ["Soft Breach", "Area Denial", "Gadget Denial"],
+            "speed": 2,
             "organization": "FBI",
             "primary": [
                 {
@@ -1009,6 +1069,8 @@
         {
             "name": "Osa",
             "gender": "Female",
+            "role": ["Intel Gatherer", "Area Denial", "Roam Denial"],
+            "speed": 2,
             "organization": "NIGHTHAVEN",
             "primary": [
                 {
@@ -1042,6 +1104,8 @@
         {
             "name": "Sens",
             "gender": "Non-binary",
+            "role": ["Area Denial", "Crowd Control"],
+            "speed": 1,
             "organization": "Wolfguard",
             "primary": [
                 {
@@ -1076,6 +1140,8 @@
         {
             "name": "Grim",
             "gender": "Male",
+            "role": ["Intel Gatherer", "Area Denial"],
+            "speed": 3,
             "organization": "NIGHTHAVEN",
             "primary": [
                 {

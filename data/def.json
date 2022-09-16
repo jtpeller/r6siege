@@ -3,7 +3,9 @@
         {
             "name": "Smoke",
             "gender": "Male",
-            "organization": "NIGHTHAVEN/Rainbow/SAS",
+            "role": ["Anchor", "Area Denial"],
+            "speed": 2,
+            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "FMG-9",
@@ -37,6 +39,8 @@
         {
             "name": "Mute",
             "gender": "Male",
+            "role": ["Anti Hard Breach", "Intel Denial"],
+            "speed": 2,
             "organization": "SAS/Rainbow",
             "primary": [
                 {
@@ -71,7 +75,9 @@
         {
             "name": "Castle",
             "gender": "Male",
-            "organization": "Rainbow/FBI SWAT/GSUTR",
+            "role": ["Anchor", "Area Denial"],
+            "speed": 2,
+            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "UMP45",
@@ -103,9 +109,11 @@
             "special": "Armor Panel"
         },
         {
-            "name": "Thermite",
+            "name": "Pulse",
             "gender": "Male",
-            "organization": "NIGHTHAVEN/Rainbow (formerly)/FBI SWAT (formerly)",
+            "role": ["Roam", "Intel Gatherer"],
+            "speed": 3,
+            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "M1014",
@@ -139,7 +147,9 @@
         {
             "name": "Doc",
             "gender": "Male",
-            "organization": "Rainbow/GIGN",
+            "role": ["Anchor", "Buff"],
+            "speed": 1,
+            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "SG-CQB",
@@ -177,6 +187,8 @@
         {
             "name": "Rook",
             "gender": "Male",
+            "role": ["Anchor", "Buff"],
+            "speed": 1,
             "organization": "Rainbow/GIGN",
             "primary": [
                 {
@@ -215,6 +227,8 @@
         {
             "name": "Kapkan",
             "gender": "Male",
+            "role": ["Trap"],
+            "speed": 2,
             "organization": "Rainbow/Spetsnaz",
             "primary": [
                 {
@@ -249,6 +263,8 @@
         {
             "name": "Tachanka",
             "gender": "Male",
+            "role": ["Anchor", "Area Denial"],
+            "speed": 1,
             "organization": "Rainbow/Spetsnaz",
             "primary": [
                 {
@@ -283,6 +299,8 @@
         {
             "name": "Jager",
             "gender": "Male",
+            "role": ["Roam", "Gadget Denial"],
+            "speed": 2,
             "organization": "Rainbow/GSG 9",
             "primary": [
                 {
@@ -313,7 +331,9 @@
         {
             "name": "Bandit",
             "gender": "Male",
-            "organization": "Rainbow/GSG 9/GSUTR",
+            "role": ["Anti Hard Breach", "Roam"],
+            "speed": 3,
+            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "M870",
@@ -343,7 +363,9 @@
         {
             "name": "Frost",
             "gender": "Female",
-            "organization": "Rainbow/JTF2/Rhodes Island",
+            "role": ["Crowd Control", "Trap"],
+            "speed": 2,
+            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "Super 90",
@@ -377,6 +399,8 @@
         {
             "name": "Valkyrie",
             "gender": "Female",
+            "role": ["Intel Gatherer", "Roam"],
+            "speed": 2,
             "organization": "Rainbow/Navy SEALs",
             "primary": [
                 {
@@ -407,6 +431,8 @@
         {
             "name": "Caveira",
             "gender": "Female",
+            "role": ["Intel Denial", "Intel Gatherer", "Roam"],
+            "speed": 3,
             "organization": "Rainbow/BOPE/GSUTR",
             "primary": [
                 {
@@ -437,6 +463,8 @@
         {
             "name": "Echo",
             "gender": "Male",
+            "role": ["Anchor", "Crowd Control", "Intel Gatherer"],
+            "speed": 1,
             "organization": "Rainbow/SAT",
             "primary": [
                 {
@@ -471,6 +499,8 @@
         {
             "name": "Mira",
             "gender": "Female",
+            "role": ["Anchor", "Intel Gatherer"],
+            "speed": 1,
             "organization": "Rainbow/GEO",
             "primary": [
                 {
@@ -505,6 +535,8 @@
         {
             "name": "Lesion",
             "gender": "Male",
+            "role": ["Anchor", "Crowd Control", "Intel Gatherer", "Roam", "Trap"],
+            "speed": 2,
             "organization": "CBRN Threat Unit/Rainbow/SDU",
             "primary": [
                 {
@@ -533,9 +565,11 @@
             "special": "Gu"
         },
         {
-            "name": "Zofia",
+            "name": "Ela",
             "gender": "Female",
-            "organization": "NIGHTHAVEN/Rainbow/GROM",
+            "role": ["Roam", "Crowd Control", "Trap"],
+            "speed": 3,
+            "organization": "Nighthaven/Rainbow/GROM",
             "primary": [
                 {
                     "name": "Scorpion EVO 3 A1",
@@ -565,6 +599,8 @@
         {
             "name": "Vigil",
             "gender": "Male",
+            "role": ["Roam", "Intel Denial"],
+            "speed": 3,
             "organization": "Rainbow/707th SMB",
             "primary": [
                 {
@@ -599,6 +635,8 @@
         {
             "name": "Maestro",
             "gender": "Male",
+            "role": ["Anchor", "Area Denial", "Intel Gatherer"],
+            "speed": 1,
             "organization": "Rainbow/GIS",
             "primary": [
                 {
@@ -633,6 +671,8 @@
         {
             "name": "Alibi",
             "gender": "Female",
+            "role": ["Roam", "Intel Denial", "Intel Gatherer", "Trap"],
+            "speed": 3,
             "organization": "Rainbow/GIS/GSUTR",
             "primary": [
                 {
@@ -667,7 +707,9 @@
         {
             "name": "Clash",
             "gender": "Female",
-            "organization": "Rainbow/GSUTR/MPS",
+            "role": ["Crowd Control", "Intel Gatherer", "Shield"],
+            "speed": 2,
+            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "CCE Shield",
@@ -697,6 +739,8 @@
         {
             "name": "Kaid",
             "gender": "Male",
+            "role": ["Anchor", "Anti Hard Breach"],
+            "speed": 1,
             "organization": "Rainbow/GIGR",
             "primary": [
                 {
@@ -731,6 +775,8 @@
         {
             "name": "Mozzie",
             "gender": "Male",
+            "role": ["Intel Denial", "Intel Gatherer"],
+            "speed": 2,
             "organization": "Rainbow/SASR",
             "primary": [
                 {
@@ -761,6 +807,8 @@
         {
             "name": "Warden",
             "gender": "Male",
+            "role": ["Anchor", "Intel Denial"],
+            "speed": 2,
             "organization": "Rainbow/Secret Service",
             "primary": [
                 {
@@ -795,6 +843,8 @@
         {
             "name": "Goyo",
             "gender": "Male",
+            "role": ["Area Denial"],
+            "speed": 2,
             "organization": "Rainbow/FES",
             "primary": [
                 {
@@ -825,7 +875,9 @@
         {
             "name": "Wamai",
             "gender": "Male",
-            "organization": "NIGHTHAVEN/Rainbow (formerly)",
+            "role": ["Anchor", "Gadget Denial"],
+            "speed": 2,
+            "organization": "Nighthaven/Rainbow (formerly)",
             "primary": [
                 {
                     "name": "AUG A2",
@@ -859,6 +911,8 @@
         {
             "name": "Oryx",
             "gender": "Male",
+            "role": ["Roam", "Soft Breach"],
+            "speed": 2,
             "organization": "Rainbow/GIGR (unofficially)",
             "primary": [
                 {
@@ -893,6 +947,8 @@
         {
             "name": "Melusi",
             "gender": "Female",
+            "role": ["Crowd Control", "Intel Gatherer"],
+            "speed": 3,
             "organization": "Rainbow/Inkaba Task Force/SANDF (formerly)",
             "primary": [
                 {
@@ -923,7 +979,9 @@
         {
             "name": "Aruni",
             "gender": "Female",
-            "organization": "NIGHTHAVEN/Rainbow (formerly)/Royal Thai Police (formerly)",
+            "role": ["Anchor", "Area Denial"],
+            "speed": 2,
+            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "P10 RONI",
@@ -953,6 +1011,8 @@
         {
             "name": "Thunderbird",
             "gender": "Female",
+            "role": ["Buff", "Roam"],
+            "speed": 3,
             "organization": "Rainbow/STAR-NET Aviation/Royal Canadian Air Force (formerly)",
             "primary": [
                 {
@@ -987,6 +1047,8 @@
         {
             "name": "Thorn",
             "gender": "Female",
+            "role": ["Anchor", "Trap"],
+            "speed": 2,
             "organization": "Rainbow/Garda ERU",
             "primary": [
                 {
@@ -1021,6 +1083,8 @@
         {
             "name": "Azami",
             "gender": "Female",
+            "role": ["Area Denial"],
+            "speed": 2,
             "organization": "Rainbow/Tokyo MPD (formerly)",
             "primary": [
                 {

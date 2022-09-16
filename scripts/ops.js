@@ -8,21 +8,22 @@
 /* GLOBALS */
 // ids
 var cid = "#content"
-	hid = "#header"
-	fid = "#footer"
+    hid = "#header"
+    fid = "#footer"
 
 var content
-	header
-	footer;
+    header
+    footer;
 
 // data
 var atkops, defops, gadgets;
-window.data = [];       // subset of ops to be built based on conditions
+window.data = [];       // subset of ops to be built based on filters
+window.roles = [];      // subset of roles to be built based on op-type selection
 
 //
 // build the page
 //
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // select all elements
     header = d3.select(hid);
     content = d3.select(cid);
@@ -32,141 +33,196 @@ document.addEventListener("DOMContentLoaded", function() {
     initNavbar(header);
     initFooter(footer);
 
-	// load all data w/ d3 utils
-	Promise.all([
-		d3.json('data/atk.json'),
-		d3.json('data/def.json'),
+    // load all data w/ d3 utils
+    Promise.all([
+        d3.json('data/atk.json'),
+        d3.json('data/def.json'),
         d3.json('data/gadgets.json')
-	]).then(function(values) {
-		// set all necessary data
-		atkops = values[0].atk
-		defops = values[1].def
+    ]).then(function (values) {
+        // set all necessary data
+        atkops = values[0].atk
+        defops = values[1].def
         gadgets = values[2]
-		initRandomOps();
-	})
+        initRandomOps();
+    })
 })
 
-function initRandomOps() { 
-	//
-	// section for randomizing operators
-	//
-	var ops = content.append('div')
-		.classed('row section', true)
-		.attr('id', 'r-ops')
-	
-	// title and separator
-	ops.append('h2')
-		.html("Operator Roulette")
-		.append('hr');
+function initRandomOps() {
+    //
+    // section for randomizing operators
+    //
+    var ops = content.append('div')
+        .classed('row section', true)
+        .attr('id', 'r-ops');
 
-	// ops left side
-	let left = ops.append('div')
-		.classed('col', true)
+    // title and separator
+    ops.append('h2')
+        .html("Operator Roulette");
 
-	// ops right side
-	let right = ops.append('div')
-		.classed('col', true)
+    // ops left side
+    let left = ops.append('div')
+        .classed('col', true);
 
-	// form for conditions
-	let rop_form = left.append('div')
-		.attr('id', 'r-op-form')
-		//.classed('conditions', true)
+    // ops right side
+    let right = ops.append('div')
+        .classed('col', true);
 
-	// add a checkbox for each filter
-	rop_form.append("h4")
-		.text('Filters')
-	for (var i = 0; i < conditions.length; i++) {
-		var div = rop_form.append('div')
-			.classed('form-check form-switch', true);
-		div.append('input')
-			.classed('form-check-input', true)
-			.attr('type', 'checkbox')
-			.attr('value', '')
-			.attr('id', 'r-op-check-'+i)
-			.property('checked', true)  // set all as selected
-            .on('click', buildData)
-		div.append('label')
-			.classed('form-check-label', true)
-			.attr('for', 'r-op-check-'+i)
-			.text(conditions[i]);
-	}
-    buildData();
+    // form for conditions
+    let rop_form = left.append('div')
+        .attr('id', 'r-op-form');
 
+    // first: attacker/defender/both selection menu
+    rop_form.append('h4')
+        .classed('my-h4', true)
+        .text('Operator Type');
+
+    let rop_type_select = rop_form.append("select")
+        .classed('form-select bg-dark text-white', true)
+        .style('width', '75%')
+        .attr('aria-label', 'Op Type Select');
+
+    rop_type_select.append('option')
+        .attr('value', '3')
+        .text("Both Attackers and Defenders");
+
+    rop_type_select.append('option')
+        .attr('value', '1')
+        .text("Attackers only");
+
+    rop_type_select.append('option')
+        .attr('value', '2')
+        .text("Defenders only");
+
+    // on page load, it will be both atk/def
+    window.data = [...atkops, ...defops];
+    window.roles = [...gen_roles, ...atk_roles, ...def_roles];
+    window.roles.sort();
+
+    // but when the user changes it, the data will need to be updated
+    rop_type_select.on('change', function () {
+        buildData();
+
+        // update roles
+        d3.select('#role-form').html('');
+        buildColumnChecklist(d3.select('#role-form'), window.roles, 2, true, buildData, 'role');
+
+        // force new selection
+        d3.select('#generate').node().click();
+    });
+
+    //
+    // role filter
+    //
+    rop_form.append('h4')
+        .classed('my-h4', true)
+        .text('Role')
+
+    let rop_role = rop_form.append('div')
+        .attr('id', 'role-form');
+    buildColumnChecklist(rop_role, window.roles, 2, true, buildData, 'role');
+
+    //
+    // three main filter types: gender, role, speed
+    //
+    rop_form.append('h4')
+        .classed('my-h4', true)
+        .text('Gender');
+
+    let rop_gender = rop_form.append('div')
+        .attr('id', 'gender-form');
+
+    buildColumnChecklist(rop_gender, genders, 3, true, buildData, 'gender');
+
+    //
+    // speed filter
+    //
+    rop_form.append('h4')
+        .classed('my-h4', true)
+        .text('Speed');
+
+    let rop_speed = rop_form.append('div')
+        .attr('id', 'speed-form');
+    buildColumnChecklist(rop_speed, [1, 2, 3], 3, true, buildData, 'speed');
+
+    // end left side
     left.append('hr');
 
-	// button and selected op button
-	let rop_submit = left.append('div')
-		.attr('id', 'r-op-submit')
+    // button and selected op button
+    let rop_submit = left.append('div')
+        .attr('id', 'r-op-submit')
 
-	rop_submit.append('p')
-		.text("Hit the button to RNG an op!");
+    // add the part after the submission (the output)
+    let rop_output = right.append('div')
+        .attr('id', 'r-op-output');
 
-	// add the part after the submission (the output)
-	let rop_output = right.append('div')
-		.attr('id', 'r-op-output');
+    let generate = rop_submit.append('button')
+        .text('Generate')
+        .classed('btn btn-outline-light', true)
+        .attr('id', 'generate')
+        .on('click', function () {
+            if (window.data.length <= 0) {
+                rop_output.text('');
+                rop_output.append('p')
+                    .text("No ops match this filter/option set. Try another combination.")
+                    .classed('no-match', true);
+            } else {
+                // generate rng for selected ops
+                var rng = Math.floor(Math.random() * window.data.length);
 
-	rop_submit.append('button')
-		.text('Generate')
-		.classed('btn btn-outline-light', true)
-		.on('click', function() {
-			if (window.data.length <= 0) {
-				rop_output.text("No ops match this filter/option set. Try another combination.");
-			} else {
-				// generate rng for selected ops
-				var rng = Math.floor(Math.random() * window.data.length);
+                var selected = window.data[rng];
+                // y7s3console.log(selected);
+                rop_output.html('');
 
-				var selected = window.data[rng];
-				//rchosenop.text('Here is your selected op');
-				rop_output.html('');
+                // now, format the card accordingly
+                rop_output.style('width', '50rem');
 
-				// now, format the card accordingly
-				rop_output.style('width', '50rem');
-					
-				// add the card's image
-				rop_output.append('img')
-					.classed('center', true)
-					.style('width', '10rem')
-					.style('height', '10rem')
-					.attr('src', fetchOpImage(selected.name))
-					.attr('alt', selected.name + "_logo.svg")
+                // add the card's image
+                rop_output.append('img')
+                    .classed('center', true)
+                    .style('width', '10rem')
+                    .style('height', '10rem')
+                    .attr('src', fetchOpImage(selected.name))
+                    .attr('alt', selected.name + "_logo.svg")
 
-				var body = rop_output.append('div')
-					.classed('card-body', true)
-				
-				body.append('h3')
-					.text(selected.name)
-					.classed('text-center', true)
-					.append('hr')
+                var body = rop_output.append('div')
+                    .classed('card-body', true)
 
-				// format primaries
-				var primaries = selected.primary;
-				var ptext = "<ul>";
-				for (var i = 0; i < primaries.length; i++) {
-					ptext += "<li>" + primaries[i].name + ": "
-					ptext += primaries[i].type + "<br></li>"
-				}
-				ptext += "</ul>";
+                body.append('h3')
+                    .text(selected.name)
+                    .classed('text-center', true)
+                    .append('hr')
 
-				// format secondaries
-				var secondaries = selected.secondary;
-				var stext = "<ul>";
-				for (var i = 0; i < secondaries.length; i++) { 
-					stext += "<li>" + secondaries[i].name + ": "
-					stext += secondaries[i].type + "<br></li>"
-				}
-				stext += "</ul>";
+                // format primaries
+                var primaries = selected.primary;
+                var ptext = "<ul>";
+                for (var i = 0; i < primaries.length; i++) {
+                    ptext += "<li>" + primaries[i].name + ": "
+                    ptext += primaries[i].type + "<br></li>"
+                }
+                ptext += "</ul>";
 
-				// format gadgets
-				var gg = selected.gadget;
-				var gtext = "<ul>";
-				for (var i = 0; i < gg.length; i++) {
-					gtext += "<li>" + gg[i].name + " x"
-					gtext += getGadgetCount(gg[i].name) + "<br></li>"
-				}
-				gtext += "</ul>";
-				
-				var body_text = `
-					<b>Organization</b>: ${selected.organization}<br>
+                // format secondaries
+                var secondaries = selected.secondary;
+                var stext = "<ul>";
+                for (var i = 0; i < secondaries.length; i++) {
+                    stext += "<li>" + secondaries[i].name + ": "
+                    stext += secondaries[i].type + "<br></li>"
+                }
+                stext += "</ul>";
+
+                // format gadgets
+                var gg = selected.gadget;
+                var gtext = "<ul>";
+                for (var i = 0; i < gg.length; i++) {
+                    gtext += "<li>" + gg[i].name + " x"
+                    gtext += getGadgetCount(gg[i].name) + "<br></li>"
+                }
+                gtext += "</ul>";
+
+                //<b>Organization</b>: ${selected.organization}<br></br>
+                var body_text = `
+                    <b>Roles</b>: ${selected.role.sort()}<br>
+                    <b>Speed</b>: ${selected.speed}<br>
 					<b>Gender</b>: ${selected.gender}<br>
 					<b>Primaries</b>: <br>
 						${ptext}
@@ -176,19 +232,21 @@ function initRandomOps() {
 						${gtext}
 					<b>Special</b>: ${selected.special}<br>
 				`
-				
-				body.append('p')
-					.html(body_text)
 
-				// make some nice changes
-				rop_output.classed('my-card', true)
-			}
-		})
+                body.append('p')
+                    .html(body_text)
+
+                // make some nice changes
+                rop_output.classed('my-card', true)
+            }
+        })
+
+    generate.node().click();
 
     rop_submit.append('button')
         .text('Toggle All Filters')
-		.classed('btn btn-outline-light', true)
-        .on('click', function() {
+        .classed('btn btn-outline-light', true)
+        .on('click', function () {
             var x = rop_form.selectAll('input[type=checkbox]').property('checked');
             rop_form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
             if (x) {    // if x was true, then all the filters have just been unchecked, so data is now empty
@@ -197,56 +255,203 @@ function initRandomOps() {
                 buildData();
             }
         })
-	
+
     /**
      * this function builds the dataset based on the selected conditions
      * and filters the user can modify.
      */
     function buildData() {
-        //
-        // first, get the conditions
-        //
-        var elems = rop_form.selectAll('.form-check-input')._groups[0]
-        //console.log(elems);
-        
-        // use these options to make an object
-        var cond = {
-            atk: elems[0].checked,
-            def: elems[1].checked,
-            male: elems[2].checked,
-            female: elems[3].checked,
+        // get op type
+        var temp = rop_type_select.property('value');
+
+        // update data based on type
+        switch (temp) {
+            case '1':       // attacker
+                window.data = [...atkops];
+                window.roles = [...gen_roles, ...atk_roles];
+                break;
+            case '2':       // defender
+                window.data = [...defops];
+                window.roles = [...gen_roles, ...def_roles];
+                break;
+            default:       // both atk/def
+                window.data = [...atkops, ...defops];
+                window.roles = [...gen_roles, ...atk_roles, ...def_roles];
         }
-        console.log(cond);
+        window.roles.sort();
+
+        // now, filter based on gender, role, and speed
 
         //
-        // use the filters to modify the op-set for rng
-        // 
+        // filtering gender
+        //
 
-        // filter with atk/def
-        if (cond.atk && cond.def) {
-            window.data = [...atkops, ...defops];
-        } else if (cond.atk) {
-            window.data = [...atkops];
-        } else if (cond.def) {
-            window.data = [...defops];
-        } else {
-            window.data = [];
+        // get gender checklist states
+        var temp = rop_gender.selectAll('input[type=checkbox]')._groups[0];
+        var options = [];        // order is: female, male, non-binary
+        for (var i = 0; i < temp.length; i++) {
+            options.push(temp[i].checked);
         }
+        //console.log(options);
 
-        // remove other filters
-        for (var i = 0; i < data.length; i++) { 
-            if ( window.data[i].gender.includes('Male') && !cond.male ) {
-                window.data.splice(i, 1);
-                i--;
-            } else if ( window.data[i].gender.includes('Female') && !cond.female) {
-                window.data.splice(i, 1);
-                i--;
-            }
+        // filter
+        filter(options, 'gender', genders);
+
+        //
+        // filtering role
+        //
+
+        // get role checklist states
+        temp = rop_role.selectAll('input[type=checkbox]')._groups[0];
+        options = [];
+        for (var i = 0; i < temp.length; i++) {
+            options.push(temp[i].checked);
         }
-        console.log(window.data);
+        filterIncludes(options, 'role', window.roles);
+
+        //
+        // filtering speed
+        //
+
+        // get speed checklist states
+        temp = rop_speed.selectAll('input[type=checkbox]')._groups[0];
+        options = [];
+        for (var i = 0; i < temp.length; i++) {
+            options.push(temp[i].checked);
+        }
+        filter(options, 'speed', [1, 2, 3]);
+
+        //console.log(window.data);
     }
 }
 
 function getGadgetCount(gadget) {
     return gadgets[gadget.toLowerCase().replaceAll(' ', '_')];
+}
+
+function buildColumnChecklist(loc, list, col_count, checked, callback, id_prefix) {
+    if (col_count === undefined || col_count <= 0 || col_count > list.length) {
+        console.log("the person who wrote this is stupid lol");
+        return;     // don't call the function wrong
+    } else {
+        var div = loc.append('div')
+            .classed('row', true);
+        
+        var chunks = chunkify(list, col_count, true);
+        
+        for (var i = 0; i < chunks.length; i++) {
+            var newloc = div.append('div')
+                .classed('col', true);
+            buildChecklist(newloc, chunks[i], checked, callback, id_prefix, i)
+        }
+    }
+}
+
+function buildChecklist(loc, list, checked, callback, id_prefix, offset) {
+    list.sort();
+    for (var i = 0; i < list.length; i++) {
+        var div = loc.append('div')
+            .classed('form-check form-switch', true);
+
+        div.append('input')
+            .classed('form-check-input', true)
+            .attr('type', 'checkbox')
+            .attr('value', '')
+            .attr('id', `${id_prefix}-${i*offset}`)
+            .property('checked', checked)
+            .on('click', callback);
+
+        div.append('label')
+            .classed('form-check-label', true)
+            .attr('for', `${id_prefix}-${i*offset}`)
+            .text(list[i]);
+    }
+}
+
+function filter(options, idx, filter_list) {
+    if (options.includes(false)) {
+        for (var i = 0; i < window.data.length; i++) {
+            // loop thru filter_list and remove those which do not match
+            for (var j = 0; j < filter_list.length; j++) {
+                if (window.data[i][idx] === filter_list[j] && !options[j]) {
+                    window.data.splice(i, 1);
+                    i--;
+                    break;
+                }
+            }
+        }
+    }
+}
+
+// same function as filter(), except this works for filtering lists
+function filterIncludes(options, idx, filter_list) {
+    if (options.includes(false)) {      // there's something to filter out
+        for (var i = 0; i < window.data.length; i++) {
+            var opmatches = false;
+
+            // if this op's list doesn't have any found in filter list, remove
+            var list = window.data[i][idx]
+
+            // loop thru this op's list
+            for (var j = 0; j < list.length; j++) {
+                var k = filter_list.indexOf(list[j]);
+                if (k >= 0 && options[k]) {
+                    opmatches = true;
+                    j = list.length+1;      // this op matches, move on
+                }
+            }
+
+            if (opmatches === true) {
+                opmatches = false;  // toggle and do nothing
+            } else {        // op does not match, remove it.
+                window.data.splice(i, 1);
+                i--;
+            }
+        }
+    }
+}
+
+// helps find the needle(s) in the haystack
+function findOne(haystack, needles) {
+    return needles.some(v => haystack.includes(v));
+}
+
+// pulled from: https://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
+function chunkify(a, n, balanced) {
+    if (n < 2)
+        return [a];
+
+    var len = a.length,
+        out = [],
+        i = 0,
+        size;
+
+    if (len % n === 0) {
+        size = Math.floor(len / n);
+        while (i < len) {
+            out.push(a.slice(i, i += size));
+        }
+    }
+
+    else if (balanced) {
+        while (i < len) {
+            size = Math.ceil((len - i) / n--);
+            out.push(a.slice(i, i += size));
+        }
+    }
+
+    else {
+
+        n--;
+        size = Math.floor(len / n);
+        if (len % size === 0)
+            size--;
+        while (i < size * n) {
+            out.push(a.slice(i, i += size));
+        }
+        out.push(a.slice(size * n));
+
+    }
+
+    return out;
 }
