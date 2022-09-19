@@ -16,6 +16,7 @@ var content, header, footer;
 // data (embedded on window for ease of access)
 window.primaries = []
 window.secondaries = [];
+window.classes = [];
 window.data = [];
 
 //
@@ -53,8 +54,7 @@ function initGuns() {
 	
 	// title and separator
 	guns.append('h2')
-		.html("Gun Roulette")
-		.append('hr');
+		.html("Gun Roulette");
 
 	// guns left side
 	let left = guns.append('div')
@@ -68,24 +68,78 @@ function initGuns() {
 	let rgun_form = left.append('div')
 		.attr('id', 'r-gun-form')
 
-	// add a checkbox for each filter
+    // selection form for gun type (primary v. secondary)
+    rgun_form.append('h4')
+        .classed('my-h4', true)
+        .text('Gun Type');
+
+    let rgun_type_select = rgun_form.append('select')
+        .classed('form-select bg-dark text-white', true)
+        .style('width', '75%')
+        .attr('aria-label', 'Gun Type Select');
+
+    rgun_type_select.append('option')
+        .attr('value', '3')
+        .text("Both Primaries and Secondaries");
+
+    rgun_type_select.append('option')
+        .attr('value', '1')
+        .text("Primaries only");
+    
+    rgun_type_select.append('option')
+        .attr('value', '2')
+        .text('Secondaries only');
+
+    // on page load, it'll be both primaries/secondaries
+    window.data = [...window.primaries, ...window.secondaries];
+    window.classes = [...primary_types, ...secondary_types];
+
+    // on user change:
+    rgun_type_select.on('change', function() {
+        buildData();
+
+        // update roles
+        d3.select('#class-form').html('');
+        buildColumnChecklist(d3.select('#class-form'), window.classes, 2, true, buildData, 'class');
+
+        // force new selection
+        d3.select('#generate').node().click();
+    })
+
+    //
+    // side form
+    //
+    rgun_form.append('h4')
+        .classed('my-h4', true)
+        .text('Side');
+
+    let rgun_side = rgun_form.append('select')
+        .classed('form-select bg-dark text-white', true)
+        .style('width', '75%')
+        .attr('aria-label', 'Side Select');
+
+    rgun_side.append('option')
+        .attr('value', '3')
+        .text("Both Attackers and Defenders");
+
+    rgun_side.append('option')
+        .attr('value', '1')
+        .text("Attackers only");
+    
+    rgun_side.append('option')
+        .attr('value', '2')
+        .text('Defenders only');
+
+	// gun class form
 	rgun_form.append("h4")
-		.text('Filters')
-	for (var i = 0; i < gcond.length; i++) {
-		var div = rgun_form.append('div')
-			.classed('form-check form-switch', true);
-		div.append('input')
-			.classed('form-check-input', true)
-			.attr('type', 'checkbox')
-			.attr('value', '')
-			.attr('id', 'r-gun-check-'+i)
-			.property('checked', true)  // set all as selected
-            .on('click', buildData)
-		div.append('label')
-			.classed('form-check-label', true)
-			.attr('for', 'r-gun-check-'+i)
-			.text(gcond[i]);
-	}
+        .classed('my-h4', true)
+		.text('Gun Class');
+
+    let rgun_class = rgun_form.append('div')
+        .attr('id', 'class-form');
+    buildColumnChecklist(rgun_class, window.classes, 2, true, buildData, 'class');
+
+    // make sure data is built
     buildData();
 
     left.append('hr');
@@ -101,7 +155,7 @@ function initGuns() {
 	let rgun_output = right.append('div')
 		.attr('id', 'r-gun-output');
 
-	rgun_submit.append('button')
+	let generate = rgun_submit.append('button')
 		.text('Generate')
 		.classed('btn btn-outline-light', true)
 		.on('click', function() {
@@ -138,19 +192,18 @@ function initGuns() {
 
                 // format properties
                 var props = selected.properties;
-                // y7s3 removed all suppressor dmg penalty: (${props.suppressed_dmg == -1 ? "N/A" : props.suppressed_dmg})
                 var ptext = `
                     <ul>
-                        <li><b>Damage</b>: ${props.damage} <br></li>
+                        <li><b>Damage</b>: ${props.damage} (${props.suppressed_dmg == -1 ? "N/A" : props.suppressed_dmg})*<br></li>
                         <li><b>Firerate</b>: ${props.firerate == -1 ? "N/A" : props.firerate}<br></li>
                         <li><b>Mobility</b>: ${props.mobility}<br></li>
                         <li><b>Capacity</b>: ${props.capacity}<br></li>
                     </ul>
+                    <br>
+                    <p><i>*Note: Update Y7S3 removed the suppressor damage penalty.</i></p>
                 `
 
                 // format ops
-                var ops = selected.ops.split('/');
-                
                 var body_text = `
                 	<b>Type</b>: ${selected.type}<br>
                 	<b>Properties</b>: <br>
@@ -162,21 +215,23 @@ function initGuns() {
                 	.html(body_text)
 
                 // append the ops image
-                for (var i = 0; i < ops.length; i++) {
+                for (var i = 0; i < selected.ops.length; i++) {
                     var imgdiv = body.append('div')
                         .style('display', 'inline-block')
                         .classed('text-center', true)
                     imgdiv.append('img')
                         //.classed('center', true)
                         .style('width', '4rem')
-                        .attr('src', fetchOpImage(ops[i]))
-                        .attr('alt', ops[i] + "_logo.png")
+                        .attr('src', fetchOpImage(selected.ops[i]))
+                        .attr('alt', selected.ops[i] + "_logo.png")
                 }
                 
                 // make some nice changes
                 rgun_output.classed('my-card', true)
 			}
-		}.bind(this))
+		}.bind(this));
+
+    generate.node().click();    // generate a gun on page load.
 	
     
     rgun_submit.append('button')
@@ -198,88 +253,46 @@ function initGuns() {
      * and filters the user can modify.
      */
     function buildData() {
-        //
-        // first, get the conditions
-        //
-        var elems = rgun_form.selectAll('.form-check-input')._groups[0]
+        // get selected gun type
+        var temp = rgun_type_select.property('value');
+
+        // init data based on type
+        switch (temp) {
+            case '1':   // primary
+                window.data = [...window.primaries];
+                window.classes = [...primary_types];
+                break;
+            case '2':   // secondary
+                window.data = [...window.secondaries];
+                window.classes = [...secondary_types];
+                break;
+            default:    // both primary/secondaries
+                window.data = [...window.primaries, ...window.secondaries];
+                window.classes = [...primary_types, ...secondary_types];
+        }
+        window.classes.sort();
         
-        // use these options to make an object
-        let cond = [];
-        for (var j = 0; j < elems.length; j++) {
-            cond.push({
-                idx: gcond[j],          // name of the filter type
-                val: elems[j].checked   // whether it is checked
-            })
-        }
-        //console.log('cond', cond);
-
-        //
-        // use the filters to modify the gun-set for rng
-        // 
-        let p = window.primaries;
-        let s = window.secondaries
-
-        // filter based on types of primaries
-        var conds_to_check = [];        // use a subset to speed up runtime
-        if (cond[0].val && cond[1].val) {   // primary && secondary
-            window.data = [...p, ...s];
-            conds_to_check = cond.slice(4);
-        } else if (cond[0].val) {
-            window.data = [...p];
-            conds_to_check = cond.slice(4, 10);
-        } else if (cond[1].val) {
-            window.data = [...s];
-            conds_to_check = cond.slice(11);
-        } else {
-            window.data = [];       // no guns at all
-            conds_to_check = [];
+        // filter based on selected attacker/defender
+        temp = rgun_side.property('value');
+        var list = ["Attacker", "Defender"]
+        switch (temp) {
+            case '1':   // attacker only
+                filterIncludes([true, false], 'team', list);
+                break;
+            case '2':   // secondary
+                filterIncludes([false, true], 'team', list);
+                break;
+            default:    // both primary/secondaries
+                filterIncludes([true, true], 'team', list);
         }
 
-        // filter based on conds_to_check
-        for (var j = 0; j < window.data.length; j++) {
-            for (var k = 0; k < conds_to_check.length; k++) {
-                if (window.data[j].type.includes(conds_to_check[k].idx) && !conds_to_check[k].val) { 
-                    window.data.splice(j, 1);
-                    j--;
-                    if (j <= 0) {
-                        break;
-                    }
-                }
-            }
+        // filter based on selected gun class
+        var temp = rgun_class.selectAll('input[type=checkbox]')._groups[0];
+        var options = [];
+        for (var i = 0; i < temp.length; i++) {
+            options.push(temp[i].checked);
         }
-
-        // filter based on atk/def
-        var atk = getCondition(cond, "Attacker");
-        var def = getCondition(cond, "Defender");
-        //console.log('atk', atk, 'def', def);
-        if (atk && def) {
-            // attacker AND defenders checked, do nothing
-        }
-        if (!atk) {
-            // attackers is checked, eliminate all guns WITHOUT attackers in team
-            for (var i = 0; i < window.data.length; i++) {
-                var team = window.data[i].team.split('/');
-                if (!team.includes('Attacker')) {
-                    window.data.splice(i, 1);
-                    i--;
-                }
-            }
-        }
-        if (!def) {
-            // defenders is checked, eliminate all guns without defenders in team
-            for (var i = 0; i < window.data.length; i++) {
-                var team = window.data[i].team.split('/');
-                if (!team.includes('Defender')) {
-                    window.data.splice(i, 1);
-                    i--;
-                }
-            }
-        } 
-        if (!atk && !def) {
-            window.data = [];       // nothing matches this selection
-        }
-
-        //console.log(window.data);
+        filter(options, 'type', window.classes);
     }
 }
 

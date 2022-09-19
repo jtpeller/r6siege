@@ -5,19 +5,16 @@
 // =  Date          : March 28, 2022
 // =================================================================
 
-var gcond = [
-    "Primary",
-    "Secondary",
-    "Attacker",
-    "Defender",
-    // primaries
+var primary_types = [
     "Assault Rifle",
     "Marksman Rifle",
     "LMG",
     "Shield",
     "Shotgun",
     "SMG",
-    // secondaries
+]
+
+var secondary_types = [
     "Hand Cannon",
     "Handgun",
     "Secondary Shotty",

@@ -9,8 +9,8 @@
                 "mobility": 45,
                 "capacity": 15
             },
-            "ops": "Sledge/Thatcher/Smoke/Mute",
-            "team": "Attacker/Defender",
+            "ops": ["Sledge", "Thatcher", "Smoke", "Mute"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -22,8 +22,8 @@
                 "mobility": 45,
                 "capacity": 7
             },
-            "ops": "Ash/Pulse/Thermite",
-            "team": "Attacker/Defender",
+            "ops": ["Ash", "Pulse", "Thermite"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -35,8 +35,8 @@
                 "mobility": 45,
                 "capacity": 20
             },
-            "ops": "Ash/Castle/Nokk/Pulse/Thermite/Zero",
-            "team": "Attacker/Defender",
+            "ops": ["Ash", "Castle", "Nokk", "Pulse", "Thermite", "Zero"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -48,8 +48,8 @@
                 "mobility": 45,
                 "capacity": 16
             },
-            "ops": "Doc/Montagne/Rook/Twitch/Ace",
-            "team": "Attacker/Defender",
+            "ops": ["Doc", "Montagne", "Rook", "Twitch", "Ace"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -61,8 +61,8 @@
                 "mobility": 45,
                 "capacity": 6
             },
-            "ops": "Ash/Castle/Nokk/Pulse/Thermite/Zero",
-            "team": "Attacker/Defender",
+            "ops": ["Ash", "Castle", "Nokk", "Pulse", "Thermite", "Zero"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -74,8 +74,8 @@
                 "mobility": 45,
                 "capacity": 8
             },
-            "ops": "Osa/Finka/Fuze/Glaz/Kapkan/Tachanka",
-            "team": "Attacker/Defender",
+            "ops": ["Osa", "Finka", "Fuze", "Glaz", "Kapkan", "Tachanka"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -87,8 +87,8 @@
                 "mobility": 45,
                 "capacity": 18
             },
-            "ops": "Fuze/Kapkan/Tachanka/Flores",
-            "team": "Attacker/Defender",
+            "ops": ["Fuze", "Kapkan", "Tachanka", "Flores"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -100,8 +100,8 @@
                 "mobility": 45,
                 "capacity": 15
             },
-            "ops": "Bandit/Blitz/IQ/Jager/Wamai",
-            "team": "Attacker/Defender",
+            "ops": ["Bandit", "Blitz", "IQ", "Jager", "Wamai"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -113,8 +113,8 @@
                 "mobility": 45,
                 "capacity": 13
             },
-            "ops": "Buck/Frost/Iana",
-            "team": "Attacker/Defender",
+            "ops": ["Buck", "Frost", "Iana"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -126,8 +126,8 @@
                 "mobility": 45,
                 "capacity": 7
             },
-            "ops": "Azami/Blackbeard/Nokk/Valkyrie",
-            "team": "Attacker/Defender",
+            "ops": ["Azami", "Blackbeard", "Nokk", "Valkyrie"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -139,8 +139,8 @@
                 "mobility": 45,
                 "capacity": 15
             },
-            "ops": "Aruni/Capitao/Nomad",
-            "team": "Attacker/Defender",
+            "ops": ["Aruni", "Capitao", "Nomad"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -152,8 +152,8 @@
                 "mobility": 45,
                 "capacity": 12
             },
-            "ops": "Echo/Goyo/Hibana",
-            "team": "Attacker/Defender",
+            "ops": ["Echo", "Goyo", "Hibana"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -165,8 +165,8 @@
                 "mobility": 45,
                 "capacity": 12
             },
-            "ops": "Jackal/Mira/Oryx",
-            "team": "Attacker/Defender",
+            "ops": ["Jackal", "Mira", "Oryx"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -178,8 +178,8 @@
                 "mobility": 45,
                 "capacity": 10
             },
-            "ops": "Lesion/Thunderbird/Ying",
-            "team": "Attacker/Defender",
+            "ops": ["Lesion", "Thunderbird", "Ying"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -191,8 +191,8 @@
                 "mobility": 45,
                 "capacity": 15
             },
-            "ops": "Ela/Melusi/Zofia",
-            "team": "Attacker/Defender",
+            "ops": ["Ela", "Melusi", "Zofia"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -204,8 +204,8 @@
                 "mobility": 45,
                 "capacity": 8
             },
-            "ops": "Maverick/Thorn",
-            "team": "Attacker/Defender",
+            "ops": ["Maverick", "Thorn"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -217,8 +217,8 @@
                 "mobility": 45,
                 "capacity": 7
             },
-            "ops": "Nomad/Kaid",
-            "team": "Attacker/Defender",
+            "ops": ["Nomad", "Kaid"],
+            "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },
         {
@@ -230,8 +230,8 @@
                 "mobility": 45,
                 "capacity": 12
             },
-            "ops": "Caveira",
-            "team": "Defender",
+            "ops": ["Caveira"],
+            "team": ["Defender"],
             "type": "Handgun"
         },
         {
@@ -243,8 +243,8 @@
                 "mobility": 45,
                 "capacity": 5
             },
-            "ops": "Maestro/Alibi/Oryx",
-            "team": "Defender",
+            "ops": ["Maestro", "Alibi", "Oryx"],
+            "team": ["Defender"],
             "type": "Handgun"
         },
         {
@@ -256,8 +256,8 @@
                 "mobility": 45,
                 "capacity": 6
             },
-            "ops": "Maestro/Alibi/Wamai",
-            "team": "Defender",
+            "ops": ["Maestro", "Alibi", "Wamai"],
+            "team": ["Defender"],
             "type": "Handgun"
         },
         {
@@ -269,8 +269,8 @@
                 "mobility": 45,
                 "capacity": 16
             },
-            "ops": "Mozzie",
-            "team": "Defender",
+            "ops": ["Mozzie"],
+            "team": ["Defender"],
             "type": "Handgun"
         },
         {
@@ -282,8 +282,8 @@
                 "mobility": 45,
                 "capacity": 16
             },
-            "ops": "Warden",
-            "team": "Defender",
+            "ops": ["Warden"],
+            "team": ["Defender"],
             "type": "Handgun"
         },
         {
@@ -295,8 +295,8 @@
                 "mobility": 50,
                 "capacity": 1
             },
-            "ops": "Amaru/Dokkaebi/Lion/Finka/Gridlock/Iana/Zero/Glaz",
-            "team": "Attacker",
+            "ops": ["Amaru", "Dokkaebi", "Lion", "Finka", "Gridlock", "Iana", "Zero", "Glaz"],
+            "team": ["Attacker"],
             "type": "Hand Cannon"
         },
         {
@@ -308,8 +308,8 @@
                 "mobility": 50,
                 "capacity": 25
             },
-            "ops": "Echo/Hibana/Thunderbird",
-            "team": "Attacker/Defender",
+            "ops": ["Echo", "Hibana", "Thunderbird"],
+            "team": ["Attacker", "Defender"],
             "type": "Machine Pistol"
         },
         {
@@ -321,8 +321,8 @@
                 "mobility": 50,
                 "capacity": 16
             },
-            "ops": "Amaru/Mute/Smoke",
-            "team": "Attacker/Defender",
+            "ops": ["Amaru", "Mute", "Smoke"],
+            "team": ["Attacker", "Defender"],
             "type": "Machine Pistol"
         },
         {
@@ -334,8 +334,8 @@
                 "mobility": 50,
                 "capacity": 32
             },
-            "ops": "Dokkaebi/Vigil/Warden",
-            "team": "Attacker/Defender",
+            "ops": ["Dokkaebi", "Vigil", "Warden"],
+            "team": ["Attacker", "Defender"],
             "type": "Machine Pistol"
         },
         {
@@ -347,8 +347,8 @@
                 "mobility": 50,
                 "capacity": 20
             },
-            "ops": "Clash/Kali",
-            "team": "Attacker/Defender",
+            "ops": ["Clash", "Kali"],
+            "team": ["Attacker", "Defender"],
             "type": "Machine Pistol"
         },
         {
@@ -360,8 +360,8 @@
                 "mobility": 50,
                 "capacity": 26
             },
-            "ops": "Kali/Thorn/Vigil",
-            "team": "Attacker/Defender",
+            "ops": ["Kali", "Thorn", "Vigil"],
+            "team": ["Attacker", "Defender"],
             "type": "Machine Pistol"
         },
         {
@@ -373,8 +373,8 @@
                 "mobility": 50,
                 "capacity": 5
             },
-            "ops": "Frost/Jackal/Mira",
-            "team": "Attacker/Defender",
+            "ops": ["Frost", "Jackal", "Mira"],
+            "team": ["Attacker", "Defender"],
             "type": "Secondary Shotty"
         },
         {
@@ -386,8 +386,8 @@
                 "mobility": 50,
                 "capacity": 3
             },
-            "ops": "Castle/Clash/Gridlock",
-            "team": "Attacker/Defender",
+            "ops": ["Castle", "Clash", "Gridlock"],
+            "team": ["Attacker", "Defender"],
             "type": "Secondary Shotty"
         }
     ]
