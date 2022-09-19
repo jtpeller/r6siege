@@ -124,11 +124,18 @@ function initGuns() {
 
     rgun_side.append('option')
         .attr('value', '1')
-        .text("Attackers only");
+        .text("Attackers");
     
     rgun_side.append('option')
         .attr('value', '2')
-        .text('Defenders only');
+        .text('Defenders');
+
+    rgun_side.on('change', function() {
+        buildData();
+
+        // force new selection
+        d3.select('#generate').node().click();
+    })
 
 	// gun class form
 	rgun_form.append("h4")
