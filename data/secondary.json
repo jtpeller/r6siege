@@ -152,7 +152,7 @@
                 "mobility": 45,
                 "capacity": 12
             },
-            "ops": ["Echo", "Goyo", "Hibana"],
+            "ops": ["Echo", "Goyo", "Hibana", "Grim"],
             "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },

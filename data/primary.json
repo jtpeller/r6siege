@@ -542,7 +542,7 @@
                 "mobility": 50,
                 "capacity": 7
             },
-            "ops": ["Doc", "Lion", "Rook", "Twitch"],
+            "ops": ["Doc", "Lion", "Rook", "Twitch", "Grim"],
             "team": ["Attacker", "Defender"],
             "type": "Shotgun"
         },
