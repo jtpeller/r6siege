@@ -174,7 +174,7 @@ function initRandomOps() {
                 rop_output.html('');
 
                 // now, format the card accordingly
-                rop_output.style('width', '50rem');
+                rop_output.classed('output-card', true);
 
                 // add the card's image
                 rop_output.append('img')
@@ -234,6 +234,7 @@ function initRandomOps() {
 				`
 
                 body.append('p')
+                    .classed('card-body', true)
                     .html(body_text)
 
                 // make some nice changes

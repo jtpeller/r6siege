@@ -167,7 +167,10 @@ function initGuns() {
 		.classed('btn btn-outline-light', true)
 		.on('click', function() {
 			if (window.data.length <= 0) {
-				rgun_output.text("No guns match this filter/option set. Try another combination.");
+                rgun_output.text('');
+                rgun_output.append('p')
+                    .text("No ops match this filter/option set. Try another combination.")
+                    .classed('no-match', true);
 			} else {
 				// generate rng for selected guns
 				var rng = Math.floor(Math.random() * window.data.length);
@@ -176,7 +179,7 @@ function initGuns() {
 				rgun_output.html('');
 
 				// now, format the card accordingly
-				rgun_output.style('width', '50rem');
+				rgun_output.classed('output-card', true);
 					
 				// add the card's image
 				rgun_output.append('img')
@@ -219,7 +222,8 @@ function initGuns() {
                 `
                 
                 body.append('p')
-                	.html(body_text)
+                    .classed('card-body', true)
+                	.html(body_text);
 
                 // append the ops image
                 for (var i = 0; i < selected.ops.length; i++) {
