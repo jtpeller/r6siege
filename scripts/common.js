@@ -5,6 +5,21 @@
 // =  Date          : March 29, 2022
 // =================================================================
 
+let ll = [
+    {
+        html: 'ops.html',
+        link: 'Operator Roulette'
+    },
+    {
+        html: 'guns.html',
+        link: 'Gun Roulette'
+    },
+    {
+        html: 'more-info.html',
+        link: 'More Info'
+    }
+]
+
 /**
  * initHeader() -- initializes the navbar for navigating the site
  */
@@ -46,41 +61,51 @@
         .classed('navbar-nav me-auto mb-2 mb-lg-0', true);
 
     // iteratively add the links
-    let links = [
-        {
-            html: 'ops.html',
-            link: 'Operator Roulette'
-        },
-        {
-            html: 'guns.html',
-            link: 'Gun Roulette'
-        }
-    ]
-
-    for (var i = 0; i < links.length; i++) {
+    for (var i = 0; i < ll.length; i++) {
         ul.append('li')
             .classed('nav-item', true)
             .append('a')
             .classed('nav-link active', true)
             .attr('aria-current', 'page')
-            .attr('href', links[i].html)
-            .text(links[i].link);
+            .attr('href', ll[i].html)
+            .text(ll[i].link);
     }
 }
 
-function initFooter(footer) {
-    let elem = footer.append('footer')
-        .classed('footer text-center text-lg-start mt-auto my-bg-dark', true)
-        .style('height', '5em');
+function initFooter(footer, anim) {
+    let elem;
+    if (anim) { 
+        elem = footer.append('footer')
+            .classed('footer footer-anim text-center text-lg-start mt-auto my-bg-dark', true)
+            .style('height', '5em');
+    } else {
+        elem = footer.append('footer')
+            .classed('footer text-center text-lg-start mt-auto my-bg-dark', true)
+            .style('height', '5em');
+    }
 
     let div = elem.append('div')
         .classed('text-center p-4 container', true)
-        .text('Written by: ')
+
+        div.append('a')
+        .attr('href', 'https://jtpeller.github.io/')
+        .classed('text-light', true)
+        .append('img')
+        .classed('logo-link', true)
+        .attr('src', 'resources/home.svg')
+        .attr('alt', 'Home')
+        .attr('title', 'My Website...');
 
     div.append('a')
         .attr('href', 'https://www.github.com/jtpeller')
         .classed('text-light', true)
-        .text('jtpeller')
+        .append('img')
+        .classed('logo-link', true)
+        .attr('src', 'resources/github.png')
+        .attr('alt', 'GitHub')
+        .attr('title', 'My GitHub Link...');
+
+    
 }
 
 /**

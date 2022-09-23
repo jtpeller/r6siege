@@ -1,6 +1,6 @@
 // =================================================================
-// = home.js
-// =  Description   : initializes home.html
+// = more.js
+// =  Description   : initializes more-info.html
 // =  Author        : jtpeller
 // =  Date          : March 29, 2022
 // =================================================================
@@ -15,8 +15,5 @@ document.addEventListener("DOMContentLoaded", function() {
     header = d3.select(hid);
     footer = d3.select(fid);
     initNavbar(header);
-    initFooter(footer);
+    initFooter(footer, false);
 })
-
-function initHome() { 
-}
