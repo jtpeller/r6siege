@@ -63,7 +63,7 @@ let ll = [
     // iteratively add the links
     for (var i = 0; i < ll.length; i++) {
         ul.append('li')
-            .classed('nav-item', true)
+            .classed('nav-item gradient-transparent', true)
             .append('a')
             .classed('nav-link active', true)
             .attr('aria-current', 'page')
@@ -87,7 +87,7 @@ function initFooter(footer, anim) {
     let div = elem.append('div')
         .classed('text-center p-4 container', true)
 
-        div.append('a')
+    div.append('a')
         .attr('href', 'https://jtpeller.github.io/')
         .classed('text-light', true)
         .append('img')

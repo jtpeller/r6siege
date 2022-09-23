@@ -183,6 +183,31 @@ h4 > a {
     opacity: 1;
 }
 
+
+.gradient-transparent {
+    position: relative;
+    background-image: linear-gradient(to bottom, transparent, transparent);
+    z-index: 1;
+}
+
+.gradient-transparent::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, transparent 70%, rgb(0, 217, 255) 85%);
+    z-index: -1;
+
+    transition: opacity 0.25s linear;
+    opacity: 0;
+}
+
+.gradient-transparent:hover::before {
+    opacity: 1;
+}
+
 .logo-link {
     width: 30px;
     height: 30px;
