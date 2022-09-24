@@ -31,7 +31,7 @@ let ll = [
         .classed('container-fluid', true);
     
     let brand = navdiv.append('a')
-        .classed('navbar-brand', true)
+        .classed('navbar-brand gradient-transparent', true)
         .attr('href', 'index.html')
         .text('R6S Roulette');
     
