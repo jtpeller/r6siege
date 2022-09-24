@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     footer = d3.select(fid);
 
     // init the navbar and footer first (data promise delays load times)
-    initNavbar(header);
+    initNavbar(header, 0);
     initFooter(footer);
 
     // load all data w/ d3 utils

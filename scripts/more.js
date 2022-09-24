@@ -14,6 +14,6 @@ var header, footer;
 document.addEventListener("DOMContentLoaded", function() {
     header = d3.select(hid);
     footer = d3.select(fid);
-    initNavbar(header);
+    initNavbar(header, 2);
     initFooter(footer, false);
 })

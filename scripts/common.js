@@ -23,7 +23,7 @@ let ll = [
 /**
  * initHeader() -- initializes the navbar for navigating the site
  */
- function initNavbar(header) {
+ function initNavbar(header, idx) {
     let nav = header.append('nav')
     nav.classed('navbar navbar-expand-lg navbar-dark my-bg-dark', true)
 
@@ -31,7 +31,7 @@ let ll = [
         .classed('container-fluid', true);
     
     let brand = navdiv.append('a')
-        .classed('navbar-brand gradient-transparent', true)
+        .classed('navbar-brand gradient-transparent border-highlight', true)
         .attr('href', 'index.html')
         .text('R6S Roulette');
     
@@ -62,13 +62,23 @@ let ll = [
 
     // iteratively add the links
     for (var i = 0; i < ll.length; i++) {
-        ul.append('li')
-            .classed('nav-item gradient-transparent', true)
-            .append('a')
-            .classed('nav-link active', true)
-            .attr('aria-current', 'page')
-            .attr('href', ll[i].html)
-            .text(ll[i].link);
+        if (idx == i) {
+            ul.append('li')
+                .classed('nav-item gradient-transparent', true)
+                .append('a')
+                .classed('nav-link active border-highlighted', true)
+                .attr('aria-current', 'page')
+                .attr('href', ll[i].html)
+                .text(ll[i].link);
+        } else {
+            ul.append('li')
+                .classed('nav-item gradient-transparent', true)
+                .append('a')
+                .classed('nav-link active border-highlight', true)
+                .attr('aria-current', 'page')
+                .attr('href', ll[i].html)
+                .text(ll[i].link);
+        }
     }
 }
 
