@@ -129,7 +129,6 @@ function getCondition(conditions, name) {
     }
 }
 
-
 function buildColumnChecklist(loc, list, col_count, checked, callback, id_prefix) {
     if (col_count === undefined || col_count <= 0 || col_count > list.length) {
         console.log("the person who wrote this is stupid lol");

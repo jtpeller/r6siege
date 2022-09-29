@@ -81,8 +81,8 @@ h4 > a:hover {
 }
 
 .link-list {
-    margin: auto;
-    padding: 0 10px;
+    margin: auto !important;
+    padding: 0 10px !important;
     opacity: 0;
     
     animation: fadeIn 1s ease-in-out 1;
@@ -262,8 +262,8 @@ h4 > a:hover {
     object-fit: scale-down;
     width: auto;
     height: auto;
-    max-width: 8rem;
-    max-height: 4rem;
+    max-width: 10rem;
+    max-height: 5rem;
 }
 
 .my-bg-dark {

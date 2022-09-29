@@ -119,7 +119,7 @@
                     "type": "Shotgun"
                 },
                 {
-                    "name": "556xi",
+                    "name": "556XI",
                     "type": "Assault Rifle"
                 }
             ],
@@ -394,7 +394,7 @@
             "organization": "Navy SEALs",
             "primary": [
                 {
-                    "name": "Mk17 CQB",
+                    "name": "MK17 CQB",
                     "type": "Assault Rifle"
                 },
                 {
@@ -466,7 +466,7 @@
                     "type": "Assault Rifle"
                 },
                 {
-                    "name": "SuperNova",
+                    "name": "Supernova",
                     "type": "Shotgun"
                 }
             ],
@@ -1109,7 +1109,7 @@
             "organization": "Wolfguard",
             "primary": [
                 {
-                    "name": "POF9",
+                    "name": "POF-9",
                     "type": "Assault Rifle"
                 },
                 {
@@ -1119,7 +1119,7 @@
             ],
             "secondary": [
                 {
-                    "name": "SDP 9MM",
+                    "name": "SDP 9mm",
                     "type": "Handgun"
                 },
                 {
