@@ -225,7 +225,7 @@ function initGuns() {
                         .classed('text-center', true)
 
                     imgdiv.append('a')
-                        .attr('href', `ops.html#${selected.ops[j]}`)
+                        .attr('href', `ops.html#${selected.ops[i]}`)
                         .append('img')
                         .style('width', '4rem')
                         .attr('src', fetchOpImage(selected.ops[i]))

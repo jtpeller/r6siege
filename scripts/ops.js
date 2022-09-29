@@ -34,7 +34,12 @@ window.onload = function () {
         initOps();
         
         // scroll to the right point for hash link
-        setTimeout( () => {location.href = location.href; }, 500);
+        setTimeout( () => {
+            console.log(location.hash);
+            if (location.hash !== '') {
+                location.hash = location.hash; 
+            }
+        }, 500);
     })
 }
 
