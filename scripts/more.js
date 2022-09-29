@@ -7,13 +7,10 @@
 
 // constants
 var hid = '#header'
-    fid = '#footer'
 
-var header, footer;
+var header;
 
 document.addEventListener("DOMContentLoaded", function() {
     header = d3.select(hid);
-    footer = d3.select(fid);
-    initNavbar(header, 2);
-    initFooter(footer, false);
+    initNavbar(header, 5);
 })

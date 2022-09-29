@@ -11,7 +11,11 @@ html, body {
     height: 100%;
 }
 
-h1, h2, h3, h4, .link-list {
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, .link-list {
     text-transform: uppercase;
     font-style: italic;
     font-weight: bold;
@@ -40,12 +44,20 @@ h4 {
 	padding-top: 1rem;
 }
 
+h3 > a,
 h4 > a {
     color: white;
     text-decoration: none;
+
+    transition: color 200ms ease-in-out;
 }
 
-/* CLASSES */
+h3 > a:hover,
+h4 > a:hover {
+    color: rgb(0, 140, 255);
+}
+
+/**** HOMEPAGE ****/
 .banner {
     opacity: 0;
 
@@ -62,58 +74,6 @@ h4 > a {
     padding: 10px;
 }
 
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-}
-
-.conditions {
-	padding: 10px;
-	text-align: center;
-}
-
-.gun-img {
-    padding-top: 10px;
-    object-fit: scale-down;
-    width: 100%;
-    height: 150;
-}
-
-.footer {
-	background-color: rgb(18, 19, 20) !important;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-}
-
-.footer-anim {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out 1;
-    animation-delay: 1.5s;
-    animation-fill-mode: forwards;
-}
-
-.form-check-input[type="checkbox"], .form-check-input[type="checkbox"]:focus {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-width='2' d='M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z'/%3e%3c/svg%3e");
-}
-
-.form-check-input:checked[type="checkbox"] {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-width='2' d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z'/%3e%3c/svg%3e");
-}
-
-.form-check-input {
-    background-color: rgb(255, 89, 60);
-    border-color: rgb(255, 89, 60);
-}
-
-.form-check-input:checked {
-    background-color: rgb(0, 233, 221);
-    border-color: rgb(0, 233, 221);
-}
-
 .link-card {
     height: 3rem;
     width: fit-content;
@@ -122,7 +82,7 @@ h4 > a {
 
 .link-list {
     margin: auto;
-    padding: 0;
+    padding: 0 10px;
     opacity: 0;
     
     animation: fadeIn 1s ease-in-out 1;
@@ -146,16 +106,6 @@ h4 > a {
                 font-size 0.25s cubic-bezier(0, 0, 0.7, 1);
 }
 
-.border-highlighted {
-    border-bottom: 5px solid rgb(0, 255, 255) !important;
-}
-
-.border-highlight {
-    border-bottom: 5px solid transparent !important;
-
-    transition: border-bottom 0.25s cubic-bezier(0, 0, 0.7, 1);
-}
-
 .border-highlight:hover {
     border-bottom: 5px solid rgb(0, 255, 255) !important;
 }
@@ -174,6 +124,89 @@ h4 > a {
 
 .btn-link:hover {
     color: rgb(59, 59, 59);
+}
+
+/**** ROULETTE SITES ****/
+.conditions {
+	padding: 10px;
+	text-align: center;
+}
+
+.form-check-input[type="checkbox"], .form-check-input[type="checkbox"]:focus {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-width='2' d='M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z'/%3e%3c/svg%3e");
+}
+
+.form-check-input:checked[type="checkbox"] {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-width='2' d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z'/%3e%3c/svg%3e");
+}
+
+.form-check-input {
+    background-color: rgb(255, 89, 60);
+    border-color: rgb(255, 89, 60);
+}
+
+.form-check-input:checked {
+    background-color: rgb(0, 233, 221);
+    border-color: rgb(0, 233, 221);
+}
+
+.no-match {
+    padding: 1rem;
+    margin: auto;
+    text-align: center;
+}
+
+.output-card {
+    width: 40vw;
+}
+
+.title-card {
+    font-size: 5vw;
+    padding-top: 10rem;
+    padding-bottom: 10px;
+}
+
+/**** OPS & GUNS PAGES ****/
+.op-card {
+    padding: 15px;
+    margin: 10px;
+}
+
+.op-img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.gun-img-lg {
+    padding-top: 10px;
+    object-fit: scale-down;
+    width: auto;
+    height: auto;
+    max-width: 12rem;
+    max-height: 6rem;
+}
+
+/**** GENERAL ****/
+/* CLASSES */
+.border-highlighted {
+    border-bottom: 5px solid rgb(0, 255, 255) !important;
+}
+
+.border-highlight {
+    border-bottom: 5px solid transparent !important;
+
+    transition: border-bottom 0.25s cubic-bezier(0, 0, 0.7, 1);
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dark-item {
+    background-color: transparent !important;
+    color: white;
 }
 
 .gradient {
@@ -224,13 +257,13 @@ h4 > a {
     opacity: 1;
 }
 
-.logo-link {
-    width: 30px;
-    height: 30px;
-}
-
-.logo-link:first-of-type {
-    margin-right: 5px;
+.gun-img {
+    padding-top: 10px;
+    object-fit: scale-down;
+    width: auto;
+    height: auto;
+    max-width: 8rem;
+    max-height: 4rem;
 }
 
 .my-bg-dark {
@@ -244,7 +277,7 @@ h4 > a {
 	border-radius: 15px;
 }
 
-.my-h4 {
+.my-header {
     width: 90%;
 	padding-top: 1rem;
     padding-bottom: 0.25rem;
@@ -256,21 +289,8 @@ h4 > a {
     padding: auto 2rem auto 2rem;
 }
 
-
-.no-match {
-    padding: 1rem;
-    margin: auto;
-    text-align: center;
-}
-
-.output-card {
-    width: 40vw;
-}
-
-.title-card {
-    font-size: 5vw;
-    padding: 12vw;
-    padding-bottom: 10px;
+.no-border {
+    border: none !important;
 }
 
 /* IDs */

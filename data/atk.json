@@ -191,7 +191,7 @@
             "organization": "GIGN",
             "primary": [
                 {
-                    "name": "Extendable Shield",
+                    "name": "Le Roc Shield",
                     "type": "Shield"
                 }
             ],
@@ -835,7 +835,7 @@
                     "type": "Submachine Gun"
                 },
                 {
-                    "name": "SIX12 SD",
+                    "name": "SIX12-SD",
                     "type": "Shotgun"
                 }
             ],

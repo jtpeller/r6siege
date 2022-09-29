@@ -5,12 +5,11 @@
 // =  Date          : March 29, 2022
 // =================================================================
 
-let header, footer;
+let header;
 
 document.addEventListener("DOMContentLoaded", function() {
     // get d3 objects
     content = d3.select('#content');
-    footer = d3.select('#footer');
 
     //
     // initialize site
@@ -28,19 +27,27 @@ document.addEventListener("DOMContentLoaded", function() {
     let links = content.append('div')
         .classed('d-flex justify-content-center link-card', true);
 
-    let ul = links.append('div')
-        .classed('link-list', true);
+    let linkdiv = links.append('div')
+        .classed('row', true);
 
-    for (var i = 0; i < ll.length; i++) {
-        ul.append('a')
-            .classed('btn btn-item gradient', true)
-            .attr('href', ll[i].html)
-            .append('a')
-            .classed('btn-link', true)
-            .attr('href', ll[i].html)
-            .text(ll[i].link);
+    let chunks = chunkify(ll, 2, true);
+
+    for (var i = 0; i < chunks.length; i++) {
+        var col = linkdiv.append('div')
+            .classed('link-list col', true);
+
+        var temp = chunks[i];
+
+        for (var j = 0; j < temp.length; j++) {
+            col.append('a')
+                .classed('btn btn-item gradient', true)
+                .attr('href', temp[j].html)
+                .append('a')
+                .classed('btn-link', true)
+                .attr('href', temp[j].html)
+                .text(temp[j].link);
+        }
+        
     }
 
-    // initialize footer
-    initFooter(footer, true);
 })

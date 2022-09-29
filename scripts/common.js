@@ -7,12 +7,24 @@
 
 let ll = [
     {
-        html: 'ops.html',
+        html: 'op-roulette.html',
         link: 'Operator Roulette'
     },
     {
-        html: 'guns.html',
+        html: 'gun-roulette.html',
         link: 'Gun Roulette'
+    },
+    {
+        html: 'strat-roulette.html',
+        link: 'Strat Roulette'
+    },
+    {
+        html: 'ops.html',
+        link: 'Operators'
+    },
+    {
+        html: 'guns.html',
+        link: 'Guns'
     },
     {
         html: 'more-info.html',
@@ -82,42 +94,6 @@ let ll = [
     }
 }
 
-function initFooter(footer, anim) {
-    let elem;
-    if (anim) { 
-        elem = footer.append('footer')
-            .classed('footer footer-anim text-center text-lg-start mt-auto my-bg-dark', true)
-            .style('height', '5em');
-    } else {
-        elem = footer.append('footer')
-            .classed('footer text-center text-lg-start mt-auto my-bg-dark', true)
-            .style('height', '5em');
-    }
-
-    let div = elem.append('div')
-        .classed('text-center p-4 container', true)
-
-    div.append('a')
-        .attr('href', 'https://jtpeller.github.io/')
-        .classed('text-light', true)
-        .append('img')
-        .classed('logo-link', true)
-        .attr('src', 'resources/home.svg')
-        .attr('alt', 'Home')
-        .attr('title', 'My Website...');
-
-    div.append('a')
-        .attr('href', 'https://www.github.com/jtpeller')
-        .classed('text-light', true)
-        .append('img')
-        .classed('logo-link', true)
-        .attr('src', 'resources/github.png')
-        .attr('alt', 'GitHub')
-        .attr('title', 'My GitHub Link...');
-
-    
-}
-
 /**
  * fetchOpImage() -- grabs an image link using buildLink
  * @param op        the op i'm trying to fetch
@@ -133,6 +109,9 @@ function fetchOpImage(op) {
  * @return link     the link for this image
  */
 function fetchGunImage(gun) {
+    if (gun.includes('.44 Mag')) {
+        gun = gun.slice(1);
+    }
     return `resources/guns/${gun}.png`;
 }
 
