@@ -1,6 +1,43 @@
 {
     "atk": [
         {
+            "name": "Recruit",
+            "gender": "Male",
+            "role": ["Absolute Unit"],
+            "speed": 2,
+            "organization": "Doesn't Need One",
+            "primary": [
+                {
+                    "name": "L85A2",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "Mk 14 EBR",
+                    "type": "Marksman Rifle"
+                },
+                {
+                    "name": "M249",
+                    "type": "Light Machine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P12",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "Super Shorty",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "C75 Auto",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": ["Frag Grenade", "Stun Grenade", "Impact EMP Grenade"],
+            "special": ["Breach Charge", "Stun Grenade", "Claymore"]
+        },
+        {
             "name": "Sledge",
             "gender": "Male",
             "role": ["Soft Breach", "Flank"],
@@ -22,17 +59,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Frag Grenade"
-                },
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Frag Grenade", "Stun Grenade", "Impact EMP Grenade"],
             "special": "Tactical Breaching Hammer"
         },
         {
@@ -61,14 +88,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Breach Charge"
-                }
-            ],
+            "gadget": ["Claymore", "Breach Charge"],
             "special": "EMP Grenade"
         },
         {
@@ -97,14 +117,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Breach Charge", "Claymore"],
             "special": "Breaching Rounds"
         },
         {
@@ -133,14 +146,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Smoke Grenade"
-                }
-            ],
+            "gadget": ["Stun Grenade", "Smoke Grenade"],
             "special": "Exothermic Charge"
         },
         {
@@ -173,14 +179,7 @@
                     "type": "Revolver"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Smoke Grenade"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Smoke Grenade", "Claymore"],
             "special": "Shock Drone"
         },
         {
@@ -205,17 +204,7 @@
                     "type": "Revolver"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Hard Breach Charge"
-                },
-                {
-                    "name": "Smoke Grenade"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Hard Breach Charge", "Smoke Grenade", "Impact EMP Grenade"],
             "special": "Le Roc"
         },
         {
@@ -240,14 +229,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Smoke Grenade"
-                },
-                {
-                    "name": "Frag Grenade"
-                }
-            ],
+            "gadget": ["Smoke Grenade", "Frag Grenade"],
             "special": "Flip Sight"
         },
         {
@@ -280,14 +262,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Hard Breach Charge"
-                }
-            ],
+            "gadget": ["Breach Charge", "Hard Breach Charge"],
             "special": "Cluster Charge"
         },
         {
@@ -308,14 +283,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Smoke Grenade"
-                },
-                {
-                    "name": "Breach Charge"
-                }
-            ],
+            "gadget": ["Smoke Grenade", "Breach Charge"],
             "special": "Flash Shield"
         },       
         {
@@ -344,14 +312,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Breach Charge", "Claymore"],
             "special": "Electronics Detector"
         },
         {
@@ -376,14 +337,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Hard Breach Charge"
-                }
-            ],
+            "gadget": ["Stun Grenade", "Hard Breach Charge"],
             "special": "Skeleton Key"
         },
         {
@@ -408,17 +362,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Claymore", "Stun Grenade", "Impact EMP Grenade"],
             "special": "Rifle-Shield"
         },
         
@@ -444,14 +388,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Hard Breach Charge"
-                }
-            ],
+            "gadget": ["Claymore", "Hard Breach Charge"],
             "special": "Tactical Crossbow"
         },
         {
@@ -480,14 +417,7 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Breach Charge"
-                }
-            ],
+            "gadget": ["Stun Grenade", "Breach Charge"],
             "special": "X-KAIROS"
         },
         {
@@ -520,14 +450,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Smoke Grenade"
-                }
-            ],
+            "gadget": ["Claymore", "Smoke Grenade"],
             "special": "Eyenox Model III"
         },
         {
@@ -552,14 +475,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Hard Breach Charge"
-                },
-                {
-                    "name": "Smoke Grenade"
-                }
-            ],
+            "gadget": ["Hard Breach Charge", "Smoke Grenade"],
             "special": "Candela"
         },
         {
@@ -584,14 +500,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Breach Charge", "Claymore"],
             "special": "KS79 LIFELINE"
         },
         {
@@ -620,17 +529,7 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Smoke Grenade"
-                },
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Smoke Grenade", "Stun Grenade", "Impact EMP Grenade"],
             "special": "Logic Bomb"
         },
         {
@@ -663,17 +562,7 @@
                     "type": "Revolver"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Stun Grenade", "Claymore", "Impact EMP Grenade"],
             "special": "EE-ONE-D"
         },
         {
@@ -706,14 +595,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Frag Grenade"
-                },
-                {
-                    "name": "Stun Grenade"
-                }
-            ],
+            "gadget": ["Smoke Grenade", "Stun Grenade"],
             "special": "Adrenal Surge"
         },
         {
@@ -738,14 +620,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Frag Grenade"
-                }
-            ],
+            "gadget": ["Claymore", "Frag Grenade"],
             "special": "Breaching Torch"
         },
         {
@@ -774,14 +649,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Stun Grenade"
-                }
-            ],
+            "gadget": ["Breach Charge", "Stun Grenade"],
             "special": "Airjab Launcher"
         },
         {
@@ -810,17 +678,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Smoke Grenade"
-                },
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Smoke Grenade", "Breach Charge", "Impact EMP Grenade"],
             "special": "Trax Stingers"
         },
         {
@@ -849,17 +707,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Frag Grenade"
-                },
-                {
-                    "name": "Hard Breach Charge"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Frag Grenade", "Hard Breach Charge", "Impact EMP Grenade"],
             "special": "HEL Presence Reduction"
         },
         {
@@ -888,14 +736,7 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Hard Breach Charge"
-                },
-                {
-                    "name": "Stun Grenade"
-                }
-            ],
+            "gadget": ["Hard Breach Charge", "Stun Grenade"],
             "special": "Garra Hook"
         },
         {
@@ -920,14 +761,7 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Breach Charge", "Claymore"],
             "special": "LV Explosive Lance"
         },
         {
@@ -956,14 +790,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Frag Grenade"
-                },
-                {
-                    "name": "Smoke Grenade"
-                }
-            ],
+            "gadget": ["Frag Grenade", "Smoke Grenade"],
             "special": "Gemini Replicator"
         },
         {
@@ -988,14 +815,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Breach Charge"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Breach Charge", "Claymore"],
             "special": "S.E.L.M.A. AQUA BREACHER"
         },
         {
@@ -1024,14 +844,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Hard Breach Charge"
-                }
-            ],
+            "gadget": ["Claymore", "Hard Breach Charge"],
             "special": "ARGUS LAUNCHER"
         },
         {
@@ -1056,14 +869,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Stun Grenade"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Stun Grenade", "Claymore"],
             "special": "RCE-Ratero Charge"
         },
         {
@@ -1088,17 +894,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Smoke Grenade"
-                },
-                {
-                    "name": "Claymore"
-                },
-                {
-                    "name": "Impact EMP Grenade"
-                }
-            ],
+            "gadget": ["Smoke Grenade", "Claymore", "Impact EMP Grenade"],
             "special": "Talon-8 Clear Shield"
         },
         {
@@ -1127,14 +923,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Hard Breach Charge"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Hard Breach Charge", "Claymore"],
             "special": "R.O.U. Projector System"
         },
         {
@@ -1159,14 +948,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": [
-                {
-                    "name": "Hard Breach Charge"
-                },
-                {
-                    "name": "Claymore"
-                }
-            ],
+            "gadget": ["Hard Breach Charge", "Claymore"],
             "special": "Kawan Hive Launcher"
         }
     ]

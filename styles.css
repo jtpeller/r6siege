@@ -167,6 +167,62 @@ h4 > a:hover {
 }
 
 /**** OPS & GUNS PAGES ****/
+.square {
+    padding: 0;
+    border-radius: 0;
+
+    width: 50px;
+    height: 50px;
+    background-color: rgb(228, 228, 228);
+
+    border-bottom: 5px solid transparent !important;
+    transition: border-bottom 0.25s cubic-bezier(0, 0, 0.7, 1);
+}
+
+.square:hover,
+.rect:hover {
+    background-color: rgb(228, 228, 228);
+    border-bottom: 5px solid rgb(0, 255, 255) !important;
+}
+
+.rect {
+    padding: 0.5rem;
+    border-radius: 0;
+
+    height: 50px;
+    background-color: rgb(228, 228, 228);
+
+    border-bottom: 5px solid transparent !important;
+    transition: border-bottom 0.25s cubic-bezier(0, 0, 0.7, 1);
+}
+
+.rect:hover > .img-svg-2,
+.square:hover > .img-svg {
+    transform: scale(1.1);
+}
+
+.img-svg {
+    width: 75%;
+    height: 50px;
+    transform: scale(1);
+
+    transition: transform 250ms ease-in-out;
+}
+
+.img-svg-2 {
+    height: 100%;
+    transform: scale(1);
+
+    transition: transform 250ms ease-in-out;
+}
+
+
+.nav-arrows {
+    position: fixed !important;
+    bottom: 5%;
+    left: 3%;
+}
+
 .op-card {
     padding: 15px;
     margin: 10px;
@@ -211,7 +267,7 @@ h4 > a:hover {
 
 .gradient {
     position: relative;
-    background-image: linear-gradient(to bottom, rgba(240, 240, 240, 0.8) 85%, rgba(240, 240, 240, 0.8) 85%);
+    background-image: linear-gradient(to bottom, rgb(212, 212, 212) 85%, rgb(212, 212, 212) 85%);
     z-index: 1;
 }
 
@@ -222,7 +278,7 @@ h4 > a:hover {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to bottom, rgba(240, 240, 240, 0) 50%, rgba(0, 217, 255, 1) 85%);
+    background-image: linear-gradient(to bottom, rgb(212, 212, 212) 50%, rgb(0, 217, 255) 85%);
     z-index: -1;
 
     transition: opacity 0.25s linear;

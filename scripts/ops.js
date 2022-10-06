@@ -50,7 +50,8 @@ function initOps() {
     content.classed('container', true);
 
     content.append('h2')
-        .text('Operators');
+        .text('Operators')
+        .attr('id', 'Operators');
 
     // attackers
     var loc = content.append('div')
@@ -58,6 +59,7 @@ function initOps() {
 
     loc.append('h4')
         .classed('my-header', true)
+        .attr('id', 'Attackers')
         .text('Attackers');
 
     buildOpCards(window.atk, loc);
@@ -68,9 +70,14 @@ function initOps() {
 
     loc.append('h4')
         .classed('my-header', true)
+        .attr('id', 'Defenders')
         .text('Defenders');
 
     buildOpCards(window.def, loc);
+
+    // now, add navigation arrows
+    var loc = d3.select('#main-content')
+    navigationArrows(loc);
 }
 
 function buildOpCards(arr, loc) {
@@ -171,6 +178,22 @@ function buildOpCards(arr, loc) {
             .text('Gadgets');
 
         buildGadgetList(op.gadget, col3);
+
+        // special
+        if (typeof op.special !== "string") { 
+            col3.append('h6')
+                .classed('my-header', true)
+                .text('Secondary Gadget');
+
+            buildGadgetList(op.special, col3);
+        } else {
+            col3.append('h6')
+                .classed('my-header', true)
+                .text('Special');
+
+            col3.append('span')
+                .text(op.special);
+        }
     }
 }
 
@@ -203,7 +226,7 @@ function buildGadgetList(list, loc) {
         .classed('list-group', true);
 
     for (var j = 0; j < list.length; j++) {
-        var gadget = list[j].name;
+        var gadget = list[j];
 
         ul.append('li')
             .classed('list-group-item dark-item no-border', true)
@@ -213,4 +236,45 @@ function buildGadgetList(list, loc) {
     function getGadgetCount(g) {
         return gadgets[g.toLowerCase().replaceAll(' ', '_')];
     }    
+}
+
+function navigationArrows(loc) {
+    var parent = loc.append('div')
+        .classed('row nav-arrows', true)
+
+    var atk = parent.append('div')
+        .classed('col', true)
+
+    atk.append('a')
+        .attr('href', '#Attackers')
+        .attr('title', 'Jump to attackers')
+        .classed('btn square gradient', true)
+        .append('img')
+        .classed('center img-svg', true)
+        .attr('src', 'resources/atk.svg')
+        .attr('alt', 'ATK');
+
+    var def = parent.append('div')
+        .classed('col ms-3', true)
+
+    def.append('a')
+        .attr('href', '#Defenders')
+        .attr('title', 'Jump to defenders')
+        .classed('btn square gradient', true)
+        .append('img')
+        .classed('center img-svg', true)
+        .attr('src', 'resources/def.svg')
+        .attr('alt', 'DEF');
+
+    var top = parent.append('div')
+        .classed('col ms-3', true)
+
+    top.append('a')
+        .attr('href', '#')
+        .attr('title', 'Back to top')
+        .classed('btn square gradient', true)
+        .append('img')
+        .classed('center img-svg', true)
+        .attr('src', 'resources/up.svg')
+        .attr('alt', 'TOP');
 }

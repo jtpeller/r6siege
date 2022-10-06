@@ -76,6 +76,10 @@ function initGuns() {
         .text('Secondaries');
 
     buildGunCards(window.sec, loc);
+
+    // add nav arrows
+    var loc = d3.select('#main-content');
+    navigationArrows(loc);
 }
 
 function buildGunCards(arr, loc) {
@@ -167,10 +171,48 @@ function buildGunCards(arr, loc) {
             .classed('my-header', true);
 
         prop.append('p').text(gun.properties.mobility)
-
-        
-
-
-
     }
 }
+
+
+function navigationArrows(loc) {
+    var parent = loc.append('div')
+        .classed('row nav-arrows', true)
+
+    var atk = parent.append('div')
+        .classed('col', true)
+
+    atk.append('a')
+        .attr('href', '#primaries')
+        .attr('title', 'Jump to primaries')
+        .classed('btn rect gradient', true)
+        .append('img')
+        .classed('center img-svg-2', true)
+        .attr('src', 'resources/guns/MP5K.png')
+        .attr('alt', 'PRIMARIES');
+
+    var def = parent.append('div')
+        .classed('col ms-3', true)
+
+    def.append('a')
+        .attr('href', '#secondaries')
+        .attr('title', 'Jump to secondaries')
+        .classed('btn rect gradient', true)
+        .append('img')
+        .classed('center img-svg-2', true)
+        .attr('src', 'resources/guns/D-50.png')
+        .attr('alt', 'SECONDARIES');
+
+    var top = parent.append('div')
+        .classed('col ms-3', true)
+
+    top.append('a')
+        .attr('href', '#')
+        .attr('title', 'Back to top')
+        .classed('btn rect gradient', true)
+        .append('img')
+        .classed('center img-svg-2', true)
+        .attr('src', 'resources/up.svg')
+        .attr('alt', 'TOP');
+}
+

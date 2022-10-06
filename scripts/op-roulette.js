@@ -166,7 +166,6 @@ function initRandomOps() {
                 var rng = Math.floor(Math.random() * window.data.length);
 
                 var selected = window.data[rng];
-                // y7s3console.log(selected);
                 rop_output.html('');
 
                 // now, format the card accordingly
@@ -213,24 +212,53 @@ function initRandomOps() {
                 var gg = selected.gadget;
                 var gtext = "<ul>";
                 for (var i = 0; i < gg.length; i++) {
-                    gtext += "<li>" + gg[i].name + " x"
-                    gtext += getGadgetCount(gg[i].name) + "<br></li>"
+                    gtext += "<li>" + gg[i] + " x"
+                    gtext += getGadgetCount(gg[i]) + "<br></li>"
                 }
                 gtext += "</ul>";
 
-                //<b>Organization</b>: ${selected.organization}<br></br>
-                var body_text = `
-                    <b>Roles</b>: ${selected.role.sort()}<br>
-                    <b>Speed</b>: ${selected.speed}<br>
-					<b>Gender</b>: ${selected.gender}<br>
-					<b>Primaries</b>: <br>
-						${ptext}
-					<b>Secondaries</b>: <br>
-						${stext}
-					<b>Gadgets</b>: <br>
-						${gtext}
-					<b>Special</b>: ${selected.special}<br>
-				`
+                //
+                // handle Recruit using the type of the special field
+                var body_text = ``;
+                if (typeof selected.special !== "string") {
+                    var gg2 = selected.special;
+                    var gtext2 = "<ul>";
+                    for (var j = 0; j < gg2.length; j++) {
+                        gtext2 += "<li>" + gg2[j] + " x";
+                        gtext2 += getGadgetCount(gg2[j]) + "<br></li>";
+                    }
+                    gtext2 += "</ul>";
+
+                    body_text = `
+                        <b>Role</b>: ${selected.role.sort()}<br>
+                        <b>Speed</b>: ${selected.speed}<br>
+                        <b>Gender</b>: ${selected.gender}<br>
+                        <b>Organization</b>: ${selected.organization}<br></br>
+                        <b>Primaries</b>: <br>
+                            ${ptext}
+                        <b>Secondaries</b>: <br>
+                            ${stext}
+                        <b>Primary Gadgets</b>: <br>
+                            ${gtext}
+                        <b>Secondary Gadgets</b>: <br>
+                            ${gtext2}
+                    `
+                } else {
+                    body_text = `
+                        <b>Role(s)</b>: ${selected.role.sort()}<br>
+                        <b>Speed</b>: ${selected.speed}<br>
+                        <b>Gender</b>: ${selected.gender}<br>
+                        <b>Organization</b>: ${selected.organization}<br></br>
+                        <b>Primaries</b>: <br>
+                            ${ptext}
+                        <b>Secondaries</b>: <br>
+                            ${stext}
+                        <b>Gadgets</b>: <br>
+                            ${gtext}
+                        <b>Special</b>: ${selected.special}<br>
+                    `
+                }
+                
 
                 body.append('p')
                     .classed('card-body', true)
