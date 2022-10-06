@@ -179,15 +179,17 @@ function initGuns() {
 				rgun_output.append('img')
 					.classed('center gun-img', true)
 					.attr('src', fetchGunImage(selected.name))
-					.attr('alt', selected.name + "_logo.png")
+					.attr('alt', selected.name)
 
 				var body = rgun_output.append('div')
 					.classed('card-body', true)
 				
 				body.append('h3')
-					.text(selected.name)
-					.classed('text-center', true);
-
+					.classed('text-center', true)
+                    .append('a')
+                    .html(selected.name + '&#128279;')
+                    .attr('href', `guns.html#${selected.name}`);
+				
                 body.append('h5')
                     .text(isPrimary(selected.name) ? 'Primary' : 'Secondary')
                     .classed('text-center', true)
