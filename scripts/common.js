@@ -157,13 +157,13 @@ function buildChecklist(loc, list, checked, callback, id_prefix, offset) {
             .classed('form-check-input', true)
             .attr('type', 'checkbox')
             .attr('value', '')
-            .attr('id', `${id_prefix}-${i*offset}`)
+            .attr('id', `${id_prefix}-${i+list.length*offset}`)
             .property('checked', checked)
             .on('click', callback);
 
         div.append('label')
             .classed('form-check-label', true)
-            .attr('for', `${id_prefix}-${i*offset}`)
+            .attr('for', `${id_prefix}-${i+list.length*offset}`)
             .text(list[i]);
     }
 }
