@@ -153,7 +153,7 @@ function initRandomOps() {
 
     let generate = rop_submit.append('button')
         .text('Generate')
-        .classed('btn btn-outline-light', true)
+        .classed('site-btn gradient-transparent border-highlight', true)
         .attr('id', 'generate')
         .on('click', function () {
             if (window.data.length <= 0) {
@@ -273,7 +273,7 @@ function initRandomOps() {
 
     rop_submit.append('button')
         .text('Toggle All Filters')
-        .classed('btn btn-outline-light', true)
+        .classed('site-btn gradient-transparent border-highlight', true)
         .on('click', function () {
             var x = rop_form.selectAll('input[type=checkbox]').property('checked');
             rop_form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart

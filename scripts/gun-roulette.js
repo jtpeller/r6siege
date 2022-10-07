@@ -158,7 +158,7 @@ function initGuns() {
 
 	let generate = rgun_submit.append('button')
 		.text('Generate')
-		.classed('btn btn-outline-light', true)
+        .classed('site-btn gradient-transparent border-highlight', true)
 		.on('click', function() {
 			if (window.data.length <= 0) {
                 rgun_output.text('');
@@ -244,7 +244,7 @@ function initGuns() {
     
     rgun_submit.append('button')
         .text('Toggle All Filters')
-		.classed('btn btn-outline-light', true)
+        .classed('site-btn gradient-transparent border-highlight', true)
         .on('click', function() {
             var x = rgun_form.selectAll('input[type=checkbox]').property('checked');
             rgun_form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
