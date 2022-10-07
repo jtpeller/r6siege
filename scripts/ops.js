@@ -240,39 +240,39 @@ function buildGadgetList(list, loc) {
 
 function navigationArrows(loc) {
     var parent = loc.append('div')
-        .classed('row nav-arrows', true)
+        .classed('nav-arrows', true)
 
     var atk = parent.append('div')
-        .classed('col', true)
+    .classed('gradient border-highlight', true)
 
     atk.append('a')
         .attr('href', '#Attackers')
         .attr('title', 'Jump to attackers')
-        .classed('btn square gradient', true)
+        .classed('btn square', true)
         .append('img')
         .classed('center img-svg', true)
         .attr('src', 'resources/atk.svg')
         .attr('alt', 'ATK');
 
     var def = parent.append('div')
-        .classed('col ms-3', true)
+        .classed('gradient border-highlight mt-3', true)
 
     def.append('a')
         .attr('href', '#Defenders')
         .attr('title', 'Jump to defenders')
-        .classed('btn square gradient', true)
+        .classed('btn square', true)
         .append('img')
         .classed('center img-svg', true)
         .attr('src', 'resources/def.svg')
         .attr('alt', 'DEF');
 
     var top = parent.append('div')
-        .classed('col ms-3', true)
+        .classed('gradient border-highlight mt-3', true)
 
     top.append('a')
         .attr('href', '#')
         .attr('title', 'Back to top')
-        .classed('btn square gradient', true)
+        .classed('btn square', true)
         .append('img')
         .classed('center img-svg', true)
         .attr('src', 'resources/up.svg')

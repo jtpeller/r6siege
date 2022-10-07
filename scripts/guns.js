@@ -177,41 +177,41 @@ function buildGunCards(arr, loc) {
 
 function navigationArrows(loc) {
     var parent = loc.append('div')
-        .classed('row nav-arrows', true)
+        .classed('nav-arrows', true)
 
     var atk = parent.append('div')
-        .classed('col', true)
+    .classed('gradient border-highlight', true)
 
     atk.append('a')
         .attr('href', '#primaries')
         .attr('title', 'Jump to primaries')
-        .classed('btn rect gradient', true)
+        .classed('btn rect', true)
         .append('img')
-        .classed('center img-svg-2', true)
+        .classed('center img-svg', true)
         .attr('src', 'resources/guns/MP5K.png')
         .attr('alt', 'PRIMARIES');
 
     var def = parent.append('div')
-        .classed('col ms-3', true)
+        .classed('gradient border-highlight mt-3', true)
 
     def.append('a')
         .attr('href', '#secondaries')
         .attr('title', 'Jump to secondaries')
-        .classed('btn rect gradient', true)
+        .classed('btn rect', true)
         .append('img')
-        .classed('center img-svg-2', true)
+        .classed('center img-svg', true)
         .attr('src', 'resources/guns/D-50.png')
         .attr('alt', 'SECONDARIES');
 
     var top = parent.append('div')
-        .classed('col ms-3', true)
+        .classed('gradient border-highlight mt-3', true)
 
     top.append('a')
         .attr('href', '#')
         .attr('title', 'Back to top')
-        .classed('btn rect gradient', true)
+        .classed('btn rect', true)
         .append('img')
-        .classed('center img-svg-2', true)
+        .classed('center img-svg', true)
         .attr('src', 'resources/up.svg')
         .attr('alt', 'TOP');
 }
