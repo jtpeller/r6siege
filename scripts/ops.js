@@ -96,9 +96,10 @@ function buildOpCards(arr, loc) {
         // 2 columns: name/icon/description, loadout
         //
 
-        // column 1: name/icon
+        // column 1: name/icon/info
+
         var col1 = rowdiv.append('div')
-            .classed('col my-auto', true);
+            .classed('col-4 my-auto', true);
 
         col1.append('img')
             .classed('center op-img', true)
@@ -113,40 +114,8 @@ function buildOpCards(arr, loc) {
             .classed('my-header', true)
             .text('General Info');
 
-        // speed
-        var speed = col1.append('div')
-        speed.append('h6')
-            .classed('my-header', true)
-            .text('Speed');
-
-        speed.append('span').text(op.speed);
-
-        // role
-        var role = col1.append('div')
-        role.append('h6')
-            .classed('my-header', true)
-            .text('Role')
-
-        role.append('span')
-            .text(op.role);
-
-        // gender
-        var gender = col1.append('div')
-        gender.append('h6')
-            .classed('my-header', true)
-            .text('Gender');
-
-        gender.append('span')
-            .text(op.gender);
-
-        // organization
-        var org = col1.append('div');
-        org.append('h6')
-            .classed('my-header', true)
-            .text('Organization');
-
-        org.append('span')
-            .text(op.organization);
+        var titles = ["Speed", "Role", "Gender", "Organization"];
+        buildGenInfo(titles, op, col1);
 
         //
         // column 3: loadout, gadgets, special
@@ -197,20 +166,47 @@ function buildOpCards(arr, loc) {
     }
 }
 
+function buildGenInfo(list, op, col) {
+    for (var i = 0; i < list.length; i++) {
+        var row = col.append('div')
+            .classed(i != list.length - 1 ? 'row my-span mx-auto' : 'row my-span no-border mx-auto', true)
+
+        var div = row.append('div')
+            .classed('col', true)
+        
+        div.append('h6')
+            .classed('text-end', true)
+            .text(list[i]);
+
+        var right = row.append('div')
+            .classed('col h6', true)
+            .html(list[i] != "Role" ? op[list[i].toLowerCase()] : formatRoles(op));
+    }
+
+    function formatRoles(o) {
+        var roles = o.role;
+        if (roles.length <= 1) {
+            return roles;
+        } else {
+            var html = '';
+            for (var j = 0; j < roles.length; j++) {
+                html += roles[j] + "<br>";
+            }
+            return html;
+        }
+    }
+}
+
 function buildLoadoutList(list, loc) {
-    var ul = loc.append('ul')
-        .classed('list-group', true);
+    var row = loc.append('div')
+        .classed('row', true);
     for (var j = 0; j < list.length; j++) {
         var gun = list[j];
 
-        var li = ul.append('li')
-            .classed('list-group-item dark-item no-border', true);
+        var col = row.append('div')
+            .classed('col', true);
 
-        var lirow = li.append('div')
-            .classed('row', true);
-
-        var img = lirow.append('div')
-            .classed('col', true)
+        var img = col.append('div')
             
         img.append('a')
             .attr('href', `guns.html#${list[j].name}`)
@@ -218,19 +214,32 @@ function buildLoadoutList(list, loc) {
             .classed('center gun-img', true)
             .attr('src', fetchGunImage(gun.name.includes(".44 Mag") ? gun.name.slice(1) : gun.name))
             .attr('alt', list[j].name)
+            .attr('title', `${gun.name} -- Click me!`);
     }
 }
 
 function buildGadgetList(list, loc) {
-    var ul = loc.append('ul')
-        .classed('list-group', true);
+    var row = loc.append('div')
+        .classed('row', true);
 
     for (var j = 0; j < list.length; j++) {
         var gadget = list[j];
 
-        ul.append('li')
-            .classed('list-group-item dark-item no-border', true)
-            .text(`${gadget} x${getGadgetCount(gadget)}`)
+        var col = row.append('div')
+            .classed('col', true);
+
+        var stupidrow = col.append('row')
+            .classed('row', true);
+
+        var img = stupidrow.append('img')
+            .classed('col center gadget-img', true)
+            .attr('src', fetchGadgetImage(gadget))
+            .attr('alt', gadget)
+            .attr('title', gadget);
+
+        stupidrow.append('div')
+            .classed('col my-auto', true)
+            .text(`x${getGadgetCount(gadget)}`)
     }
 
     function getGadgetCount(g) {

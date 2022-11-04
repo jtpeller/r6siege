@@ -95,24 +95,33 @@ let ll = [
 }
 
 /**
- * fetchOpImage() -- grabs an image link using buildLink
- * @param op        the op i'm trying to fetch
- * @return link         the link for this image
+ * fetchOpImage() -- grabs an image link
+ * @param op        the op to fetch
+ * @return link     the link for this op
  */
 function fetchOpImage(op) {
     return `resources/ops/svg/${op.toLowerCase()}.svg`;
 }
 
 /**
- * fetchGunImage() -- grabs an image link using buildLink
- * @param gun       the gun i'm trying to fetch
- * @return link     the link for this image
+ * fetchGunImage() -- grabs an image link
+ * @param gun       the gun to fetch
+ * @return link     the link for this gun
  */
 function fetchGunImage(gun) {
     if (gun.includes('.44 Mag')) {
         gun = gun.slice(1);
     }
     return `resources/guns/${gun}.png`;
+}
+
+/**
+ * fetchGadgetImage() -- grabs an image link of a gadget
+ * @param gadget    the gadget to fetch
+ * @return link     the link for this gadget
+ */
+function fetchGadgetImage(gadget) {
+    return `resources/gadgets/${gadget.toLowerCase().replaceAll(' ', '_')}.png`;
 }
 
 /**

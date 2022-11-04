@@ -17,5 +17,5 @@ window.onload = function() {
 
     // build content
     content.append('div')
-        .text('This site is under construction...');
+        .text('This page is under construction...');
 }

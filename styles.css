@@ -1,3 +1,7 @@
+:root {
+    --border-bottom-color: rgb(0, 255, 255);
+}
+
 body {
     font-family: 'Helvetica', 'Arial', sans-serif;
     display: flex;
@@ -107,15 +111,23 @@ h4 > a:hover {
 }
 
 .btn-item:hover {
-    border-bottom: 5px solid rgb(0, 255, 255) !important;
-    font-size: 1.4rem;
+    border-bottom: 5px solid var(--border-bottom-color) !important;
+}
+
+.btn-item:hover > .btn-link {
+    transform: scale(1.1);
 }
 
 .btn-link {
+    font-size: 1.4rem;
     margin: auto;
     text-decoration: none;
     font-weight: bold;
     color: rgb(59, 59, 59);
+
+    transform: scale(1);
+
+    transition: transform 0.25s cubic-bezier(0, 0, 0.7, 1);
 }
 
 .btn-link:hover {
@@ -221,7 +233,7 @@ h4 > a:hover {
 /**** GENERAL ****/
 /* CLASSES */
 .border-highlighted {
-    border-bottom: 5px solid rgb(0, 255, 255) !important;
+    border-bottom: 5px solid var(--border-bottom-color) !important;
 }
 
 .border-highlight {
@@ -232,7 +244,7 @@ h4 > a:hover {
 }
 
 .border-highlight:hover {
-    border-bottom: 5px solid rgb(0, 255, 255) !important;
+    border-bottom: 5px solid var(--border-bottom-color) !important;
 }
 
 .btn {
@@ -257,6 +269,14 @@ h4 > a:hover {
 .dark-item {
     background-color: transparent !important;
     color: white;
+}
+
+.gadget-img {
+    padding-top: 10px;
+    object-fit: scale-down;
+    width: auto;
+    height: auto;
+    max-height: 4rem;
 }
 
 .gradient {
@@ -328,6 +348,13 @@ h4 > a:hover {
 }
 
 .my-header {
+    width: 100%;
+	padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1.5px solid grey;
+}
+
+.my-span {
     width: 90%;
 	padding-top: 1rem;
     padding-bottom: 0.25rem;
