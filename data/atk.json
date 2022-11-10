@@ -291,7 +291,7 @@
             "gender": "Female",
             "role": ["Gadget Denial", "Flank", "Intel Gatherer"],
             "speed": 3,
-            "organization": "GSG 9/NIGHTHAVEN",
+            "organization": "GSG 9/Nighthaven",
             "primary": [
                 {
                     "name": "AUG A2",
@@ -744,7 +744,7 @@
             "gender": "Female",
             "role": ["Gadget Denial"],
             "speed": 2,
-            "organization": "NIGHTHAVEN",
+            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "CSRX 300",
@@ -798,7 +798,7 @@
             "gender": "Male",
             "role": ["Hard Breach"],
             "speed": 2,
-            "organization": "NIGHTHAVEN",
+            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "AK-12",
@@ -877,7 +877,7 @@
             "gender": "Female",
             "role": ["Intel Gatherer", "Area Denial", "Roam Denial"],
             "speed": 2,
-            "organization": "NIGHTHAVEN",
+            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "556XI",
@@ -931,7 +931,7 @@
             "gender": "Male",
             "role": ["Intel Gatherer", "Area Denial"],
             "speed": 3,
-            "organization": "NIGHTHAVEN",
+            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "552 Commando",

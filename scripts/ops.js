@@ -11,6 +11,11 @@ let header, content;
 window.atk = [];
 window.def = [];
 window.gadgets = [];
+window.rows = [];
+window.last = {
+    name: '',
+    row: -1,
+}
 
 window.onload = function () {
     // get d3 elements
@@ -30,18 +35,33 @@ window.onload = function () {
         window.atk = values[0].atk;
         window.def = values[1].def;
         window.gadgets = values[2];
+        
+        // save the hash name for later
+        var sav = location.hash;
+        if (sav.length > 1) {
+            location.hash = '';
+            location.hash = sav;
+        }
+
+        window.last.name = sav.replaceAll('#', '');
 
         initOps();
         
         // scroll to the right point for hash link
         setTimeout( () => {
-            console.log(location.hash);
             var sav = location.hash;
             if (sav.length > 1) {
                 location.hash = '';
                 location.hash = sav;
             }
         }, 750);
+
+        // click the specified operator
+        console.log(window.last);
+        if (window.last.name != '' && window.last.row === -1) {
+            d3.select(`#${window.last.name}`).node().click();
+            console.log('clicked button', `${window.last.name}`)
+        }
     })
 }
 
@@ -56,197 +76,165 @@ function initOps() {
     // attackers
     var loc = content.append('div')
         .attr('id', 'attackers')
+        .classed('d-block', true);
 
     loc.append('h4')
         .classed('my-header', true)
         .attr('id', 'Attackers')
         .text('Attackers');
 
-    buildOpCards(window.atk, loc);
+    buildOpCards(window.atk, loc, true);
 
     // defenders
     loc = content.append('div')
         .attr('id', 'defenders')
+        .classed('d-block', true);
 
     loc.append('h4')
         .classed('my-header', true)
         .attr('id', 'Defenders')
         .text('Defenders');
 
-    buildOpCards(window.def, loc);
+    buildOpCards(window.def, loc, false);
 
     // now, add navigation arrows
     var loc = d3.select('#main-content')
     navigationArrows(loc);
 }
 
-function buildOpCards(arr, loc) {
-    // loop thru arr and make a neat looking card about each op
-    for (var i = 0; i < arr.length; i++) {
-        let op = arr[i];
+function buildOpCards(arr, loc, atk) {
+    let offset;
+    if (atk) {
+        offset = 0;
+    } else {
+        offset = 5;     // row count
+    }
+    // break up array into chunks (of 8)
+    const size = 8;
+    for (let i = 0; i < arr.length; i += size) {
+        var chunk = arr.slice(i, i + size);
 
-        var carddiv = loc.append('div')
-            .attr('id', op.name)
-            .classed('my-card op-card', true)
+        var row = loc.append('div')
+            .attr('id', `img-row-${i/size + offset}`)
+            .classed('row img-row', true);
 
-        var rowdiv = carddiv.append('div')
-            .classed('row card-body', true);
+        // loop thru chunk & build the card
+        for (let j = 0; j < chunk.length; j++) {
+            let op = chunk[j];
 
-        //
-        // 2 columns: name/icon/description, loadout
-        //
+            var cardcol = row.append('div')
+                .classed('card-col col-auto', true);
 
-        // column 1: name/icon/info
+            var carddiv = cardcol.append('button')
+                .attr('id', `${op.name}`)
+                .attr('rownum', i/size+offset)
+                .classed('card-button btn', true)
+                .on('mouseover', function() {
+                    d3.select(this)
+                        .select('.op-footer')
+                        .classed('op-highlighted', true);
+                })
+                .on('mouseout', function() {
+                    d3.select(this)
+                        .select('.op-footer')
+                        .classed('op-highlighted', false);
+                })
+                .on('click', function() {
+                    // collapse the last row
+                    if (window.last.row != -1) {
+                        collapse(window.last.row);
+                    }
 
-        var col1 = rowdiv.append('div')
-            .classed('col-4 my-auto', true);
+                    // set this button as highlighted
+                    d3.selectAll('.op-clicked')
+                        .classed('op-clicked', false);
 
-        col1.append('img')
-            .classed('center op-img', true)
-            .attr('src', fetchOpImage(op.name))
-            .attr('alt', op.name + '.svg');
+                    d3.select(this)
+                        .select('.op-footer')
+                        .classed('op-clicked', true);
 
-        col1.append('h3')
-            .classed('text-center', true)
-            .text(op.name);
+                    // get which operator was clicked
+                    var name = d3.select(this).attr('id');
+                    var rownum = +d3.select(this).attr('rownum');
+                    console.log(name, rownum);
 
-        col1.append('h4')
-            .classed('my-header', true)
-            .text('General Info');
+                    // check if last op is this op
+                    console.log('last', window.last.name, 'current', name)
+                    if (window.last.name == name && window.last.row != -1) {
+                        // they clicked the same operator. collapse
+                        collapse(window.last.row);
 
-        var titles = ["Speed", "Role", "Gender", "Organization"];
-        buildGenInfo(titles, op, col1);
+                        // reset buttons n stuff
+                        d3.selectAll('.op-clicked')
+                            .classed('op-clicked', false);
 
-        //
-        // column 3: loadout, gadgets, special
-        //
-        var col3 = rowdiv.append('div')
-            .classed('col', true);
+                        window.last.name = '';
 
-        col3.append('h4')
-            .classed('my-header', true)
-            .text('Loadout');
+                        return;
+                    }
 
-        // primaries
-        col3.append('h6')
-            .classed('my-header', true)
-            .text('Primaries');
+                    // now, get that row's desc
+                    let desc = d3.select(`#desc-row-${rownum}`);
 
-        buildLoadoutList(op.primary, col3);
+                    // get the operator object
+                    ops = [...window.atk, ...window.def];
+                    obj = {};
+                    for (var k = 0; k < ops.length; k++) {
+                        if (ops[k].name == name) {
+                            obj = ops[k];
+                            break;
+                        }
+                    }
+                    buildOpCard(obj, desc);
 
-        // secondaries
-        col3.append('h6')
-            .classed('my-header', true)
-            .text('Secondaries');
+                    // show this row
+                    expand(rownum);
 
-        buildLoadoutList(op.secondary, col3);
+                    window.last.row = rownum;
+                    window.last.name = name;
 
-        // gadgets
-        col3.append('h6')
-            .classed('my-header', true)
-            .text('Gadgets');
+                    function collapse(idx) {
+                        var temp = d3.select(`#desc-row-${idx}`)
+                        temp.classed('visible', false);
+                        temp.html('').style('height', 0);
+                    }
 
-        buildGadgetList(op.gadget, col3);
+                    function expand(idx) {
+                        var temp = d3.select(`#desc-row-${idx}`)
+                        temp.classed('visible', true);
+                        temp.style('height', 'fit-content');
+                    }
+                })
+                .append('div')
+                .attr('id', op.name)
+                .classed('card op-card no-border', true)
 
-        // special
-        if (typeof op.special !== "string") { 
-            col3.append('h6')
-                .classed('my-header', true)
-                .text('Secondary Gadget');
+            // name & logo are listed
+            carddiv.append('img')    
+                .classed('card-img-top', true)
+                .attr('src', fetchOpImage(op.name))
+                .attr('alt', op.name);
 
-            buildGadgetList(op.special, col3);
-        } else {
-            col3.append('h6')
-                .classed('my-header', true)
-                .text('Special');
+            var body = carddiv.append('div')
+                .classed('card-footer op-footer no-radius', true)
 
-            col3.append('span')
-                .text(op.special);
+            body.append('h4')
+                .classed('op-title', true)
+                .text(op.name);
         }
+
+        loc.append('div')
+            .classed('desc-row', true)
+            .attr('id', `desc-row-${i/size + offset}`)
     }
 }
 
-function buildGenInfo(list, op, col) {
-    for (var i = 0; i < list.length; i++) {
-        var row = col.append('div')
-            .classed(i != list.length - 1 ? 'row my-span mx-auto' : 'row my-span no-border mx-auto', true)
-
-        var div = row.append('div')
-            .classed('col', true)
-        
-        div.append('h6')
-            .classed('text-end', true)
-            .text(list[i]);
-
-        var right = row.append('div')
-            .classed('col h6', true)
-            .html(list[i] != "Role" ? op[list[i].toLowerCase()] : formatRoles(op));
-    }
-
-    function formatRoles(o) {
-        var roles = o.role;
-        if (roles.length <= 1) {
-            return roles;
-        } else {
-            var html = '';
-            for (var j = 0; j < roles.length; j++) {
-                html += roles[j] + "<br>";
-            }
-            return html;
-        }
-    }
-}
-
-function buildLoadoutList(list, loc) {
-    var row = loc.append('div')
-        .classed('row', true);
-    for (var j = 0; j < list.length; j++) {
-        var gun = list[j];
-
-        var col = row.append('div')
-            .classed('col', true);
-
-        var img = col.append('div')
-            
-        img.append('a')
-            .attr('href', `guns.html#${list[j].name}`)
-            .append('img')
-            .classed('center gun-img', true)
-            .attr('src', fetchGunImage(gun.name.includes(".44 Mag") ? gun.name.slice(1) : gun.name))
-            .attr('alt', list[j].name)
-            .attr('title', `${gun.name} -- Click me!`);
-    }
-}
-
-function buildGadgetList(list, loc) {
-    var row = loc.append('div')
-        .classed('row', true);
-
-    for (var j = 0; j < list.length; j++) {
-        var gadget = list[j];
-
-        var col = row.append('div')
-            .classed('col', true);
-
-        var stupidrow = col.append('row')
-            .classed('row', true);
-
-        var img = stupidrow.append('img')
-            .classed('col center gadget-img', true)
-            .attr('src', fetchGadgetImage(gadget))
-            .attr('alt', gadget)
-            .attr('title', gadget);
-
-        stupidrow.append('div')
-            .classed('col my-auto', true)
-            .text(`x${getGadgetCount(gadget)}`)
-    }
-
-    function getGadgetCount(g) {
-        return gadgets[g.toLowerCase().replaceAll(' ', '_')];
-    }    
-}
-
+/**
+ * navigationArrows() -- builds navigation buttons to be placed on the side of the 
+ * page for users to click to quickly move around the page.
+ * 
+ * @param loc       the d3 element to place these buttons.
+ */
 function navigationArrows(loc) {
     var parent = loc.append('div')
         .classed('nav-arrows', true)

@@ -1,6 +1,16 @@
 :root {
-    --border-bottom-color: rgb(0, 255, 255);
     --bar-color: rgb(0, 102, 255);
+    --bg-color: rgb(28, 30, 31);
+    --border-bottom-color: rgb(0, 255, 255);
+
+    --gun-card-bg-color: rgb(255, 255, 255);
+    --gun-footer-bg-color: rgb(228, 228, 228);
+
+    --op-card-bg-color: rgb(42, 43, 48);
+    --op-footer-bg-color: rgb(211, 211, 211);
+    --op-highlighted-bg-color: rgb(0, 183, 255);
+
+    --output-card-bg-color: rgb(33, 33, 37);
 }
 
 body {
@@ -34,8 +44,8 @@ nav {
 h2 {
     font-size: 2rem;
     text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
     border-bottom: 2px solid grey;
 }
 
@@ -47,6 +57,11 @@ h3 {
 h4 {
     font-size: 1.25rem;
 	padding-top: 1rem;
+}
+
+h5 {
+    font-size: 1.05rem;
+    padding-top: 1rem;
 }
 
 h3 > a,
@@ -73,10 +88,6 @@ h4 > a:hover {
     text-align: center;
     padding-top: 3rem;
     padding-bottom: 2rem;
-}
-
-.card-body {
-    padding: 10px;
 }
 
 .link-card {
@@ -135,7 +146,30 @@ h4 > a:hover {
     color: rgb(59, 59, 59);
 }
 
+.title-card {
+    font-size: 5vw;
+    padding-top: 10rem;
+    padding-bottom: 10px;
+}
+
 /**** ROULETTE SITES ****/
+@media (min-width: 992px) {
+    .sidebar {position: sticky;
+        top: 5rem;
+        display: flex !important;
+        height: calc(100vh - 17rem);
+        padding-left: 0.25rem;
+        margin-left: -0.25rem;
+        overflow-y: auto;
+    }
+}
+
+.my-sidebar {
+    height: auto;
+    width: 100%;
+    padding: 15px;
+}
+
 .conditions {
 	padding: 10px;
 	text-align: center;
@@ -165,14 +199,12 @@ h4 > a:hover {
     text-align: center;
 }
 
-.output-card {
-    width: 40vw;
+.roulette-card {
+    min-height: 700px !important;
 }
 
-.title-card {
-    font-size: 5vw;
-    padding-top: 10rem;
-    padding-bottom: 10px;
+.gun-roulette-card {
+    min-height: 350px !important;
 }
 
 /**** OPS & GUNS PAGES ****/
@@ -212,14 +244,57 @@ h4 > a:hover {
     left: 3%;
 }
 
+.card-col {
+    width: 12.5%;
+    padding: 5px;
+}
+
+.card-button {
+    width: 100%;
+    padding: 0;
+}
+
 .op-card {
-    padding: 15px;
-    margin: 10px;
+    margin: 0;
+    border-radius: 0 !important;
+    background-color: var(--op-card-bg-color);
+}
+
+.op-clicked,
+.op-highlighted {
+    background-color: var(--op-highlighted-bg-color) !important;
+}
+
+.op-footer {
+    background-color: var(--op-footer-bg-color);
+    padding: 0;
+
+    transition: background-color 250ms linear;
 }
 
 .op-img {
     width: 10rem;
     height: 10rem;
+}
+
+.desc-row {
+    background-color: var(--bg-color);
+    transform: scaley(0);
+    
+    transition: transform 250ms ease-in-out;
+}
+
+.visible {
+    transform: scaley(1);
+}
+
+.op-title {
+    font-size: 100%;
+    padding: 5px;
+    margin: auto !important;
+    display: flex;
+    justify-content: center;
+    color: black;
 }
 
 .gun-img-lg {
@@ -241,8 +316,7 @@ h4 > a:hover {
 }
 
 .my-svg {
-    fill: rgb(39, 18, 18);
-    width: 250px;
+    width: 450px;
     height: 50px;
 }
 
@@ -343,6 +417,11 @@ h4 > a:hover {
     opacity: 1;
 }
 
+.gun-card {
+    background-color: transparent;
+    width: fit-content;
+}
+
 .gun-img {
     padding-top: 10px;
     object-fit: scale-down;
@@ -352,15 +431,26 @@ h4 > a:hover {
     max-height: 5rem;
 }
 
+.gun-title {
+    font-size: 100%;
+    padding: 5px;
+    margin: auto !important;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
 .my-bg-dark {
     background-color: rgb(21, 22, 22);
 }
 
-.my-card {
-	background-color: rgb(34, 34, 41) !important;
+.output-card {
+	background-color: var(--output-card-bg-color) !important;
 	color: white;
 	border: 1px solid rgb(134, 134, 134);
 	border-radius: 15px;
+
+    margin: 5px;
 }
 
 .my-header {
@@ -371,12 +461,10 @@ h4 > a:hover {
 }
 
 .my-span {
-    width: 90%;
 	padding-top: 1rem;
     padding-bottom: 0.25rem;
     border-bottom: 1.5px solid grey;
 }
-
 
 .nav-item,
 .navbar-brand {
@@ -385,6 +473,22 @@ h4 > a:hover {
 
 .no-border {
     border: none !important;
+}
+
+.no-radius {
+    border-radius: 0 !important;
+}
+
+.no-show-link {
+    text-decoration: none !important;
+}
+
+.no-bg {
+    background-color: transparent !important;
+}
+
+.invert {
+    filter: invert(1);
 }
 
 /* IDs */
@@ -406,3 +510,6 @@ h4 > a:hover {
         opacity: 1;
     }
 }
+
+/**** MOBILE CHANGES ****/
+@media screen and (max-width: 1400px) {}

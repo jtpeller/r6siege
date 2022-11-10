@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		// set all necessary data
 		window.primaries = values[0].primary
 		window.secondaries = values[1].secondary
+
+        setMaxValues(window.primaries, window.secondaries);
 		initGuns();
 	})
 })
@@ -53,37 +55,87 @@ function initGuns() {
 	guns.append('h2')
 		.html("Gun Roulette");
 
+    let body = guns.append('div')
+        .attr('id', 'body')
+        .classed('row', true);
+
 	// guns left side
-	let left = guns.append('div')
-		.classed('col', true)
+	let asidecol = body.append('div')
+		.classed('col-3', true);
+
+    asidecol.append('h4')
+        .classed('my-header text-center', true)
+        .text('Filters');
+
+    let aside = asidecol.append('aside')
+        .classed('sidebar', true);
 
 	// guns right side
-	let right = guns.append('div')
-		.classed('col', true)
+	let main = body.append('div')
+        .attr('id', 'output-main')
+		.classed('col', true);
+
+    let output = main.append('div');
+    
+	let generate = main.append('div')
+        .classed('text-center', true)
+        .append('button')
+        .text('Generate')
+        .classed('site-btn w-75 gradient-transparent border-highlight', true)
+        .attr('id', 'generate')
+        .on('click', function() {
+            if (window.data.length <= 0) {
+                output.text('');
+                output.append('p')
+                    .text("No ops match this filter/option set. Try another combination.")
+                    .classed('no-match', true);
+            } else {
+                // generate rng for selected guns
+                var rng = Math.floor(Math.random() * window.data.length);
+
+                var gun = window.data[rng];
+                output.html('');
+                buildGunCard(gun, output, isPrimary(gun));
+
+                // set card-div height
+                d3.select('#carddiv')
+                    .classed('roulette-card', true);
+
+                // make the header a link
+                d3.select(`#gun-name`)
+                    .html('')
+                    .append('a')
+                    .html(gun.name + '&#128279;')
+                    .attr('href', `guns.html#${gun.name}`);
+            }
+        }.bind(this));
 
 	// form for conditions
-	let rgun_form = left.append('div')
+    let filters = aside.append('div')
+        .classed('my-sidebar', true);
+
+	let form = filters.append('div')
 		.attr('id', 'r-gun-form')
 
     // selection form for gun type (primary v. secondary)
-    rgun_form.append('h4')
+    form.append('h4')
         .classed('my-header', true)
         .text('Gun Type');
 
-    let rgun_type_select = rgun_form.append('select')
+    let type_select = form.append('select')
         .classed('form-select bg-dark text-white', true)
         .style('width', '75%')
         .attr('aria-label', 'Gun Type Select');
 
-    rgun_type_select.append('option')
+    type_select.append('option')
         .attr('value', '3')
-        .text("Both Primaries and Secondaries");
+        .text("Both");
 
-    rgun_type_select.append('option')
+    type_select.append('option')
         .attr('value', '1')
         .text("Primaries only");
     
-    rgun_type_select.append('option')
+    type_select.append('option')
         .attr('value', '2')
         .text('Secondaries only');
 
@@ -92,12 +144,12 @@ function initGuns() {
     window.classes = [...primary_types, ...secondary_types];
 
     // on user change:
-    rgun_type_select.on('change', function() {
+    type_select.on('change', function() {
         buildData();
 
         // update roles
         d3.select('#class-form').html('');
-        buildColumnChecklist(d3.select('#class-form'), window.classes, 2, true, buildData, 'class');
+        buildChecklist(d3.select('#class-form'), window.classes, true, buildData, 'class');
 
         // force new selection
         d3.select('#generate').node().click();
@@ -106,18 +158,18 @@ function initGuns() {
     //
     // side form
     //
-    rgun_form.append('h4')
+    form.append('h4')
         .classed('my-header', true)
         .text('Side');
 
-    let rgun_side = rgun_form.append('select')
+    let rgun_side = form.append('select')
         .classed('form-select bg-dark text-white', true)
         .style('width', '75%')
         .attr('aria-label', 'Side Select');
 
     rgun_side.append('option')
         .attr('value', '3')
-        .text("Both Attackers and Defenders");
+        .text("Both");
 
     rgun_side.append('option')
         .attr('value', '1')
@@ -135,119 +187,25 @@ function initGuns() {
     })
 
 	// gun class form
-	rgun_form.append("h4")
+	form.append("h4")
         .classed('my-header', true)
 		.text('Gun Class');
 
-    let rgun_class = rgun_form.append('div')
+    let rgun_class = form.append('div')
         .attr('id', 'class-form');
-    buildColumnChecklist(rgun_class, window.classes, 2, true, buildData, 'class');
+    buildChecklist(rgun_class, window.classes, true, buildData, 'class');
 
     // make sure data is built
     buildData();
 
-    left.append('hr');
-
-	// button and selected gun button
-	let rgun_submit = left.append('div')
-		.attr('id', 'r-gun-submit')
-
-	// add the part after the submission (the output)
-	let rgun_output = right.append('div')
-		.attr('id', 'r-gun-output');
-
-	let generate = rgun_submit.append('button')
-		.text('Generate')
-        .classed('site-btn gradient-transparent border-highlight', true)
-		.on('click', function() {
-			if (window.data.length <= 0) {
-                rgun_output.text('');
-                rgun_output.append('p')
-                    .text("No ops match this filter/option set. Try another combination.")
-                    .classed('no-match', true);
-			} else {
-				// generate rng for selected guns
-				var rng = Math.floor(Math.random() * window.data.length);
-
-				var selected = window.data[rng];
-				rgun_output.html('');
-
-				// now, format the card accordingly
-				rgun_output.classed('output-card', true);
-					
-				// add the card's image
-				rgun_output.append('img')
-					.classed('center gun-img', true)
-					.attr('src', fetchGunImage(selected.name))
-					.attr('alt', selected.name)
-
-				var body = rgun_output.append('div')
-					.classed('card-body', true)
-				
-				body.append('h3')
-					.classed('text-center', true)
-                    .append('a')
-                    .html(selected.name + '&#128279;')
-                    .attr('href', `guns.html#${selected.name}`);
-				
-                body.append('h5')
-                    .text(isPrimary(selected.name) ? 'Primary' : 'Secondary')
-                    .classed('text-center', true)
-					.append('hr')
-
-                // format properties
-                var props = selected.properties;
-                var ptext = `
-                    <ul>
-                        <li><b>Damage</b>: ${props.damage} (${props.suppressed_dmg == -1 ? "N/A" : props.suppressed_dmg})*<br></li>
-                        <li><b>Firerate</b>: ${props.firerate == -1 ? "N/A" : props.firerate}<br></li>
-                        <li><b>Mobility</b>: ${props.mobility}<br></li>
-                        <li><b>Capacity</b>: ${props.capacity}<br></li>
-                    </ul>
-                    <br>
-                    <p><i>*Note: Update Y7S3 removed the suppressor damage penalty.</i></p>
-                `
-
-                // format ops
-                var body_text = `
-                	<b>Type</b>: ${selected.type}<br>
-                	<b>Properties</b>: <br>
-                		${ptext}
-                    <b>Operators with this gun</b>: <br>
-                `
-                
-                body.append('p')
-                    .classed('card-body', true)
-                	.html(body_text);
-
-                // append the ops image
-                for (var i = 0; i < selected.ops.length; i++) {
-                    var imgdiv = body.append('div')
-                        .style('display', 'inline-block')
-                        .classed('text-center', true)
-
-                    imgdiv.append('a')
-                        .attr('href', `ops.html#${selected.ops[i]}`)
-                        .append('img')
-                        .style('width', '4rem')
-                        .attr('src', fetchOpImage(selected.ops[i]))
-                        .attr('alt', selected.ops[i] + "_logo.png")
-                }
-                
-                // make some nice changes
-                rgun_output.classed('my-card', true)
-			}
-		}.bind(this));
-
     generate.node().click();    // generate a gun on page load.
-	
     
-    rgun_submit.append('button')
+    filters.append('button')
         .text('Toggle All Filters')
         .classed('site-btn gradient-transparent border-highlight', true)
         .on('click', function() {
-            var x = rgun_form.selectAll('input[type=checkbox]').property('checked');
-            rgun_form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
+            var x = form.selectAll('input[type=checkbox]').property('checked');
+            form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
             if (x) {    // if x was true, then all the filters have just been unchecked, so data is now empty
                 window.data = [];
             } else {
@@ -262,7 +220,7 @@ function initGuns() {
      */
     function buildData() {
         // get selected gun type
-        var temp = rgun_type_select.property('value');
+        var temp = type_select.property('value');
 
         // init data based on type
         switch (temp) {

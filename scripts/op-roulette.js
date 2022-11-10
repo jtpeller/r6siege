@@ -55,31 +55,82 @@ function initRandomOps() {
     ops.append('h2')
         .html("Operator Roulette");
 
-    // ops left side
-    let left = ops.append('div')
+    let body = ops.append('div')
+        .attr('id', 'body')
+        .classed('row', true);
+
+    // aside for filters
+    let asidecol = body.append('div')
+        .classed('col-3', true);
+
+    asidecol.append('h4')
+        .classed('my-header text-center', true)
+        .text('Filters');
+
+    let aside = asidecol.append('aside')
+        .classed('sidebar', true);
+
+    // div for the rng'd op
+    let main = body.append('div')
+        .attr('id', 'output-main')
         .classed('col', true);
 
-    // ops right side
-    let right = ops.append('div')
-        .classed('col', true);
+    let output = main.append('div');
+
+    // generation button
+    let generate = main.append('div')
+        .classed('text-center', true)
+        .append('button')
+        .text('Generate')
+        .classed('site-btn w-75 mx-auto gradient-transparent border-highlight', true)
+        .attr('id', 'generate')
+        .on('click', function () {
+            if (window.data.length <= 0) {
+                output.text('');
+                output.append('p')
+                    .text("No ops match this filter/option set. Try another combination.")
+                    .classed('no-match', true);
+            } else {
+                // generate rng for selected ops
+                var rng = Math.floor(Math.random() * window.data.length);
+
+                var op = window.data[rng];
+
+                buildOpCard(op, output);
+
+                // set the card-div height
+                d3.select('#carddiv')
+                    .classed('roulette-card', true);
+
+                // make the op name a link
+                d3.select('#op-name')
+                    .html('')
+                    .append('a')
+                    .html(op.name + '&#128279;')
+                    .attr('href', `ops.html#${op.name}`);
+            }
+        })
+
+    // ops left side
+    let filters = aside.append('div')
+        .classed('my-sidebar', true);
 
     // form for conditions
-    let rop_form = left.append('div')
+    let form = filters.append('div')
         .attr('id', 'r-op-form');
 
     // first: attacker/defender/both selection menu
-    rop_form.append('h4')
+    form.append('h5')
         .classed('my-header', true)
         .text('Operator Type');
 
-    let rop_type_select = rop_form.append("select")
+    let rop_type_select = form.append("select")
         .classed('form-select bg-dark text-white', true)
-        .style('width', '75%')
         .attr('aria-label', 'Op Type Select');
 
     rop_type_select.append('option')
         .attr('value', '3')
-        .text("Both Attackers and Defenders");
+        .text("Both");
 
     rop_type_select.append('option')
         .attr('value', '1')
@@ -100,7 +151,7 @@ function initRandomOps() {
 
         // update roles
         d3.select('#role-form').html('');
-        buildColumnChecklist(d3.select('#role-form'), window.roles, 2, true, buildData, 'role');
+        buildColumnChecklist(d3.select('#role-form'), window.roles, 1, true, buildData, 'role');
 
         // force new selection
         d3.select('#generate').node().click();
@@ -109,174 +160,52 @@ function initRandomOps() {
     //
     // role filter
     //
-    rop_form.append('h4')
+    form.append('h5')
         .classed('my-header', true)
         .text('Role')
 
-    let rop_role = rop_form.append('div')
+    let rop_role = form.append('div')
         .attr('id', 'role-form');
-    buildColumnChecklist(rop_role, window.roles, 2, true, buildData, 'role');
+    buildColumnChecklist(rop_role, window.roles, 1, true, buildData, 'role');
 
     //
     // three main filter types: gender, role, speed
     //
-    rop_form.append('h4')
+    form.append('h5')
         .classed('my-header', true)
         .text('Gender');
 
-    let rop_gender = rop_form.append('div')
+    let rop_gender = form.append('div')
         .attr('id', 'gender-form');
 
-    buildColumnChecklist(rop_gender, genders, 3, true, buildData, 'gender');
+    buildColumnChecklist(rop_gender, genders, 1, true, buildData, 'gender');
 
     //
     // speed filter
     //
-    rop_form.append('h4')
+    form.append('h5')
         .classed('my-header', true)
         .text('Speed');
 
-    let rop_speed = rop_form.append('div')
+    let rop_speed = form.append('div')
         .attr('id', 'speed-form');
-    buildColumnChecklist(rop_speed, [1, 2, 3], 3, true, buildData, 'speed');
+    buildColumnChecklist(rop_speed, [1, 2, 3], 1, true, buildData, 'speed');
 
     // end left side
-    left.append('hr');
+    filters.append('hr');
 
     // button and selected op button
-    let rop_submit = left.append('div')
+    let rop_submit = filters.append('div')
         .attr('id', 'r-op-submit')
-
-    // add the part after the submission (the output)
-    let rop_output = right.append('div')
-        .attr('id', 'r-op-output');
-
-    let generate = rop_submit.append('button')
-        .text('Generate')
-        .classed('site-btn gradient-transparent border-highlight', true)
-        .attr('id', 'generate')
-        .on('click', function () {
-            if (window.data.length <= 0) {
-                rop_output.text('');
-                rop_output.append('p')
-                    .text("No ops match this filter/option set. Try another combination.")
-                    .classed('no-match', true);
-            } else {
-                // generate rng for selected ops
-                var rng = Math.floor(Math.random() * window.data.length);
-
-                var selected = window.data[rng];
-                rop_output.html('');
-
-                // now, format the card accordingly
-                rop_output.classed('output-card', true);
-
-                // add the card's image
-                rop_output.append('img')
-                    .classed('center', true)
-                    .style('width', '10rem')
-                    .style('height', '10rem')
-                    .attr('src', fetchOpImage(selected.name))
-                    .attr('alt', selected.name + ".svg")
-
-                var body = rop_output.append('div')
-                    .classed('card-body', true)
-
-                body.append('h3')
-                    .classed('text-center', true)
-                    .append('a')
-                    .html(selected.name + '&#128279;')
-                    .attr('href', `ops.html#${selected.name}`)
-
-                body.append('hr')
-
-                // format primaries
-                var primaries = selected.primary;
-                var ptext = "<ul>";
-                for (var i = 0; i < primaries.length; i++) {
-                    ptext += "<li>" + primaries[i].name + ": "
-                    ptext += primaries[i].type + "<br></li>"
-                }
-                ptext += "</ul>";
-
-                // format secondaries
-                var secondaries = selected.secondary;
-                var stext = "<ul>";
-                for (var i = 0; i < secondaries.length; i++) {
-                    stext += "<li>" + secondaries[i].name + ": "
-                    stext += secondaries[i].type + "<br></li>"
-                }
-                stext += "</ul>";
-
-                // format gadgets
-                var gg = selected.gadget;
-                var gtext = "<ul>";
-                for (var i = 0; i < gg.length; i++) {
-                    gtext += "<li>" + gg[i] + " x"
-                    gtext += getGadgetCount(gg[i]) + "<br></li>"
-                }
-                gtext += "</ul>";
-
-                //
-                // handle Recruit using the type of the special field
-                var body_text = ``;
-                if (typeof selected.special !== "string") {
-                    var gg2 = selected.special;
-                    var gtext2 = "<ul>";
-                    for (var j = 0; j < gg2.length; j++) {
-                        gtext2 += "<li>" + gg2[j] + " x";
-                        gtext2 += getGadgetCount(gg2[j]) + "<br></li>";
-                    }
-                    gtext2 += "</ul>";
-
-                    body_text = `
-                        <b>Role</b>: ${selected.role.sort()}<br>
-                        <b>Speed</b>: ${selected.speed}<br>
-                        <b>Gender</b>: ${selected.gender}<br>
-                        <b>Organization</b>: ${selected.organization}<br></br>
-                        <b>Primaries</b>: <br>
-                            ${ptext}
-                        <b>Secondaries</b>: <br>
-                            ${stext}
-                        <b>Primary Gadgets</b>: <br>
-                            ${gtext}
-                        <b>Secondary Gadgets</b>: <br>
-                            ${gtext2}
-                    `
-                } else {
-                    body_text = `
-                        <b>Role(s)</b>: ${selected.role.sort()}<br>
-                        <b>Speed</b>: ${selected.speed}<br>
-                        <b>Gender</b>: ${selected.gender}<br>
-                        <b>Organization</b>: ${selected.organization}<br></br>
-                        <b>Primaries</b>: <br>
-                            ${ptext}
-                        <b>Secondaries</b>: <br>
-                            ${stext}
-                        <b>Gadgets</b>: <br>
-                            ${gtext}
-                        <b>Special</b>: ${selected.special}<br>
-                    `
-                }
-                
-
-                body.append('p')
-                    .classed('card-body', true)
-                    .html(body_text)
-
-                // make some nice changes
-                rop_output.classed('my-card', true)
-            }
-        })
 
     generate.node().click();
 
     rop_submit.append('button')
         .text('Toggle All Filters')
-        .classed('site-btn gradient-transparent border-highlight', true)
+        .classed('site-btn w-100 gradient-transparent border-highlight', true)
         .on('click', function () {
-            var x = rop_form.selectAll('input[type=checkbox]').property('checked');
-            rop_form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
+            var x = form.selectAll('input[type=checkbox]').property('checked');
+            form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
             if (x) {    // if x was true, then all the filters have just been unchecked, so data is now empty
                 window.data = [];
             } else {
@@ -351,6 +280,10 @@ function initRandomOps() {
 
         //console.log(window.data);
     }
+}
+
+function buildFilters() {
+
 }
 
 function getGadgetCount(gadget) {

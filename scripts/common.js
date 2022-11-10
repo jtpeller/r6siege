@@ -5,6 +5,14 @@
 // =  Date          : March 29, 2022
 // =================================================================
 
+window.max = {
+    pri: 0,     // primary damage
+    sec: 0,     // secondary damage
+    fir: 0,     // fire rate
+    cap: 0,     // capacity
+    mob: 0      // mobility
+}
+
 let ll = [
     {
         html: 'op-roulette.html',
@@ -122,6 +130,391 @@ function fetchGunImage(gun) {
  */
 function fetchGadgetImage(gadget) {
     return `resources/gadgets/${gadget.toLowerCase().replaceAll(' ', '_')}.png`;
+}
+
+/**
+ * fetchSpecialImage() -- grabs an image link of the op's special
+ * @param op        the op's name
+ * @return link     the link for the image of op's special
+ */
+function fetchSpecialImage(op) {
+    return `resources/special/${op.toLowerCase()}.webp`
+}
+
+/**
+ * buildOpCard() -- creates the operator card for op roulette & operator pages
+ * @param op    the operator JSON data
+ * @param loc   the d3 object to build the card at
+ */
+function buildOpCard(op, loc) {
+    loc.html('');
+
+    var carddiv = loc.append('div')
+        .attr('id', 'carddiv')
+        .classed('output-card', true)
+
+    var rowdiv = carddiv.append('div')
+        .classed('row p-3', true);
+
+    //
+    // 2 columns: name/icon/description, loadout
+    //
+
+    // column 1: name/icon/info
+
+    var col1 = rowdiv.append('div')
+        .classed('col-4 my-auto', true);
+
+    col1.append('img')
+        .classed('center op-img', true)
+        .attr('src', fetchOpImage(op.name))
+        .attr('alt', op.name + '.svg');
+
+    col1.append('h3')
+        .classed('text-center', true)
+        .attr('id', 'op-name')
+        .text(op.name);
+
+    col1.append('h4')
+        .classed('my-header', true)
+        .text('General Info');
+
+    var titles = ["Speed", "Role", "Gender", "Organization"];
+    buildGenInfo(titles, op, col1);
+
+    //
+    // column 3: loadout, gadgets, special
+    //
+    var col3 = rowdiv.append('div')
+        .classed('col', true);
+
+    col3.append('h4')
+        .classed('my-header', true)
+        .text('Loadout');
+
+    // primaries
+    col3.append('h6')
+        .classed('my-header', true)
+        .text('Primaries');
+
+    buildLoadoutList(op.primary, col3);
+
+    // secondaries
+    col3.append('h6')
+        .classed('my-header', true)
+        .text('Secondaries');
+
+    buildLoadoutList(op.secondary, col3);
+
+    // gadgets
+    col3.append('h6')
+        .classed('my-header', true)
+        .text('Gadgets');
+
+    buildGadgetList(op.gadget, col3);
+
+    // special
+    buildSpecial(op, col3);
+}
+
+function buildGenInfo(list, op, loc) {
+    for (var i = 0; i < list.length; i++) {
+        var row = loc.append('div')
+            .classed(i != list.length - 1 ? 'row my-span mx-auto' : 'row my-span no-border mx-auto', true)
+
+        var div = row.append('div')
+            .classed('col-4', true)
+        
+        div.append('h6')
+            .classed('text-end', true)
+            .text(list[i] == "Organization" ? 'Org' : list[i]);
+
+        // handle special formatting
+        if (list[i] == "Role") {
+            row.append('div')
+                .classed('col h6', true)
+                .html(formatAsList(op[list[i].toLowerCase()]));
+        } else if (list[i] == "Organization") {
+            row.append('div')
+                .classed('col h6', true)
+                .html(formatAsList(op[list[i].toLowerCase()].split('/')));
+        } else {
+            row.append('div')
+                .classed('col h6', true)
+                .html(op[list[i].toLowerCase()])
+        }
+    }
+
+    function formatAsList(list) {
+        if (list.length <= 1 || typeof list == 'string') {
+            return list;
+        } else {
+            var html = '';
+            for (var j = 0; j < list.length; j++) {
+                html += list[j] + "<br>";
+            }
+            return html;
+        }
+    }
+}
+
+function buildLoadoutList(list, loc) {
+    var row = loc.append('div')
+        .classed('row', true);
+    for (var j = 0; j < list.length; j++) {
+        var gun = list[j];
+
+        var col = row.append('div')
+            .classed('col my-auto', true);
+
+        var card = col.append('div')
+            .classed('center card gun-card no-border no-radius', true);
+            
+        card.append('a')
+            .attr('href', `guns.html#${list[j].name}`)
+            .append('img')
+            .classed('center card-img-top gun-img', true)
+            .attr('src', fetchGunImage(gun.name.includes(".44 Mag") ? gun.name.slice(1) : gun.name))
+            .attr('alt', list[j].name)
+            .attr('title', `${gun.name} -- Click me!`);
+
+        var body = card.append('div')
+            .classed('card-footer p-0 no-border no-radius', true);
+
+        body.append('h4')
+            .classed('gun-title', true)
+            .text(gun.name);
+    }
+}
+
+function buildGadgetList(list, loc) {
+    var row = loc.append('div')
+        .classed('row', true);
+
+    for (var j = 0; j < list.length; j++) {
+        var gadget = list[j];
+
+        var col = row.append('div')
+            .classed('col my-auto', true);
+
+        var card = col.append('div')
+            .classed('center card gadget-card no-bg no-border no-radius', true);
+
+        card.append('img')
+            .classed('center card-img-top gadget-img', true)
+            .attr('src', fetchGadgetImage(gadget))
+            .attr('alt', gadget)
+            .attr('title', gadget);
+
+        var body = card.append('div')
+            .classed('card-footer p-0 no-border no-radius', true);
+
+        body.append('h4')
+            .classed('gun-title', true)
+            .text(`${gadget} x${getGadgetCount(gadget)}`)
+    }
+
+    function getGadgetCount(g) {
+        return gadgets[g.toLowerCase().replaceAll(' ', '_')];
+    }    
+}
+
+/**
+ * buildSpecial() -- builds the special gadget list
+ * @param op    operator object
+ * @param loc   location where it will be built
+ */
+function buildSpecial(op, loc) {
+    if (typeof op.special !== "string") { 
+        loc.append('h6')
+            .classed('my-header', true)
+            .text('Secondary Gadget');
+
+        buildGadgetList(op.special, loc);
+    } else {
+
+        loc.append('h6')
+            .classed('my-header', true)
+            .text('Special');
+
+        var card = loc.append('div')
+            .classed('card no-bg no-border', true);
+        
+        card.append('img')
+            .classed('center gadget-img', true)
+            .attr('src', fetchSpecialImage(op.name))
+            .attr('alt', op.special)
+            .attr('title', op.special);
+
+        var body = card.append('div')
+            .classed('card-footer no-border', true)
+
+        body.append('h6')
+            .classed('gun-title', true)
+            .text(op.special);
+    }
+}
+
+function buildGunCard(gun, loc, pri) {
+    var carddiv = loc.append('div')
+        .attr('id', gun.name)
+        .classed('output-card gun-roulette-card', true);
+
+    var centerdiv = carddiv.append('div')
+        .classed('m-auto', true);
+
+    var rowdiv = centerdiv.append('div')
+        .classed('row p-3', true);
+
+    //
+    // 2 columns: name/icon/type, properties
+    //
+
+    // column 1: name/icon/type
+    var col1 = rowdiv.append('div')
+        .classed('col-4 my-auto', true);
+
+    // gun icon
+    col1.append('img')
+        .classed('center gun-img-lg', true)
+        .attr('src', fetchGunImage(gun.name))
+        .attr('alt', gun.name)
+        .attr('title', gun.name);
+
+    // gun type
+    col1.append('h3')
+        .classed('text-center', true)
+        .attr('id', 'gun-name')
+        .text(gun.name);
+
+    // gun type
+    col1.append('h6')
+        .classed('text-center italic', true)
+        .text(gun.type);
+
+    // append all ops
+    //col1.append('h6')
+    //    .classed('my-header', true)
+    //    .text('Operators');
+
+    var imgs = col1.append('div')
+        .classed('text-center', true);
+
+    for (var j = 0; j < gun.ops.length; j++) {
+        var imgdiv = imgs.append('div')
+            .style('display', 'inline-block')
+            .classed('text-center', true)
+        
+        imgdiv.append('a')
+            .attr('href', `ops.html#${gun.ops[j]}`)
+            .append('img')
+            .classed('mx-auto', true)
+            .style('width', '4rem')
+            .attr('src', fetchOpImage(gun.ops[j]))
+            .attr('alt', gun.ops[j])
+            .attr('title', gun.ops[j])
+    }
+
+    // column 2: properties
+    var prop = rowdiv.append('div')
+        .classed('col my-auto', true);
+
+    var idx = ['damage', 'firerate', 'mobility', 'capacity'];
+    var title = ['Damage', 'Fire Rate', 'Mobility', 'Capacity'];
+
+    buildGunProps(gun.properties, idx, title, prop, pri);
+}
+
+function buildGunProps(props, idx, headers, loc, primary) {
+    for (var i = 0; i < idx.length; i++) {
+        var row = loc.append('div')
+            .classed('row my-span no-border', true)
+
+        var title = row.append('div')
+            .classed('col-3', true);
+
+        title.append('h6')
+            .classed('text-end', true)
+            .text(headers[i])
+
+        var chart = row.append('div')
+            .classed('col', true);
+
+        var get = ['', 'fir', 'mob', 'cap'];
+        if (primary) {
+            get[0] = 'pri'
+        } else {
+            get[0] = 'sec'
+        }
+
+        buildChart(props[idx[i]], window.max[get[i]], chart);
+        
+        // then add damage in final col
+        var val = row.append('div')
+            .classed('col-2', true);
+
+        if (idx[i] == 'firerate' && props[idx[i]] == -1) {
+            val.append('p')
+                .text('-1')     // TODO: this should be that symbol from the game
+        } else {
+            val.append('p')
+                .text(props[idx[i]]);
+        }
+    }
+}
+
+function setMaxValues(pri, sec) {
+    window.max.pri = getMax(pri, "damage");
+    window.max.sec = getMax(sec, "damage");
+
+    temp = [...pri, ...sec];
+    window.max.fir = getMax(temp, "firerate");
+    window.max.cap = getMax(temp, "capacity");
+    window.max.mob = getMax(temp, "mobility");
+}
+
+function getMax(list, name) {
+    var max = 0;
+    for (var i = 0; i < list.length; i++) {
+        var prop = list[i].properties;
+        var val = prop[name];
+        
+        if (val > max) {
+            max = val;
+        }
+    }
+    return max;
+}
+
+
+function buildChart(val, max, loc) {
+    var svg = loc.append('svg')
+        .classed('my-svg', true);
+
+    // margins & widths
+    let margin = {top: 5, left: 5, bottom: 5, right: 5}
+    const width = svg.style('width').replaceAll('px', '');
+    let innerWidth = width - margin.left - margin.right;
+    
+    const height = 10;
+
+    const x_scale = d3.scaleLinear()
+        .domain([0, max])
+        .range([0, innerWidth]);
+
+    const g = svg.append('g')
+        .attr('transform', `translate(${margin.left}, ${margin.top})`)
+        .attr('id', 'g-bar');
+
+    g.append('rect')
+        .classed('bar-blank', true)
+        .attr('height', height)
+        .attr('width', innerWidth);
+
+    g.append('rect')
+        .classed('bar', true)
+        .attr('height', height)
+        .attr('width', x_scale(val));
 }
 
 /**
