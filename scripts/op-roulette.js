@@ -108,6 +108,11 @@ function initRandomOps() {
                     .append('a')
                     .html(op.name + '&#128279;')
                     .attr('href', `ops.html#${op.name}`);
+
+                // shift the opimg to the left
+                d3.select('#opimg')
+                    .classed('output-op-img-sm', true)
+                    .classed('output-op-img', false);
             }
         })
 
@@ -280,10 +285,6 @@ function initRandomOps() {
 
         //console.log(window.data);
     }
-}
-
-function buildFilters() {
-
 }
 
 function getGadgetCount(gadget) {

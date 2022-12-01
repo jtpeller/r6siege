@@ -112,6 +112,15 @@ function fetchOpImage(op) {
 }
 
 /**
+ * fetchOpBackground() -- grabs image link of op background image
+ * @param op        the op's name to fetch
+ * @return link     the link for this op's background image
+ */
+function fetchOpBackground(op) {
+    return `resources/ops/bkgd/${op.toLowerCase()}.webp`;
+}
+
+/**
  * fetchGunImage() -- grabs an image link
  * @param gun       the gun to fetch
  * @return link     the link for this gun
@@ -153,8 +162,20 @@ function buildOpCard(op, loc) {
         .attr('id', 'carddiv')
         .classed('output-card', true)
 
+    
+    
+    // add the op's image
+    var opimgdiv = carddiv.append('div')
+        .classed('output-op-div', true);
+
+    var opimg = opimgdiv.append('img')
+        .attr('id', 'opimg')
+        .classed('output-op-img', true)
+        .attr('src', fetchOpBackground(op.name))
+
     var rowdiv = carddiv.append('div')
-        .classed('row p-3', true);
+        .classed('row p-3 front', true);
+
 
     //
     // 2 columns: name/icon/description, loadout
@@ -361,10 +382,10 @@ function buildGunCard(gun, loc, pri) {
         .classed('output-card gun-roulette-card', true);
 
     var centerdiv = carddiv.append('div')
-        .classed('m-auto', true);
+        .classed('p-auto', true);
 
     var rowdiv = centerdiv.append('div')
-        .classed('row p-3', true);
+        .classed('row', true);
 
     //
     // 2 columns: name/icon/type, properties
@@ -454,10 +475,10 @@ function buildGunProps(props, idx, headers, loc, primary) {
             .classed('col-2', true);
 
         if (idx[i] == 'firerate' && props[idx[i]] == -1) {
-            val.append('p')
-                .text('-1')     // TODO: this should be that symbol from the game
+            val.append('h6')
+                .text('N/A');
         } else {
-            val.append('p')
+            val.append('h6')
                 .text(props[idx[i]]);
         }
     }

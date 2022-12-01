@@ -22,6 +22,12 @@ body {
 	color: rgb(235, 235, 235) !important;
 }
 
+html {
+    overflow: scroll !important;
+    min-height: 100%;
+}
+
+
 html, body {
     height: 100%;
 }
@@ -204,7 +210,13 @@ h4 > a:hover {
 }
 
 .gun-roulette-card {
-    min-height: 350px !important;
+    height: fit-content !important;
+    padding: 15px;
+}
+
+.gun-output-card {
+    height: fit-content !important;
+    padding: 15px;
 }
 
 /**** OPS & GUNS PAGES ****/
@@ -361,6 +373,11 @@ h4 > a:hover {
     color: white;
 }
 
+.front {
+    position: relative;
+    z-index: 1 !important;
+}
+
 .gadget-img {
     padding-top: 10px;
     object-fit: scale-down;
@@ -446,11 +463,34 @@ h4 > a:hover {
 
 .output-card {
 	background-color: var(--output-card-bg-color) !important;
+    background-image: url('/resources/background.jpg');
 	color: white;
 	border: 1px solid rgb(134, 134, 134);
 	border-radius: 15px;
+    height: 720px;
 
     margin: 5px;
+}
+
+.output-op-div {
+    position: fixed;
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+}
+
+.output-op-img {
+    position: relative;
+    left: 40%;
+    height: 1200px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0,0,0,0) 65%);
+}
+
+.output-op-img-sm {
+    position: relative;
+    left: 15%;
+    height: 1000px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0,0,0,0) 75%);
 }
 
 .my-header {

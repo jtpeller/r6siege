@@ -88,6 +88,10 @@ function buildGunCards(arr, loc, pri) {
     for (var i = 0; i < arr.length; i++) {
         buildGunCard(arr[i], loc, pri);
     }
+
+    d3.selectAll('.gun-roulette-card')
+        .classed('gun-roulette-card', false)
+        .classed('gun-output-card', true);
 }
 
 function navigationArrows(loc) {
