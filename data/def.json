@@ -5,7 +5,6 @@
             "gender": "Male",
             "role": ["Absolute Unit"],
             "speed": 2,
-            "organization": "Doesn't Need One",
             "primary": [
                 {
                     "name": "MP5K",
@@ -32,9 +31,8 @@
         {
             "name": "Smoke",
             "gender": "Male",
-            "role": ["Anchor", "Area Denial"],
+            "role": ["Anti-Entry", "Crowd Control"],
             "speed": 2,
-            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "FMG-9",
@@ -55,15 +53,14 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": ["Deployable Shield", "Barbed Wire"],
+            "gadget": ["Barbed Wire", "Proximity Alarm"],
             "special": "Remote Gas Grenade"
         },
         {
             "name": "Mute",
             "gender": "Male",
-            "role": ["Anti Hard Breach", "Intel Denial"],
-            "speed": 2,
-            "organization": "SAS/Rainbow",
+            "role": ["Anti-Gadget", "Intel Denial"],
+            "speed": 1,
             "primary": [
                 {
                     "name": "MP5K",
@@ -90,9 +87,8 @@
         {
             "name": "Castle",
             "gender": "Male",
-            "role": ["Anchor", "Area Denial"],
+            "role": ["Anti-Entry", "Support"],
             "speed": 2,
-            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "UMP45",
@@ -111,6 +107,10 @@
                 {
                     "name": "Super Shorty",
                     "type": "Shotgun"
+                },
+                {
+                    "name": "M45 MEUSOC",
+                    "type": "Handgun"
                 }
             ],
             "gadget": ["Bulletproof Camera", "Proximity Alarm"],
@@ -119,9 +119,8 @@
         {
             "name": "Pulse",
             "gender": "Male",
-            "role": ["Roam", "Intel Gatherer"],
+            "role": ["Roam", "Intel Gatherer", "Support"],
             "speed": 3,
-            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "M1014",
@@ -142,15 +141,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Barbed Wire", "Nitro Cell"],
+            "gadget": ["Nitro Cell", "Deployable Shield", "Observation Blocker"],
             "special": "Heartbeat Sensor"
         },
         {
             "name": "Doc",
             "gender": "Male",
-            "role": ["Anchor", "Buff"],
+            "role": ["Support"],
             "speed": 1,
-            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "SG-CQB",
@@ -173,17 +171,20 @@
                 {
                     "name": "LFP586",
                     "type": "Revolver"
+                },
+                {
+                    "name": "Bailiff 410",
+                    "type": "Revolver"
                 }
             ],
-            "gadget": ["Barbed Wire", "Bulletproof Camera"],
+            "gadget": ["Bulletproof Camera", "Barbed Wire"],
             "special": "Stim Pistol"
         },
         {
             "name": "Rook",
             "gender": "Male",
-            "role": ["Anchor", "Buff"],
+            "role": ["Support"],
             "speed": 1,
-            "organization": "Rainbow/GIGN",
             "primary": [
                 {
                     "name": "P90",
@@ -200,23 +201,22 @@
             ],
             "secondary": [
                 {
-                    "name": "P9",
-                    "type": "Handgun"
-                },
-                {
                     "name": "LFP586",
                     "type": "Revolver"
+                },
+                {
+                    "name": "P9",
+                    "type": "Handgun"
                 }
             ],
-            "gadget": ["Proximity Alarm", "Impact Grenade"],
+            "gadget": ["Proximity Alarm", "Impact Grenade", "Observation Blocker"],
             "special": "Armor Pack"
         },
         {
             "name": "Kapkan",
             "gender": "Male",
-            "role": ["Trap"],
+            "role": ["Anti-Entry", "Trapper"],
             "speed": 2,
-            "organization": "Rainbow/Spetsnaz",
             "primary": [
                 {
                     "name": "9x19VSN",
@@ -243,9 +243,8 @@
         {
             "name": "Tachanka",
             "gender": "Male",
-            "role": ["Anchor", "Area Denial"],
+            "role": ["Anti-Entry", "Crowd Control"],
             "speed": 1,
-            "organization": "Rainbow/Spetsnaz",
             "primary": [
                 {
                     "name": "DP27",
@@ -264,17 +263,20 @@
                 {
                     "name": "PMM",
                     "type": "Handgun"
+                },
+                {
+                    "name": "Bearing 9",
+                    "type": "Machine Pistol"
                 }
             ],
-            "gadget": ["Barbed Wire", "Deployable Shield"],
-            "special": "Grenade Launcher"
+            "gadget": ["Barbed Wire", "Deployable Shield", "Proximity Alarm"],
+            "special": "Shumikha Launcher"
         },
         {
             "name": "Jager",
             "gender": "Male",
-            "role": ["Roam", "Gadget Denial"],
+            "role": ["Anti-Gadget", "Support"],
             "speed": 2,
-            "organization": "Rainbow/GSG 9",
             "primary": [
                 {
                     "name": "M870",
@@ -291,23 +293,22 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Bulletproof Camera", "Barbed Wire"],
-            "special": "Flash Shield"
+            "gadget": ["Bulletproof Camera", "Observation Blocker"],
+            "special": "Active Defense"
         },       
         {
             "name": "Bandit",
             "gender": "Male",
-            "role": ["Anti Hard Breach", "Roam"],
+            "role": ["Anti-Entry", "Anti-Gadget"],
             "speed": 3,
-            "organization": "Wolfguard",
             "primary": [
-                {
-                    "name": "M870",
-                    "type": "Shotgun"
-                },
                 {
                     "name": "MP7",
                     "type": "Submachine Gun"
+                },
+                {
+                    "name": "M870",
+                    "type": "Shotgun"
                 }
             ],
             "secondary": [
@@ -322,9 +323,8 @@
         {
             "name": "Frost",
             "gender": "Female",
-            "role": ["Crowd Control", "Trap"],
+            "role": ["Anti-Entry", "Trapper"],
             "speed": 2,
-            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "Super 90",
@@ -351,9 +351,8 @@
         {
             "name": "Valkyrie",
             "gender": "Female",
-            "role": ["Intel Gatherer", "Roam"],
+            "role": ["Intel Gatherer", "Support"],
             "speed": 2,
-            "organization": "Rainbow/Navy SEALs",
             "primary": [
                 {
                     "name": "MPX",
@@ -376,9 +375,8 @@
         {
             "name": "Caveira",
             "gender": "Female",
-            "role": ["Intel Denial", "Intel Gatherer", "Roam"],
+            "role": ["Intel Gatherer", "Roam"],
             "speed": 3,
-            "organization": "Rainbow/BOPE/GSUTR",
             "primary": [
                 {
                     "name": "M12",
@@ -395,15 +393,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Impact Grenade", "Proximity Alarm"],
+            "gadget": ["Impact Grenade", "Proximity Alarm", "Observation Blocker"],
             "special": "Silent Step"
         },
         {
             "name": "Echo",
             "gender": "Male",
-            "role": ["Anchor", "Crowd Control", "Intel Gatherer"],
+            "role": ["Crowd Control", "Intel Gatherer"],
             "speed": 1,
-            "organization": "Rainbow/SAT",
             "primary": [
                 {
                     "name": "SuperNova",
@@ -430,9 +427,8 @@
         {
             "name": "Mira",
             "gender": "Female",
-            "role": ["Anchor", "Intel Gatherer"],
+            "role": ["Intel Gatherer", "Support"],
             "speed": 1,
-            "organization": "Rainbow/GEO",
             "primary": [
                 {
                     "name": "Vector .45 ACP",
@@ -445,12 +441,12 @@
             ],
             "secondary": [
                 {
-                    "name": "ITA12S",
-                    "type": "Shotgun"
-                },
-                {
                     "name": "USP40",
                     "type": "Handgun"
+                },
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
                 }
             ],
             "gadget": ["Proximity Alarm", "Nitro Cell"],
@@ -459,9 +455,8 @@
         {
             "name": "Lesion",
             "gender": "Male",
-            "role": ["Anchor", "Crowd Control", "Intel Gatherer", "Roam", "Trap"],
+            "role": ["Anti-Entry", "Trapper"],
             "speed": 2,
-            "organization": "CBRN Threat Unit/Rainbow/SDU",
             "primary": [
                 {
                     "name": "SIX12",
@@ -476,6 +471,10 @@
                 {
                     "name": "Q-929",
                     "type": "Handgun"
+                },
+                {
+                    "name": "Super Shorty",
+                    "type": "Shotgun"
                 }
             ],
             "gadget": ["Impact Grenade", "Bulletproof Camera"],
@@ -484,9 +483,8 @@
         {
             "name": "Ela",
             "gender": "Female",
-            "role": ["Roam", "Crowd Control", "Trap"],
-            "speed": 3,
-            "organization": "Nighthaven/Rainbow/GROM",
+            "role": ["Crowd Control", "Roam", "Trapper"],
+            "speed": 2,
             "primary": [
                 {
                     "name": "Scorpion EVO 3 A1",
@@ -503,15 +501,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Barbed Wire", "Deployable Shield"],
+            "gadget": ["Barbed Wire", "Deployable Shield", "Observation Blocker"],
             "special": "Grzmot Mine"
         },
         {
             "name": "Vigil",
             "gender": "Male",
-            "role": ["Roam", "Intel Denial"],
+            "role": ["Intel Denial", "Roam"],
             "speed": 3,
-            "organization": "Rainbow/707th SMB",
             "primary": [
                 {
                     "name": "K1A",
@@ -538,9 +535,8 @@
         {
             "name": "Maestro",
             "gender": "Male",
-            "role": ["Anchor", "Area Denial", "Intel Gatherer"],
+            "role": ["Anti-Gadget", "Intel Gatherer", "Intel Denial"],
             "speed": 1,
-            "organization": "Rainbow/GIS",
             "primary": [
                 {
                     "name": "ALDA 5.56",
@@ -561,15 +557,14 @@
                     "type": "Revolver"
                 }
             ],
-            "gadget": ["Barbed Wire", "Impact Grenade"],
+            "gadget": ["Barbed Wire", "Impact Grenade", "Observation Blocker"],
             "special": "Evil Eye"
         },
         {
             "name": "Alibi",
             "gender": "Female",
-            "role": ["Roam", "Intel Denial", "Intel Gatherer", "Trap"],
+            "role": ["Intel Denial", "Intel Gatherer", "Trapper"],
             "speed": 3,
-            "organization": "Rainbow/GIS/GSUTR",
             "primary": [
                 {
                     "name": "Mx4 Storm",
@@ -590,7 +585,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Impact Grenade", "Deployable Shield"],
+            "gadget": ["Proximity Alarm", "Observation Blocker"],
             "special": "Prisma"
         },
         {
@@ -598,7 +593,6 @@
             "gender": "Female",
             "role": ["Crowd Control", "Intel Gatherer", "Shield"],
             "speed": 2,
-            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "CCE Shield",
@@ -613,17 +607,20 @@
                 {
                     "name": "SPSMG9",
                     "type": "Machine Pistol"
+                },
+                {
+                    "name": "P-10C",
+                    "type": "Handgun"
                 }
             ],
-            "gadget": ["Impact Grenade", "Barbed Wire"],
+            "gadget": ["Barbed Wire", "Impact Grenade", "Deployable Shield"],
             "special": "CCE Shield"
         },
         {
             "name": "Kaid",
             "gender": "Male",
-            "role": ["Anchor", "Anti Hard Breach"],
+            "role": ["Anti-Entry", "Anti-Gadget"],
             "speed": 1,
-            "organization": "Rainbow/GIGR",
             "primary": [
                 {
                     "name": "AUG A3",
@@ -644,15 +641,14 @@
                     "type": "Revolver"
                 }
             ],
-            "gadget": ["Barbed Wire", "Nitro Cell"],
+            "gadget": ["Nitro Cell", "Barbed Wire", "Observation Blocker"],
             "special": "Rtila Electroclaw"
         },
         {
             "name": "Mozzie",
             "gender": "Male",
-            "role": ["Intel Denial", "Intel Gatherer"],
+            "role": ["Anti-Gadget", "Intel Denial", "Intel Gatherer"],
             "speed": 2,
-            "organization": "Rainbow/SASR",
             "primary": [
                 {
                     "name": "Commando 9",
@@ -675,9 +671,8 @@
         {
             "name": "Warden",
             "gender": "Male",
-            "role": ["Anchor", "Intel Denial"],
-            "speed": 2,
-            "organization": "Rainbow/Secret Service",
+            "role": ["Anti-Gadget", "Intel Gatherer"],
+            "speed": 1,
             "primary": [
                 {
                     "name": "M590A1",
@@ -698,15 +693,14 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": ["Nitro Cell", "Deployable Shield"],
+            "gadget": ["Deployable Shield", "Nitro Cell", "Observation Blocker"],
             "special": "Glance Smart Glasses"
         },
         {
             "name": "Goyo",
             "gender": "Male",
-            "role": ["Area Denial"],
+            "role": ["Anti-Entry", "Trapper"],
             "speed": 2,
-            "organization": "Rainbow/FES",
             "primary": [
                 {
                     "name": "Vector .45 ACP",
@@ -723,15 +717,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Nitro Cell", "Proximity Alarm"],
+            "gadget": ["Proximity Alarm", "Bulletproof Camera", "Impact Grenade"],
             "special": "Volcan Canister"
         },
         {
             "name": "Wamai",
             "gender": "Male",
-            "role": ["Anchor", "Gadget Denial"],
+            "role": ["Anti-Gadget", "Trapper"],
             "speed": 2,
-            "organization": "Nighthaven/Rainbow (formerly)",
             "primary": [
                 {
                     "name": "AUG A2",
@@ -752,15 +745,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Proximity Alarm", "Impact Grenade"],
+            "gadget": ["Impact Grenade", "Proximity Alarm"],
             "special": "Mag-NET"
         },
         {
             "name": "Oryx",
             "gender": "Male",
-            "role": ["Roam", "Soft Breach"],
+            "role": ["Support"],
             "speed": 2,
-            "organization": "Rainbow/GIGR (unofficially)",
             "primary": [
                 {
                     "name": "T-5 SMG",
@@ -788,8 +780,7 @@
             "name": "Melusi",
             "gender": "Female",
             "role": ["Crowd Control", "Intel Gatherer"],
-            "speed": 3,
-            "organization": "Rainbow/Inkaba Task Force/SANDF (formerly)",
+            "speed": 1,
             "primary": [
                 {
                     "name": "MP5",
@@ -806,15 +797,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Impact Grenade", "Bulletproof Camera"],
+            "gadget": ["Bulletproof Camera", "Impact Grenade"],
             "special": "Banshee Sonic Defense"
         },
         {
             "name": "Aruni",
             "gender": "Female",
-            "role": ["Anchor", "Area Denial"],
-            "speed": 2,
-            "organization": "Nighthaven",
+            "role": ["Anti-Entry", "Anti-Gadget", "Trapper"],
+            "speed": 1,
             "primary": [
                 {
                     "name": "P10 RONI",
@@ -832,14 +822,13 @@
                 }
             ],
             "gadget": ["Barbed Wire", "Bulletproof Camera"],
-            "special": "Surya Laser Gate"
+            "special": "Surya Gate"
         },
         {
             "name": "Thunderbird",
             "gender": "Female",
-            "role": ["Buff", "Roam"],
-            "speed": 3,
-            "organization": "Rainbow/STAR-NET Aviation/Royal Canadian Air Force (formerly)",
+            "role": ["Support"],
+            "speed": 2,
             "primary": [
                 {
                     "name": "Spear .308",
@@ -851,24 +840,23 @@
                 }
             ],
             "secondary": [
-                {
-                    "name": "Q-929",
-                    "type": "Handgun"
-                },
                 { 
                     "name": "Bearing 9",
                     "type": "Machine Pistol"
+                },
+                {
+                    "name": "Q-929",
+                    "type": "Handgun"
                 }
             ],
-            "gadget": ["Impact Grenade", "Nitro Cell"],
+            "gadget": ["Barbed Wire", "Bulletproof Camera"],
             "special": "Kona Station"
         },
         {
             "name": "Thorn",
             "gender": "Female",
-            "role": ["Anchor", "Trap"],
+            "role": ["Anti-Entry", "Trapper"],
             "speed": 2,
-            "organization": "Rainbow/Garda ERU",
             "primary": [
                 {
                     "name": "UZK50GI",
@@ -889,15 +877,14 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": ["Barbed Wire", "Deployable Shield"],
+            "gadget": ["Deployable Shield", "Barbed Wire"],
             "special": "Razorbloom Shell"
         },
         {
             "name": "Azami",
             "gender": "Female",
-            "role": ["Area Denial"],
+            "role": ["Anti-Entry", "Support"],
             "speed": 2,
-            "organization": "Rainbow/Tokyo MPD (formerly)",
             "primary": [
                 {
                     "name": "9x19VSN",
@@ -916,6 +903,58 @@
             ],
             "gadget": ["Barbed Wire", "Impact Grenade"],
             "special": "Kiba Barrier"
+        },
+        {
+            "name": "Solis",
+            "gender": "Female",
+            "role": ["Intel Gatherer", "Support"],
+            "speed": 2,
+            "primary": [
+                {
+                    "name": "P90",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "ITA12L",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "SMG-11",
+                    "type": "Machine Pistol"
+                }
+            ],
+            "gadget": ["Impact Grenade", "Bulletproof Camera"],
+            "special": "Spec-IO Electro-Sensor"
+        },
+        {
+            "name": "Fenrir",
+            "gender": "Male",
+            "role": ["Crowd Control", "Trapper"],
+            "speed": 2,
+            "primary": [
+                {
+                    "name": "MP7",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "SASG-12",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Bailiff 410",
+                    "type": "Revolver"
+                },
+                {
+                    "name": "5.7 USG",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": ["Bulletproof Camera", "Barbed Wire"],
+            "special": "F-NATT Dread Mine"
         }
     ]
 }

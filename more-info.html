@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-us">
+
 <head>
     <meta charset="utf-8"/>
-    <title>R6S Roulette - More Info</title>
+    <title>More Info | R6S Roulette</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- CSS & Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-        crossorigin="anonymous">
-    <link rel='stylesheet' href='styles.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel='stylesheet' href='/styles/common.css'>
+
+    <!-- scripts -->
+    <script src='https://d3js.org/d3.v7.min.js'></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/more.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="header" id="header"></div>
-    <div class="container" id="main-content">
-        <h2 class="title">More Info</h2>
-        <h4 class="my-header">What is this?</h4>
+    <header></header>
+    <main class="container">
+        <h2 class="siege-uppercase page-title">More Info</h2>
+        <h4 class="siege-uppercase subheader">What is this?</h4>
         <p>
             If you've ever played Siege, you might have trouble deciding which operator
             to play. This website contains a couple of customizable randomizers
@@ -29,30 +35,21 @@
             loadouts for the operators.
         </p>
         <p>You can get started by using the navigation bar above!</p>
-        <h4 class="my-header">How do I use this?</h4>
-        <h5>Want to select a random pistol to use? What about some random primary?</h5>
-        <ul><li>Simple: Go <a href="gun-roulette.html">here</a></li></ul>
-        <h5>What about selecting some random defender or attacker?</h5>
-        <ul><li>Easy: Click <a href="op-roulette.html">here</a></li></ul>
-        <h5>Why? Siege already has a randomizer!</h5>
-        <ul><li>
-            Sure, Siege does have a randomizer, but it isn't customizable (nor can you randomize which gun to use).
+        <h4 class="siege-uppercase subheader">How do I use this?</h4>
+        <p><b>Q: Want to select a random pistol to use? What about some random primary?</b></p>
+        <p>A: Simple: Go <a href="gun-roulette.html">here</a></p>
+        <p><b>Q: What about selecting some random defender or attacker?</b></p>
+        <p>A: Easy: Click <a href="op-roulette.html">here</a></p>
+        <p><b>Q: Why? Siege already has a randomizer!</b></p>
+        <p>
+            A: Sure, Siege does have a randomizer, but it isn't customizable (nor can you randomize which gun to use).
             This site gives you the ability to add certain criteria to your randomization, to customize what pool
             of operators or guns you want to select from.
-        </li></ul>
-        <h4 class="my-header">Features for the future</h4>
-        <ul>
-            <li>Strat roulette</li>
-        </ul>
+        </p>
+        <h4 class="siege-uppercase subheader">Features for the future</h4>
+        <p>Build strat roulette page</p>
         <br>
-        <p><i>Last updated for <b><a href="https://www.ubisoft.com/en-us/game/rainbow-six/siege/game-info/seasons/brutalswarm" target="_blank">Y7S3</a></b></i></p>
-    </div>
-
-    <!-- scripts -->
-    <script src='https://d3js.org/d3.v5.min.js'></script>
-    <script src="scripts/common.js"></script>
-    <script src="scripts/more.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <p><i>Last updated for <b><a href="https://www.ubisoft.com/en-us/game/rainbow-six/siege/game-info/seasons/heavymettle" target="_blank">Y8S3</a></b></i></p>
+    </main>
 </body>
 </html>

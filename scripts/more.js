@@ -5,12 +5,7 @@
 // =  Date          : March 29, 2022
 // =================================================================
 
-// constants
-var hid = '#header'
-
-var header;
-
+// load the navbar
 document.addEventListener("DOMContentLoaded", function() {
-    header = d3.select(hid);
-    initNavbar(header, 5);
+    initNavbar(d3.select('header'), 5);
 })

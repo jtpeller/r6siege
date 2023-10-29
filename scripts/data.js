@@ -22,33 +22,32 @@ var secondary_types = [
 ]
 
 // ============================ GENDERS ==============================
-let genders = ["Female", "Male", "Non-binary"];
+let genders = ["Female", "Male", "Non-Binary"];
 
 // ============================= ROLES ===============================
 // roles only defenders can have
 let def_roles = [
-    "Anchor",
-    "Anti Hard Breach",
+    "Anti-Entry",
+    "Crowd Control",
     "Roam",
 ]
 
 // roles only attackers can have
 let atk_roles = [
-    "Crowd Control",
-    "Gadget Denial",
+    "Front Line",
     "Hard Breach",
     "Roam Denial",
 ]
 
 // all other roles
 let gen_roles = [
-    "Area Denial",
-    "Buffer",
-    "Flank",
+    "Anti-Gadget",
     "Intel Denial",
     "Intel Gatherer",
+    "Map Control",
     "Shield",
     "Soft Breach",
-    "Trap",
+    "Support",
+    "Trapper",
 ]
 

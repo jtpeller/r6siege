@@ -5,7 +5,6 @@
             "gender": "Male",
             "role": ["Absolute Unit"],
             "speed": 2,
-            "organization": "Doesn't Need One",
             "primary": [
                 {
                     "name": "L85A2",
@@ -40,9 +39,8 @@
         {
             "name": "Sledge",
             "gender": "Male",
-            "role": ["Soft Breach", "Flank"],
-            "speed": 2,
-            "organization": "SAS",
+            "role": ["Soft Breach", "Anti-Gadget"],
+            "speed": 1,
             "primary": [
                 {
                     "name": "M590A1",
@@ -65,9 +63,8 @@
         {
             "name": "Thatcher",
             "gender": "Male",
-            "role": ["Gadget Denial"],
-            "speed": 2,
-            "organization": "SAS",
+            "role": ["Anti-Gadget", "Soft Breach", "Support"],
+            "speed": 1,
             "primary": [
                 {
                     "name": "AR33",
@@ -88,15 +85,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Claymore", "Breach Charge"],
+            "gadget": ["Breach Charge", "Claymore"],
             "special": "EMP Grenade"
         },
         {
             "name": "Ash",
             "gender": "Female",
-            "role": ["Soft Breach", "Flank", "Gadget Denial"],
+            "role": ["Soft Breach", "Front Line"],
             "speed": 3,
-            "organization": "FBI SWAT",
             "primary": [
                 {
                     "name": "G36C",
@@ -123,9 +119,8 @@
         {
             "name": "Thermite",
             "gender": "Male",
-            "role": ["Hard Breach"],
+            "role": ["Hard Breach", "Support"],
             "speed": 2,
-            "organization": "FBI SWAT",
             "primary": [
                 {
                     "name": "M1014",
@@ -146,15 +141,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Stun Grenade", "Smoke Grenade"],
+            "gadget": ["Smoke Grenade", "Stun Grenade"],
             "special": "Exothermic Charge"
         },
         {
             "name": "Twitch",
             "gender": "Female",
-            "role": ["Gadget Denial", "Intel Gatherer"],
+            "role": ["Anti-Gadget", "Intel Gatherer"],
             "speed": 2,
-            "organization": "GIGN",
             "primary": [
                 {
                     "name": "F2",
@@ -179,15 +173,14 @@
                     "type": "Revolver"
                 }
             ],
-            "gadget": ["Smoke Grenade", "Claymore"],
-            "special": "Shock Drone"
+            "gadget": ["Claymore", "Smoke Grenade"],
+            "special": "Shock Drones"
         },
         {
             "name": "Montagne",
             "gender": "Male",
-            "role": ["Shield"],
+            "role": ["Intel Gatherer", "Shield", "Support"],
             "speed": 1,
-            "organization": "GIGN",
             "primary": [
                 {
                     "name": "Le Roc Shield",
@@ -205,14 +198,13 @@
                 }
             ],
             "gadget": ["Hard Breach Charge", "Smoke Grenade", "Impact EMP Grenade"],
-            "special": "Le Roc"
+            "special": "Le Roc Shield"
         },
         {
             "name": "Glaz",
             "gender": "Male",
-            "role": ["Soft Breach", "Roam Denial"],
+            "role": ["Intel Gatherer", "Roam Denial", "Support"],
             "speed": 3,
-            "organization": "Spetsnaz",
             "primary": [
                 {
                     "name": "OTs-03",
@@ -229,15 +221,14 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": ["Smoke Grenade", "Frag Grenade"],
+            "gadget": ["Smoke Grenade", "Frag Grenade", "Claymore"],
             "special": "Flip Sight"
         },
         {
             "name": "Fuze",
             "gender": "Male",
-            "role": ["Shield", "Area Denial", "Gadget Denial"],
+            "role": ["Map Control", "Anti-Gadget", "Shield"],
             "speed": 1,
-            "organization": "Spetsnaz",
             "primary": [
                 {
                     "name": "Ballistic Shield",
@@ -262,15 +253,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Breach Charge", "Hard Breach Charge"],
+            "gadget": ["Breach Charge", "Hard Breach Charge", "Smoke Grenade"],
             "special": "Cluster Charge"
         },
         {
             "name": "Blitz",
             "gender": "Male",
-            "role": ["Shield", "Crowd Control", "Roam Denial"],
+            "role": ["Front Line", "Roam Denial", "Shield"],
             "speed": 2,
-            "organization": "GSG 9",
             "primary": [
                 {
                     "name": "G52-Tactical Shield",
@@ -289,9 +279,8 @@
         {
             "name": "IQ",
             "gender": "Female",
-            "role": ["Gadget Denial", "Flank", "Intel Gatherer"],
+            "role": ["Anti-Gadget", "Intel Gatherer", "Support"],
             "speed": 3,
-            "organization": "GSG 9/Nighthaven",
             "primary": [
                 {
                     "name": "AUG A2",
@@ -320,7 +309,6 @@
             "gender": "Male",
             "role": ["Flank", "Soft Breach"],
             "speed": 2,
-            "organization": "JTF2",
             "primary": [
                 {
                     "name": "C8-SFW",
@@ -335,6 +323,10 @@
                 {
                     "name": "Mk1 9mm",
                     "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
                 }
             ],
             "gadget": ["Stun Grenade", "Hard Breach Charge"],
@@ -343,9 +335,8 @@
         {
             "name": "Blackbeard",
             "gender": "Male",
-            "role": ["Shield"],
+            "role": ["Shield", "Support"],
             "speed": 2,
-            "organization": "Navy SEALs",
             "primary": [
                 {
                     "name": "MK17 CQB",
@@ -369,9 +360,8 @@
         {
             "name": "Capitao",
             "gender": "Male",
-            "role": ["Area Denial", "Flank"],
+            "role": ["Map Control", "Front Line"],
             "speed": 3,
-            "organization": "BOPE",
             "primary": [
                 {
                     "name": "PARA-308",
@@ -386,6 +376,10 @@
                 {
                     "name": "PRB92",
                     "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
                 }
             ],
             "gadget": ["Claymore", "Hard Breach Charge"],
@@ -394,9 +388,8 @@
         {
             "name": "Hibana",
             "gender": "Female",
-            "role": ["Hard Breach"],
+            "role": ["Front Line", "Hard Breach"],
             "speed": 3,
-            "organization": "SAT",
             "primary": [
                 {
                     "name": "Type-89",
@@ -423,9 +416,8 @@
         {
             "name": "Jackal",
             "gender": "Male",
-            "role": ["Roam Denial", "Intel Gatherer"],
+            "role": ["Intel Gatherer", "Map Control"],
             "speed": 2,
-            "organization": "GEO",
             "primary": [
                 {
                     "name": "C7E",
@@ -456,9 +448,8 @@
         {
             "name": "Ying",
             "gender": "Female",
-            "role": ["Crowd Control"],
+            "role": ["Front Line", "Map Control"],
             "speed": 2,
-            "organization": "SDU/GSUTR",
             "primary": [
                 {
                     "name": "T-95 LSW",
@@ -481,9 +472,8 @@
         {
             "name": "Zofia",
             "gender": "Female",
-            "role": ["Soft Breach", "Roam Denial", "Gadget Denial", "Crowd Control", "Flank"],
-            "speed": 2,
-            "organization": "GROM",
+            "role": ["Anti-Gadget", "Soft Breach"],
+            "speed": 1,
             "primary": [
                 {
                     "name": "LMG-E",
@@ -506,9 +496,8 @@
         {
             "name": "Dokkaebi",
             "gender": "Female",
-            "role": ["Intel Denial", "Intel Gatherer", "Roam Denial"],
-            "speed": 2,
-            "organization": "707th SMB",
+            "role": ["Intel Denial", "Intel Gatherer", "Map Control"],
+            "speed": 3,
             "primary": [
                 {
                     "name": "Mk 14 EBR",
@@ -521,12 +510,16 @@
             ],
             "secondary": [
                 {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
-                },
-                {
                     "name": "SMG-12",
                     "type": "Machine Pistol"
+                },
+                {
+                    "name": "C75 Auto",
+                    "type": "Machine Pistol"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
                 }
             ],
             "gadget": ["Smoke Grenade", "Stun Grenade", "Impact EMP Grenade"],
@@ -535,9 +528,8 @@
         {
             "name": "Lion",
             "gender": "Male",
-            "role": ["Roam Denial", "Intel Gatherer", "Crowd Control"],
+            "role": ["Intel Gatherer", "Map Control", "Roam Denial"],
             "speed": 2,
-            "organization": "CBRN Threat Unit/GIGN",
             "primary": [
                 {
                     "name": "V308",
@@ -554,12 +546,16 @@
             ],
             "secondary": [
                 {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
-                },
-                {
                     "name": "LFP586",
                     "type": "Revolver"
+                },
+                {
+                    "name": "P9",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
                 }
             ],
             "gadget": ["Stun Grenade", "Claymore", "Impact EMP Grenade"],
@@ -568,9 +564,8 @@
         {
             "name": "Finka",
             "gender": "Female",
-            "role": ["Buffer"],
+            "role": ["Front Line", "Support"],
             "speed": 2,
-            "organization": "CBRN Threat Unit/Spetsnaz",
             "primary": [
                 {
                     "name": "Spear .308",
@@ -591,19 +586,18 @@
                     "type": "Handgun"
                 },
                 {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
+                    "name": "GSH-18",
+                    "type": "Handgun"
                 }
             ],
-            "gadget": ["Smoke Grenade", "Stun Grenade"],
+            "gadget": ["Smoke Grenade", "Stun Grenade", "Frag Grenade"],
             "special": "Adrenal Surge"
         },
         {
             "name": "Maverick",
             "gender": "Male",
-            "role": ["Gadget Denial", "Flank", "Hard Breach"],
+            "role": [ "Front Line", "Soft Breach", "Hard Breach"],
             "speed": 3,
-            "organization": "GSUTR/Delta Force",
             "primary": [
                 {
                     "name": "AR-15.50",
@@ -620,15 +614,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Claymore", "Frag Grenade"],
+            "gadget": ["Stun Grenade", "Claymore"],
             "special": "Breaching Torch"
         },
         {
             "name": "Nomad",
             "gender": "Female",
-            "role": ["Roam Denial", "Area Denial", "Crowd Control", "Trap"],
+            "role": ["Front Line", "Roam Denial", "Map Control"],
             "speed": 2,
-            "organization": "GIGR",
             "primary": [
                 {
                     "name": "AK-74M",
@@ -649,15 +642,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Breach Charge", "Stun Grenade"],
+            "gadget": ["Stun Grenade", "Breach Charge"],
             "special": "Airjab Launcher"
         },
         {
             "name": "Gridlock",
             "gender": "Female",
-            "role": ["Roam Denial", "Area Denial", "Crowd Control"],
+            "role": ["Map Control", "Roam Denial", "Support"],
             "speed": 1,
-            "organization": "SASR",
             "primary": [
                 {
                     "name": "F90",
@@ -674,19 +666,18 @@
                     "type": "Shotgun"
                 },
                 {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
+                    "name": "SDP 9mm",
+                    "type": "Handgun"
                 }
             ],
-            "gadget": ["Smoke Grenade", "Breach Charge", "Impact EMP Grenade"],
+            "gadget": ["Smoke Grenade", "Impact EMP Grenade", "Frag Grenade"],
             "special": "Trax Stingers"
         },
         {
             "name": "Nokk",
             "gender": "Female",
-            "role": ["Flank", "Intel Denial"],
+            "role": ["Front Line", "Intel Denial"],
             "speed": 2,
-            "organization": "Jaeger Corps",
             "primary": [
                 {
                     "name": "FMG-9",
@@ -713,9 +704,8 @@
         {
             "name": "Amaru",
             "gender": "Female",
-            "role": ["Flank"],
+            "role": ["Front Line", "Map Control"],
             "speed": 2,
-            "organization": "APCA",
             "primary": [
                 {
                     "name": "G8A1",
@@ -728,12 +718,16 @@
             ],
             "secondary": [
                 {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
-                },
-                {
                     "name": "SMG-11",
                     "type": "Machine Pistol"
+                },
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
                 }
             ],
             "gadget": ["Hard Breach Charge", "Stun Grenade"],
@@ -742,9 +736,8 @@
         {
             "name": "Kali",
             "gender": "Female",
-            "role": ["Gadget Denial"],
+            "role": ["Anti-Gadget", "Support"],
             "speed": 2,
-            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "CSRX 300",
@@ -753,23 +746,26 @@
             ],
             "secondary": [
                 {
+                    "name": "SPSMG9",
+                    "type": "Machine Pistol"
+                },
+                {
                     "name": "C75 Auto",
                     "type": "Machine Pistol"
                 },
                 {
-                    "name": "SPSMG9",
-                    "type": "Machine Pistol"
+                    "name": "P226 MK 25",
+                    "type": "Handgun"
                 }
             ],
-            "gadget": ["Breach Charge", "Claymore"],
+            "gadget": ["Claymore", "Breach Charge"],
             "special": "LV Explosive Lance"
         },
         {
             "name": "Iana",
             "gender": "Female",
-            "role": ["Intel Denial", "Intel Gatherer"],
+            "role": ["Front Line", "Intel Denial", "Intel Gatherer"],
             "speed": 2,
-            "organization": "REU",
             "primary": [
                 {
                     "name": "ARX200",
@@ -790,15 +786,14 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": ["Frag Grenade", "Smoke Grenade"],
+            "gadget": ["Stun Grenade", "Smoke Grenade"],
             "special": "Gemini Replicator"
         },
         {
             "name": "Ace",
             "gender": "Male",
-            "role": ["Hard Breach"],
+            "role": ["Anti-Gadget", "Hard Breach"],
             "speed": 2,
-            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "AK-12",
@@ -821,9 +816,8 @@
         {
             "name": "Zero",
             "gender": "Male",
-            "role": ["Intel Denial", "Intel Gatherer"],
-            "speed": 2,
-            "organization": "ROS/Fourth Echelon",
+            "role": ["Anti-Gadget", "Intel Denial", "Intel Gatherer"],
+            "speed": 3,
             "primary": [
                 {
                     "name": "SC3000K",
@@ -844,15 +838,14 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": ["Claymore", "Hard Breach Charge"],
+            "gadget": ["Hard Breach Charge", "Claymore"],
             "special": "ARGUS LAUNCHER"
         },
         {
             "name": "Flores",
             "gender": "Male",
-            "role": ["Soft Breach", "Area Denial", "Gadget Denial"],
+            "role": ["Anti-Gadget", "Intel Denial", "Intel Gatherer", "Map Control", "Soft Breach" ],
             "speed": 2,
-            "organization": "FBI",
             "primary": [
                 {
                     "name": "AR33",
@@ -875,9 +868,8 @@
         {
             "name": "Osa",
             "gender": "Female",
-            "role": ["Intel Gatherer", "Area Denial", "Roam Denial"],
-            "speed": 2,
-            "organization": "Nighthaven",
+            "role": ["Intel Gatherer", "Map Control", "Roam Denial", "Support"],
+            "speed": 1,
             "primary": [
                 {
                     "name": "556XI",
@@ -900,9 +892,8 @@
         {
             "name": "Sens",
             "gender": "Non-binary",
-            "role": ["Area Denial", "Crowd Control"],
+            "role": ["Map Control", "Support"],
             "speed": 1,
-            "organization": "Wolfguard",
             "primary": [
                 {
                     "name": "POF-9",
@@ -929,9 +920,8 @@
         {
             "name": "Grim",
             "gender": "Male",
-            "role": ["Intel Gatherer", "Area Denial"],
+            "role": ["Front Line", "Intel Gatherer", "Map Control"],
             "speed": 3,
-            "organization": "Nighthaven",
             "primary": [
                 {
                     "name": "552 Commando",
@@ -946,10 +936,70 @@
                 {
                     "name": "P229",
                     "type": "Handgun"
+                },
+                {
+                    "name": "Bailiff 410",
+                    "type": "Revolver"
                 }
             ],
-            "gadget": ["Hard Breach Charge", "Claymore"],
+            "gadget": ["Breach Charge", "Claymore", "Hard Breach Charge"],
             "special": "Kawan Hive Launcher"
+        },
+        {
+            "name": "Brava",
+            "gender": "Female",
+            "role": ["Anti-Gadget", "Intel Gatherer"],
+            "speed": 3,
+            "primary": [
+                {
+                    "name": "PARA-308",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "CAMRS",
+                    "type": "Marksman Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Super Shorty",
+                    "type": "Shotgun"
+                },
+                {
+                    "name": "USP40",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": ["Smoke Grenade", "Claymore"],
+            "special": "Kludge Drone"
+        },
+        {
+            "name": "Ram",
+            "gender": "Female",
+            "role": ["Anti-Gadget", "Soft Breach"],
+            "speed": 1,
+            "primary": [
+                {
+                    "name": "R4-C",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "LMG-E",
+                    "type": "Light Machine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Mk1 9mm",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
+                }
+            ],
+            "gadget": ["Stun Grenade", "Smoke Grenade"],
+            "special": "Bu-Gi Auto-Breacher"
         }
     ]
 }

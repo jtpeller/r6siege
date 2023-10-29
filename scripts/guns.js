@@ -10,14 +10,14 @@ let header, content;
 window.pri = [];
 window.sec = [];
 
-window.onload = function() {
-    // get d3 elements
-    header = d3.select('#header');
-    content = d3.select('#content');
-
+document.addEventListener("DOMContentLoaded", function() {
     // build header
+    header = d3.select('header');
     initNavbar(header, 4);
-
+    
+    content = d3.select('main')
+        .append('div');
+    
     // load all data
     Promise.all([
         d3.json('data/primary.json'),
@@ -46,52 +46,37 @@ window.onload = function() {
         setTimeout( () => {
             var sav = location.hash;
             if (sav.length > 1) {
-                location.hash = '';
-                location.hash = sav;
+                d3.select(sav).node().scrollIntoView(true)
             }
-        }, 750);
+        }, 500);
     })
-}
+})
 
 function initGuns() {
-    // init page
-    content.classed('container', true);
-
-    content.append('h2').text('Guns');
-
     // primaries
     var loc = content.append('div')
-        .attr('id', 'primaries')
-
-    loc.append('h4')
-        .classed('my-header', true)
-        .text('Primaries');
-
+        .attr('id', 'primaries')        // used for href
+        .classed('row', true);
+    addTitle(loc, "Primaries");
     buildGunCards(window.pri, loc, true);
 
     // secondaries
     loc = content.append('div')
-        .attr('id', 'secondaries')
-
-    loc.append('h4')
-        .classed('my-header', true)
-        .text('Secondaries');
-
+        .attr('id', 'secondaries')        // used for href
+        .classed('row', true);
+    addTitle(loc, "Secondaries");
     buildGunCards(window.sec, loc, false);
 
     // add nav arrows
-    var loc = d3.select('#main-content');
-    navigationArrows(loc);
+    navigationArrows(content);
 }
 
 function buildGunCards(arr, loc, pri) {
     for (var i = 0; i < arr.length; i++) {
-        buildGunCard(arr[i], loc, pri);
+        var col = loc.append('div')
+            .classed('col-sm-12 col-lg-6', true)
+        buildGunCard(arr[i], col, pri);
     }
-
-    d3.selectAll('.gun-roulette-card')
-        .classed('gun-roulette-card', false)
-        .classed('gun-output-card', true);
 }
 
 function navigationArrows(loc) {
@@ -107,8 +92,9 @@ function navigationArrows(loc) {
         .classed('btn rect', true)
         .append('img')
         .classed('center img-svg', true)
-        .attr('src', 'resources/guns/MP5K.png')
-        .attr('alt', 'PRIMARIES');
+        .attr('src', fetchGunImage('MP5K'))
+        .attr('alt', 'PRIMARIES')
+        .attr('loading', 'lazy');
 
     var def = parent.append('div')
         .classed('gradient border-highlight mt-3', true)
@@ -119,8 +105,9 @@ function navigationArrows(loc) {
         .classed('btn rect', true)
         .append('img')
         .classed('center img-svg', true)
-        .attr('src', 'resources/guns/D-50.png')
-        .attr('alt', 'SECONDARIES');
+        .attr('src', fetchGunImage('D-50'))
+        .attr('alt', 'SECONDARIES')
+        .attr('loading', 'lazy');
 
     var top = parent.append('div')
         .classed('gradient border-highlight mt-3', true)
@@ -132,5 +119,6 @@ function navigationArrows(loc) {
         .append('img')
         .classed('center img-svg', true)
         .attr('src', 'resources/up.svg')
-        .attr('alt', 'TOP');
+        .attr('alt', 'TOP')
+        .attr('loading', 'lazy');
 }

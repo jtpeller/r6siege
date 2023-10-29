@@ -12,5 +12,6 @@
     "deployable_shield": 1,
     "impact_grenade": 2,
     "proximity_alarm": 2,
-    "nitro_cell": 1
+    "nitro_cell": 1,
+    "observation_blocker": 2
 }

@@ -5,30 +5,8 @@
 // =  Date          : March 29, 2022
 // =================================================================
 
-let header;
-
-document.addEventListener("DOMContentLoaded", function() {
-    // get d3 objects
-    content = d3.select('#content');
-
-    //
-    // initialize site
-    //
-    let banner = content.append('div')
-        .classed('banner', true);
-
-    let title = banner.append('span')
-        .classed('title-box', true)
-        .append('h1')
-        .classed('title-card', true)
-        .text('R6S Roulette');
-
-    // links
-    let links = content.append('div')
-        .classed('d-flex justify-content-center link-card', true);
-
-    let linkdiv = links.append('div')
-        .classed('row', true);
+document.addEventListener("DOMContentLoaded", function () {
+    let linkdiv = d3.select('#btn-loc')
 
     let chunks = chunkify(ll, 2, true);
 
@@ -40,14 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         for (var j = 0; j < temp.length; j++) {
             col.append('a')
-                .classed('btn btn-item gradient', true)
+                .classed('btn btn-item gradient siege-uppercase', true)
                 .attr('href', temp[j].html)
                 .append('a')
                 .classed('btn-link', true)
                 .attr('href', temp[j].html)
                 .text(temp[j].link);
         }
-        
     }
-
 })

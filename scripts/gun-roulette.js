@@ -1,16 +1,12 @@
 // =================================================================
-// = guns.js
-// =  Description   : Builds guns.html
+// = guns-roulette.js
+// =  Description   : Builds guns-roulette.html
 // =  Author        : jtpeller
 // =  Date          : March 29, 2022
 // =================================================================
 
 /* GLOBALS */
-// ids
-var cid = "#content"
-	hid = "#header"
-
-var content, header;
+let content, header;
 
 // data (embedded on window for ease of access)
 window.primaries = []
@@ -22,12 +18,17 @@ window.data = [];
 // build the page
 //
 document.addEventListener("DOMContentLoaded", function() {
-    // select all elements
-    header = d3.select(hid);
-    content = d3.select(cid);
-
-    // init the navbar and footer first (data promise delays load times)
+    // create header
+    header = d3.select('header');
     initNavbar(header, 1);
+
+    // page content
+    content = d3.select('main').append('div');
+	var guns = content.append('div').classed('row', true);
+    addTitle(guns, 'Gun Roulette');     // page title
+    guns.append('p')                    // description
+        .classed('standout', true)
+        .html("Want to play a random gun? Bored of the same ol' guns? Want a new favorite gun? Press your luck!");
 
 	// load all data w/ d3 utils
 	Promise.all([
@@ -39,92 +40,64 @@ document.addEventListener("DOMContentLoaded", function() {
 		window.secondaries = values[1].secondary
 
         setMaxValues(window.primaries, window.secondaries);
-		initGuns();
+		initGuns(guns);
 	})
 })
 
-function initGuns() { 
-	//
-	// section for randomizing operators
-	//
-	var guns = content.append('div')
-		.classed('row section', true)
-		.attr('id', 'r-guns')
-	
-	// title and separator
-	guns.append('h2')
-		.html("Gun Roulette");
+function initGuns(guns) {
+    let generate_div = guns.append('div');
+    guns.append('hr');
 
-    let body = guns.append('div')
-        .attr('id', 'body')
-        .classed('row', true);
+    // roulette body
+    let body = guns.append('div').classed('row', true);
 
-	// guns left side
-	let asidecol = body.append('div')
-		.classed('col-3', true);
+    //
+    // filters
+    //
+    let filtercol = body.append('div')
+        .classed('col-sm-12 col-lg-4', true);
 
-    asidecol.append('h4')
-        .classed('my-header text-center', true)
+    let filter_acc = filtercol.append('div')
+        .classed('accordion accordion-flush', true)
+        .attr('id', 'filter-list')
+        .append('div')
+        .classed('accordion-item no-bkgd', true)
+
+    // filter header
+    filter_acc.append('h2')
+        .classed('accordion-header no-border', true)
+        .append('button')
+        .classed('accordion-button siege-uppercase collapsed', true)
+        .attr('type', 'button')
+        .attr('data-bs-toggle', 'collapse')
+        .attr('data-bs-target', '#filters-acc')
+        .attr('aria-expanded', 'false')
+        .attr('aria-controls', 'filters-acc')
         .text('Filters');
 
-    let aside = asidecol.append('aside')
-        .classed('sidebar', true);
+    // filter body
+    var filter_content = filter_acc.append('div')
+        .classed('accordion-collapse collapse', true)
+        .attr('id', 'filters-acc')
+        .attr('data-bs-parent', '#filters-list')
 
-	// guns right side
-	let main = body.append('div')
-        .attr('id', 'output-main')
-		.classed('col', true);
+    let filter_body = filter_content.append('div')
+        .classed('accordion-body', true);
 
-    let output = main.append('div');
-    
-	let generate = main.append('div')
-        .classed('text-center', true)
-        .append('button')
-        .text('Generate')
-        .classed('site-btn w-75 gradient-transparent border-highlight', true)
-        .attr('id', 'generate')
-        .on('click', function() {
-            if (window.data.length <= 0) {
-                output.text('');
-                output.append('p')
-                    .text("No ops match this filter/option set. Try another combination.")
-                    .classed('no-match', true);
-            } else {
-                // generate rng for selected guns
-                var rng = Math.floor(Math.random() * window.data.length);
+    // filter accordion organized into grid
+    var row = filter_body.append('div')
+        .classed('row', true);  // row for filters / op-card
 
-                var gun = window.data[rng];
-                output.html('');
-                buildGunCard(gun, output, isPrimary(gun));
+    var form = row.append('div')
+        .classed('row', true);  // row inside filters accordion
 
-                // set card-div height
-                d3.select('#carddiv')
-                    .classed('roulette-card', true);
-
-                // make the header a link
-                d3.select(`#gun-name`)
-                    .html('')
-                    .append('a')
-                    .html(gun.name + '&#128279;')
-                    .attr('href', `guns.html#${gun.name}`);
-            }
-        }.bind(this));
-
-	// form for conditions
-    let filters = aside.append('div')
-        .classed('my-sidebar', true);
-
-	let form = filters.append('div')
-		.attr('id', 'r-gun-form')
-
-    // selection form for gun type (primary v. secondary)
-    form.append('h4')
-        .classed('my-header', true)
-        .text('Gun Type');
+    // form for conditions
+    // first: primary/secondary/both selection menu
+    addHeader(form, "Gun Type");
 
     let type_select = form.append('select')
-        .classed('form-select bg-dark text-white', true)
-        .style('width', '75%')
+        .classed('form-select bg-dark text-white siege-bold', true)
+        .attr('id', 'gun-type-select')
         .attr('aria-label', 'Gun Type Select');
 
     type_select.append('option')
@@ -134,7 +107,7 @@ function initGuns() {
     type_select.append('option')
         .attr('value', '1')
         .text("Primaries only");
-    
+
     type_select.append('option')
         .attr('value', '2')
         .text('Secondaries only');
@@ -145,75 +118,81 @@ function initGuns() {
 
     // on user change:
     type_select.on('change', function() {
-        buildData();
-
-        // update roles
-        d3.select('#class-form').html('');
+        buildData();        // filter out data
         buildChecklist(d3.select('#class-form'), window.classes, true, buildData, 'class');
-
-        // force new selection
-        d3.select('#generate').node().click();
+        d3.select('#generate').node().click();  // force new selection
     })
 
     //
     // side form
     //
-    form.append('h4')
-        .classed('my-header', true)
-        .text('Side');
-
-    let rgun_side = form.append('select')
-        .classed('form-select bg-dark text-white', true)
-        .style('width', '75%')
-        .attr('aria-label', 'Side Select');
-
-    rgun_side.append('option')
-        .attr('value', '3')
-        .text("Both");
-
-    rgun_side.append('option')
-        .attr('value', '1')
-        .text("Attackers");
-    
-    rgun_side.append('option')
-        .attr('value', '2')
-        .text('Defenders');
-
-    rgun_side.on('change', function() {
-        buildData();
-
-        // force new selection
-        d3.select('#generate').node().click();
-    })
+    addHeader(form, "Team");
+    var team = form.append('div').classed('uppercase', true)
+    buildChecklist(team, ['Attacker', 'Defender'], true, buildData, 'team')
 
 	// gun class form
-	form.append("h4")
-        .classed('my-header', true)
-		.text('Gun Class');
+    addHeader(form, "Gun Class");
+    let gunclass = form.append('div')
+        .classed('uppercase', true)
+        .attr('id', 'class-form');      // note to me: keep this
 
-    let rgun_class = form.append('div')
-        .attr('id', 'class-form');
-    buildChecklist(rgun_class, window.classes, true, buildData, 'class');
+    buildChecklist(gunclass, window.classes, true, buildData, 'class', 0);
 
-    // make sure data is built
-    buildData();
+    // add horizontal line after final filters category
+    form.append('hr');
 
-    generate.node().click();    // generate a gun on page load.
-    
-    filters.append('button')
+    // toggle all filters button
+    let submit = row.append('div');
+    submit.append('button')
         .text('Toggle All Filters')
-        .classed('site-btn gradient-transparent border-highlight', true)
+        .classed('site-btn w-100 siege-uppercase gradient-transparent border-highlight', true)
         .on('click', function() {
             var x = form.selectAll('input[type=checkbox]').property('checked');
             form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
             if (x) {    // if x was true, then all the filters have just been unchecked, so data is now empty
                 window.data = [];
+                setEnabled('#generate', false);     // disable button
             } else {
+                setEnabled('#generate', true);
                 buildData();
             }
         })
 
+    //
+    // div for the rng'd gun
+    //
+	let main = body.append('div')
+		.classed('col', true);
 
+    let output = main.append('div');
+    
+    // generation button
+	let generate = generate_div.append('div')
+        .classed('text-center', true)
+        .append('button')
+        .text('Generate')
+        .classed('site-btn w-75 siege-uppercase gradient-transparent border-highlight', true)
+        .attr('id', 'generate')
+        .on('click', function() {
+            // generate rng for selected guns
+            var rng = Math.floor(Math.random() * window.data.length);
+            var gun = window.data[rng];
+            transitionGunCard(gun, output, isPrimary(gun.name));
+        }.bind(this));
+    
+    // generate a gun on page load.
+    var rng = Math.floor(Math.random() * window.data.length);
+    var gun = window.data[rng];
+    buildGunCard(gun, output, isPrimary(gun.name));
+
+    // make the header a link
+    d3.select(`#gun-name`)
+        .html('')
+        .append('a')
+        .classed('link', true)
+        .html(gun.name + '&#128279;')
+        .attr('href', `guns.html#${gun.name}`);
+    
     /**
      * this function builds the dataset based on the selected conditions
      * and filters the user can modify.
@@ -239,26 +218,28 @@ function initGuns() {
         window.classes.sort();
         
         // filter based on selected attacker/defender
-        temp = rgun_side.property('value');
-        var list = ["Attacker", "Defender"]
-        switch (temp) {
-            case '1':   // attacker only
-                filterIncludes([true, false], 'team', list);
-                break;
-            case '2':   // secondary
-                filterIncludes([false, true], 'team', list);
-                break;
-            default:    // both primary/secondaries
-                filterIncludes([true, true], 'team', list);
+        var temp = team.selectAll('input[type=checkbox]')._groups[0];
+        var options = [];
+        for (var i = 0; i < temp.length; i++) {
+            options.push(temp[i].checked);
         }
+        var list = ["Attacker", "Defender"]
+        filterIncludes(options, 'team', list);
 
         // filter based on selected gun class
-        var temp = rgun_class.selectAll('input[type=checkbox]')._groups[0];
+        var temp = gunclass.selectAll('input[type=checkbox]')._groups[0];
         var options = [];
         for (var i = 0; i < temp.length; i++) {
             options.push(temp[i].checked);
         }
         filter(options, 'type', window.classes);
+
+        // enable/disable site button as needed
+        if (window.data.length <= 0) {
+            setEnabled('#generate', false);
+        } else {
+            setEnabled('#generate', true);
+        }
     }
 }
 

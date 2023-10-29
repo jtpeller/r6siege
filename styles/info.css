@@ -1,0 +1,95 @@
+:root {
+    --op-card-bg-color: rgb(24, 26, 27);
+    --op-footer-bg-color: rgb(49, 53, 55);
+    --op-highlighted-bg-color: rgb(0, 183, 255);
+}
+
+.card-button {
+    width: 100%;
+    padding: 0;
+}
+
+.img-svg {
+    height: 100%;
+    transform: scale(1);
+
+    transition: transform 250ms ease-in-out;
+}
+
+.modal-content {
+    background-color: var(--op-card-bg-color) !important;
+    color: var(--primary-font-color) !important;
+}
+
+.nav-arrows {
+    position: fixed !important;
+    bottom: 5%;
+    left: 3%;
+}
+
+.op-card {
+    margin: 10px;
+    border-radius: 0 !important;
+    background-color: var(--op-card-bg-color);
+}
+
+.op-clicked,
+.op-highlighted {
+    background-color: var(--op-highlighted-bg-color) !important;
+}
+
+.op-footer {
+    background-color: var(--op-footer-bg-color);
+    padding: 0;
+
+    transition: background-color 250ms ease;
+}
+
+.op-img {
+    height: 100px;
+    width: 100px;
+}
+
+.op-title {
+    padding: 5px;
+    margin: auto !important;
+    color: var(--primary-font-color);
+}
+
+.rect {
+    padding: 0.5rem;
+    border-radius: 0;
+
+    height: 50px;
+    min-width: 100px;
+    background-color: rgb(212, 212, 212);
+}
+
+.square {
+    padding: 0.5rem;
+    border-radius: 0;
+
+    min-width: 100px;
+    height: 50px;
+    background-color: rgb(212, 212, 212);
+}
+
+.rect:hover > .img-svg,
+.square:hover > .img-svg {
+    transform: scale(1.1);
+}
+
+/**** MOBILE CHANGES ****/
+@media only screen and (min-width: 576px) {
+    .modal-dialog {
+        width: 75% !important;
+        max-width: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .modal-dialog {
+        width: 50% !important;
+        max-width: none;
+    }
+}

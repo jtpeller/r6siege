@@ -1,0 +1,121 @@
+.banner {
+    opacity: 0;
+
+    animation: fadeIn 1s ease-in-out 1;
+    animation-delay: 250ms;
+    animation-fill-mode: forwards;
+
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+
+    transition: padding-top 500ms ease;
+}
+
+.btn-item {
+    display: flex;
+    text-align: center !important;
+    border-radius: 0px;
+
+    height: 5rem;
+    min-width: 18rem;
+    margin-bottom: 2rem;
+
+    border-bottom: 5px solid transparent !important;
+    font-size: 1.3rem;
+
+    transition: border-bottom 250ms ease,
+        font-size 250ms ease;
+}
+
+.btn-item:hover {
+    border-bottom: 5px solid var(--border-bottom-color) !important;
+}
+
+.btn-item:hover>.btn-link {
+    transform: scale(1.1);
+}
+
+.btn-link {
+    font-size: 1.4rem;
+    margin: auto;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(59, 59, 59);
+
+    transform: scale(1);
+
+    transition: transform 0.25s ease-in-out;
+}
+
+.btn-link:hover {
+    color: rgb(59, 59, 59);
+}
+
+.link-card {
+    height: 3rem;
+    width: fit-content;
+    margin: auto;
+}
+
+.link-list {
+    margin: auto !important;
+    padding: 0 10px !important;
+    opacity: 0;
+
+    animation: fadeIn 1s ease-in-out 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.title-card {
+    font-size: 5vw;
+    padding-bottom: 10px;
+    transition: font-size 500ms ease;
+}
+
+
+/* QUERIES */
+/* LG */
+@media only screen and (min-width: 992px) {
+    .banner {
+        padding-top: 200px;
+    }
+
+    .title-card {
+        font-size: 100px;
+    }
+}
+
+/* MD */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .banner {
+        padding-top: 175px;
+    }
+
+    .title-card {
+        font-size: 75px;
+    }
+}
+
+/* S */
+@media only screen and (min-width: 592px) and (max-width: 768px) {
+    .banner {
+        padding-top: 150px;
+    }
+
+    .title-card {
+        font-size: 60px;
+    }
+}
+
+/* XS */
+@media only screen and (max-width: 591px) {
+    .banner {
+        padding-top: 75px;
+    }
+
+    .title-card {
+        font-size: 36px;
+    }
+}
