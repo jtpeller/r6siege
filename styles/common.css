@@ -34,7 +34,7 @@ body {
     display: flex;
     flex-direction: column;
 	background-color: rgb(18, 19, 20) !important;
-    background-image: url('/resources/background.jpg');
+    background-image: url('resources/background.jpg');
 	color: var(--primary-font-color) !important;
 }
 
