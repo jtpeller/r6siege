@@ -386,8 +386,8 @@
                 "mobility": 50,
                 "capacity": 10
             },
-            "ops": ["Maverick"],
-            "team": ["Attacker"],
+            "ops": ["Maverick", "Tubarao"],
+            "team": ["Attacker", "Defender"],
             "type": "Marksman Rifle"
         },
         {
@@ -880,7 +880,7 @@
                 "mobility": 50,
                 "capacity": 30
             },
-            "ops": ["Valkyrie", "Warden"],
+            "ops": ["Valkyrie", "Warden", "Tubarao"],
             "team": ["Defender"],
             "type": "SMG"
         },
@@ -924,7 +924,7 @@
             "type": "SMG"
         },
         {
-            "name": "Scorpion Evo 3 A1",
+            "name": "Scorpion EVO 3 A1",
             "properties": {
                 "damage": 23,
                 "suppressed_dmg": 19,

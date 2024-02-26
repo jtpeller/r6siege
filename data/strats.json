@@ -3,18 +3,21 @@
         "Rush in with pistols only as 3-speed operators.",
         "Attack with shield operators.",
         "Finka-Ash Rush",
-        "Wait until the last minute and then rush site.",
+        "Wait until the one minute is remaining and then rush site.",
         "Recruit Rush",
         "Rush in with shotguns.",
         "Sniper rush: Glaz and Kali",
         "Attack with shield operators, but un-equip your shield. Protect your back!"
     ],
     "def-strat": [
-
+        "Lock yourselves in with Castle's barricades and wait until the last minute.",
+        "Pick a 3-speed and roam",
+        "Anchor, like a boring rat"
     ],
     "gen-strat": [
-        "Hard mode: Damage yourself or get damaged to half health and rush.",
+        "Hard mode: Damage yourself or get damaged to half health and be aggressive.",
         "Play as you normally would.",
-        "Do not use ADS. Hipfire only."
+        "Do not use ADS. Hipfire only.",
+        "Play as a rat: prone only."
     ]
 }

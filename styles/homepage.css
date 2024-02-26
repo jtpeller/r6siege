@@ -1,3 +1,8 @@
+:root {
+    --master-font-size: 36px;
+    --banner-top-pad: 12px;
+}
+
 .banner {
     opacity: 0;
 
@@ -6,19 +11,19 @@
     animation-fill-mode: forwards;
 
     text-align: center;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding-top: var(--banner-top-pad);
+    padding-bottom: 15px;
 
-    transition: padding-top 500ms ease;
+    transition: padding-top 250ms ease;
 }
 
 .btn-item {
     display: flex;
+    position: relative;
     text-align: center !important;
     border-radius: 0px;
 
     height: 5rem;
-    min-width: 18rem;
     margin-bottom: 2rem;
 
     border-bottom: 5px solid transparent !important;
@@ -45,7 +50,7 @@
 
     transform: scale(1);
 
-    transition: transform 0.25s ease-in-out;
+    transition: transform 250ms ease-in-out;
 }
 
 .btn-link:hover {
@@ -69,7 +74,7 @@
 }
 
 .title-card {
-    font-size: 5vw;
+    font-size: var(--master-font-size);
     padding-bottom: 10px;
     transition: font-size 500ms ease;
 }
@@ -78,44 +83,41 @@
 /* QUERIES */
 /* LG */
 @media only screen and (min-width: 992px) {
-    .banner {
-        padding-top: 200px;
-    }
-
-    .title-card {
-        font-size: 100px;
+    :root {
+        --master-font-size: 72px;
+        --banner-top-pad: 128px;
     }
 }
 
 /* MD */
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-    .banner {
-        padding-top: 175px;
-    }
-
-    .title-card {
-        font-size: 75px;
+    :root {
+        --master-font-size: 48px;
+        --banner-top-pad: 24px;
     }
 }
 
 /* S */
 @media only screen and (min-width: 592px) and (max-width: 768px) {
-    .banner {
-        padding-top: 150px;
-    }
-
-    .title-card {
-        font-size: 60px;
+    :root {
+        --master-font-size: 42px;
+        --banner-top-pad: 21px;
     }
 }
 
 /* XS */
 @media only screen and (max-width: 591px) {
-    .banner {
-        padding-top: 75px;
+    :root {
+        --master-font-size: 40px;
+        --banner-top-pad: 15px;
     }
+}
 
-    .title-card {
-        font-size: 36px;
+
+/* XXS */
+@media only screen and (max-width: 396px) {
+    :root {
+        --master-font-size: 36px;
+        --banner-top-pad: 12px;
     }
 }

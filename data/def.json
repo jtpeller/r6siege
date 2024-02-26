@@ -403,7 +403,7 @@
             "speed": 1,
             "primary": [
                 {
-                    "name": "SuperNova",
+                    "name": "Supernova",
                     "type": "Shotgun"
                 },
                 {
@@ -955,6 +955,30 @@
             ],
             "gadget": ["Bulletproof Camera", "Barbed Wire"],
             "special": "F-NATT Dread Mine"
+        },
+        {
+            "name": "Tubarao",
+            "gender": "Male",
+            "role": ["Anti-Entry", "Anti-Gadget"],
+            "speed": 2,
+            "primary": [
+                {
+                    "name": "MPX",
+                    "type": "Submachine Gun"
+                },
+                {
+                    "name": "AR-15.50",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P226 MK 25",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": ["Nitro Cell", "Proximity Alarm"],
+            "special": "Zoto Canister"
         }
     ]
 }

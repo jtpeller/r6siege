@@ -4,121 +4,118 @@
 // =  Author        : jtpeller
 // =  Date          : September 26, 2022
 // =================================================================
-
-let header, content;
-
-window.pri = [];
-window.sec = [];
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function() {
-    // build header
-    header = d3.select('header');
-    initNavbar(header, 4);
-    
-    content = d3.select('main')
-        .append('div');
+    // initializations
+    const utils = new Utils();
+    utils.initNavbar(utils.select('#header'), 4);
+    const content = utils.select('#main');
+
+    // data
+    let pri = [];       // primary weapons
+    let sec = [];       // secondary weapons
+    let data = [];
+    let maxes = {};       // maximum values
     
     // load all data
     Promise.all([
-        d3.json('data/primary.json'),
-        d3.json('data/secondary.json')
-    ]).then(function(values) {
+        fetch('data/primary.json'),
+        fetch('data/secondary.json')
+    ]).then(function (responses) {
+        return Promise.all(responses.map(function(response) {
+            return response.json();
+        }));
+    }).then(function(values) {
         // set the data
-        window.pri = values[0].primary;
-        window.sec = values[1].secondary;
+        pri = values[0].primary;
+        sec = values[1].secondary;
 
-        // sort the data
-        window.pri.sort(function (a, b) {
+        // sort each of the data arrays
+        function sort(a, b) {
             return ('' + a.name).localeCompare(b.name);
+        }
+        pri.sort(sort);
+        sec.sort(sort);
+
+        // build data
+        [...pri, ...sec].forEach((val) => {
+            data.push(val.name);
         })
-        
-        window.sec.sort(function (a, b) {
-            return ('' + a.name).localeCompare(b.name);
-        })
+        data.sort((a, b) => { return ('' + a).localeCompare(b)});
 
         // calculate the max values
-        setMaxValues(window.pri, window.sec);
+        maxes = utils.setMaxValues(pri, sec);
         
         // build the page
         initGuns();
 
-        // scroll to the right point for hash link
+        // scroll to the right point for hash link, if it exists
         setTimeout( () => {
-            var sav = location.hash;
+            let sav = location.hash;
             if (sav.length > 1) {
-                d3.select(sav).node().scrollIntoView(true)
+                sav = sav.replaceAll("%20", " ");   // clean up URL
+                utils.select(sav).scrollIntoView(true)
             }
         }, 500);
     })
-})
 
-function initGuns() {
-    // primaries
-    var loc = content.append('div')
-        .attr('id', 'primaries')        // used for href
-        .classed('row', true);
-    addTitle(loc, "Primaries");
-    buildGunCards(window.pri, loc, true);
+    function initGuns() {
+        // add main title
+        utils.addPageTitle(content, "Guns List")
+        utils.append(content, 'p', {
+            classList: 'standout',
+            textContent: 'Each and every gun from the game is listed below. You can take a look at their stats or just look at the operators who have that gun. Start a search or get scrolling!'
+        })
 
-    // secondaries
-    loc = content.append('div')
-        .attr('id', 'secondaries')        // used for href
-        .classed('row', true);
-    addTitle(loc, "Secondaries");
-    buildGunCards(window.sec, loc, false);
+        // add search bar
+        utils.buildSearchBar(content, enter, submit, data, 'guns')
+        function enter(e) {
+            if (e.key === 'Enter') {
+                submit(e)
+            }
+        }
 
-    // add nav arrows
-    navigationArrows(content);
-}
+        function submit(e) {
+            let value = utils.capitalizeFirstLetter(utils.select('#guns-search-bar').value);
+            if (data.includes(value)) {
+                location.href = `#${value}`;
+            }
+        }
 
-function buildGunCards(arr, loc, pri) {
-    for (var i = 0; i < arr.length; i++) {
-        var col = loc.append('div')
-            .classed('col-sm-12 col-lg-6', true)
-        buildGunCard(arr[i], col, pri);
+        // primaries
+        let loc = utils.append(content, 'div', {classList: 'row'});
+        utils.addHeader(loc, "Primaries", "Primaries");
+        buildGunCards(pri, loc, true, maxes);
+    
+        // secondaries
+        loc = utils.append(content, 'div', {classList: 'row'});
+        utils.addHeader(loc, "Secondaries", "Secondaries");
+        buildGunCards(sec, loc, false, maxes);
+    
+        // add nav arrows
+        utils.buildNavigationArrows(content, getNavArrowList());
     }
-}
-
-function navigationArrows(loc) {
-    var parent = loc.append('div')
-        .classed('nav-arrows', true)
-
-    var atk = parent.append('div')
-    .classed('gradient border-highlight', true)
-
-    atk.append('a')
-        .attr('href', '#primaries')
-        .attr('title', 'Jump to primaries')
-        .classed('btn rect', true)
-        .append('img')
-        .classed('center img-svg', true)
-        .attr('src', fetchGunImage('MP5K'))
-        .attr('alt', 'PRIMARIES')
-        .attr('loading', 'lazy');
-
-    var def = parent.append('div')
-        .classed('gradient border-highlight mt-3', true)
-
-    def.append('a')
-        .attr('href', '#secondaries')
-        .attr('title', 'Jump to secondaries')
-        .classed('btn rect', true)
-        .append('img')
-        .classed('center img-svg', true)
-        .attr('src', fetchGunImage('D-50'))
-        .attr('alt', 'SECONDARIES')
-        .attr('loading', 'lazy');
-
-    var top = parent.append('div')
-        .classed('gradient border-highlight mt-3', true)
-
-    top.append('a')
-        .attr('href', '#')
-        .attr('title', 'Jump to top')
-        .classed('btn rect', true)
-        .append('img')
-        .classed('center img-svg', true)
-        .attr('src', 'resources/up.svg')
-        .attr('alt', 'TOP')
-        .attr('loading', 'lazy');
-}
+    
+    // calls the buildGunCard function for each gun in arr
+    function buildGunCards(arr, loc, isPrimary, max) {
+        for (let i = 0; i < arr.length; i++) {
+            let col = utils.append(loc, 'div', {classList: 'col-sm-12 col-lg-6'})
+            utils.buildGunCard(col, arr[i], isPrimary, max);
+        }
+    }
+    
+    // gets the list used when building navigation arrows
+    function getNavArrowList() {
+        return [{
+            title: "Primaries",
+            src: utils.fetchGunImage('MP5K'),
+        }, {
+            title: "Secondaries",
+            src: utils.fetchGunImage('D-50'),
+        }, {
+            title: "Top",
+            src: 'resources/up.svg',
+        }];
+    }
+})

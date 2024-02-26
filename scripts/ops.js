@@ -4,200 +4,219 @@
 // =  Author        : jtpeller
 // =  Date          : September 26, 2022
 // =================================================================
-
-let header, content;
-
-// embedded data
-window.atk = [];
-window.def = [];
-window.gadgets = [];
-window.rows = [];
-window.last = {
-    name: '',
-    row: -1,
-}
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function() {
-    // build header
-    header = d3.select('header');
-    initNavbar(header, 3);
-    
-    content = d3.select('main')
-        .append('div');
+    // init header & utils
+    const utils = new Utils();
+    utils.initNavbar(utils.select('#header'), 3);
+    const content = utils.select('#main');
+
+    // data
+    let atk = [];
+    let def = [];
+    let data = [];
+    let gadgets = [];
+    let last = {
+        name: '',
+        row: -1,
+    }
 
     // load all data
     Promise.all([
-        d3.json('data/atk.json'),
-        d3.json('data/def.json'),
-        d3.json('data/gadgets.json')
-    ]).then(function (values) {
+        fetch('data/atk.json'),
+        fetch('data/def.json'),
+        fetch('data/gadgets.json')
+    ]).then(function (responses) {
+        return Promise.all(responses.map(function(response) {
+            return response.json();
+        }));
+    }).then(function (values) {
         // set the data
-        window.atk = values[0].atk;
-        window.def = values[1].def;
-        window.gadgets = values[2];
-        
-        // save the hash name for later
-        var sav = location.hash;
-        window.last.name = sav.replaceAll('#', '');
+        atk = values[0].atk;
+        def = values[1].def;
+        gadgets = values[2];
+        utils.saveData(atk, def, gadgets);
+
+        // build list of op names (for search)
+        [...atk, ...def].forEach((val) => {
+            data.push(val.name);
+        });
+        data.sort((a, b) => { return ('' + a).localeCompare(b)});
 
         // initialize the page
         initOps();
         
         // scroll to the right point for hash link
+        let sav = location.hash;
+        last.name = sav.replaceAll('#', '');
         setTimeout( () => {
             if (sav.length > 1) {
-                d3.select(sav).node().scrollIntoView(true)
+                utils.select(sav).scrollIntoView(true)
             }
         }, 500);
 
-        // click the specified operator
-        if (window.last.name != '' && window.last.row === -1) {
-            d3.select(`#${window.last.name}`).node().click();
+        // click the specified operator to trigger the modal
+        if (last.name != '' && last.row === -1) {
+            utils.select(`#${last.name}`).click();
         }
     })
-})
+    
+    function initOps() {
+        // add main title, standout
+        utils.addPageTitle(content, "Operators List")
+        utils.append(content, 'p', {
+            classList: 'standout',
+            textContent: 'Each and every operator from the game is listed below. You can take a look at their stats by clicking on their card. Start a search or get scrolling!'
+        })
 
-function initOps() {
-    buildModal(content);
+        // add search bar
+        utils.buildSearchBar(content, enter, submit, data, 'op')
+        function enter(e) {
+            if (e.key === 'Enter') {
+                submit(e)
+            }
+        }
 
-    // attackers
-    var loc = content.append('div');
-    addTitle(loc, 'Attackers', 'Attackers');
-    buildOpCards(window.atk, loc);
+        function submit(e) {
+            const value = utils.capitalizeFirstLetter(utils.select('#op-search-bar').value);
+            if (data.includes(value)) {
+                let opcard = utils.select(`#${value}`)
+                opcard.scrollIntoView(true);
+                setTimeout( () => {
+                    opcard.click();
+                }, 500);        // delay, to scroll before opening modal
 
-    // defenders
-    loc = content.append('div');
-    addTitle(loc, 'Defenders', 'Defenders');
-    buildOpCards(window.def, loc);
+            }
+        }
 
-    // navigation arrows
-    navigationArrows(content);
-}
+        // build the modal
+        buildModal(content);
 
-function buildOpCards(arr, loc) {
-    // populate the row
-    var row = d3.create('div').classed('row', true)
-    for (let i = 0; i < arr.length; i++) {
-        let op = arr[i];
-        var cardcol = row.append('div')
-            .classed('col-sm-6 col-md-3 col-lg-3 col-xl-2', true);
+        // attackers
+        let loc = utils.create('div', {id: 'attacker-div'});
+        utils.addHeader(loc, 'Attackers', 'Attackers');
+        buildOpCards(atk, loc);
+        content.append(loc);
 
-        // this button creates the modal
-        var carddiv = cardcol.append('button')
-            .attr('type', 'button')
-            .attr('id', `${op.name}`)
-            .classed('card-button btn', true)
-            .attr('data-bs-toggle', 'modal')
-            .attr('data-bs-target', '#op-modal')
-            .on('mouseover', function() {
-                d3.select(this)
-                    .select('.op-footer')
-                    .classed('op-highlighted', true);
-            })
-            .on('mouseout', function() {
-                d3.select(this)
-                    .select('.op-footer')
-                    .classed('op-highlighted', false);
-            })
-            .on('click', function() {
-                var modal_body = d3.select('#modal-body');
-                modal_body.html('');
-                buildOpCard(op, modal_body);
-            })
-            .append('div')
-            .attr('id', op.name)
-            .classed('card op-card no-border', true)
+        // defenders
+        loc = utils.create('div', {id: 'defender-div'});
+        utils.addHeader(loc, 'Defenders', 'Defenders');
+        buildOpCards(def, loc);
+        content.append(loc);
 
-        // name & logo are listed
-        carddiv.append('img')    
-            .classed('card-img-top center op-img', true)
-            .attr('src', fetchOpImage(op.name))
-            .attr('alt', op.name);
-
-        var body = carddiv.append('div')
-            .classed('card-footer op-footer no-radius', true)
-
-        body.append('h6')
-            .classed('op-title siege-uppercase', true)
-            .text(op.name);
+        // navigation arrows
+        utils.buildNavigationArrows(content, getNavArrowList());
     }
-    loc.append(() => row.node());
-}
 
-/**
- * buildModal() -- builds the op modal
- * @param loc       the d3 element to place these buttons.
- * @param op        the JSON obj holding the op
- */
-function buildModal(loc) {
-    var modal = d3.create('div')
-        .classed('modal fade', true)
-        .attr('id', 'op-modal')
-        .attr('aria-hidden', 'true')
-        .attr('tabindex', -1);
+    // builds each of the op cards on the page in a Bootstrap row
+    function buildOpCards(arr, loc) {
+        // populate the row
+        let row = utils.create('div', {classList: 'row'});
 
-    var modal_content = modal.append('div')
-        .classed('modal-dialog modal-dialog-centered modal-dialog-scrollable', true)
-        .append('div')
-        .classed('modal-content', true)
+        for (let i = 0; i < arr.length; i++) {
+            const op = arr[i];
+            let card_col = utils.create('div', {
+                classList: 'col-sm-6 col-md-3 col-lg-3 col-xl-2'
+            })
 
-    var modal_header = modal_content.append('div')
-        .classed('modal-header', true)
+            // button to trigger the modal
+            let card_btn = utils.create('button', {
+                type: 'button',
+                id: op.name,
+                classList: 'card-button btn',
+            })
+            card_btn.dataset.bsToggle = 'modal';
+            card_btn.dataset.bsTarget = '#op-modal';
+            card_btn.addEventListener('mouseover', (e) => {
+                let mod = e.currentTarget.querySelector('.op-footer');
+                mod.classList.add('op-highlighted');
+            })
 
-    modal_header.append('button')
-        .classed('btn-close', true)
-        .attr('data-bs-dismiss', 'modal')
-        .attr('aria-label', 'Close');
+            card_btn.addEventListener('mouseout', (e) => {
+                let mod = e.currentTarget.querySelector('.op-footer');
+                mod.classList.remove('op-highlighted');
+            })
 
-    modal_content.append('div')
-                .classed('modal-body', true)
-                .attr('id', 'modal-body');
+            card_btn.addEventListener('click', (e) => {
+                let modal_body = utils.select('#modal-body');
+                modal_body.innerHTML = '';
+                utils.buildOpCard(modal_body, op);
+            })
 
-    loc.append(() => modal.node());
-}
+            // div which is the actual bootstrap card
+            let card_div = utils.create('div', {
+                classList: 'card op-card no-border',
+                id: op.name
+            })
 
-/**
- * navigationArrows() -- builds navigation buttons to be placed on the side of the 
- * page for users to click to quickly move around the page.
- * @param loc       the d3 element to place these buttons.
- */
-function navigationArrows(loc) {
-    var parent = loc.append('div')
-        .classed('nav-arrows', true)
+            card_div.append(utils.create('img', {
+                classList: 'card-img-top center op-img',
+                src: utils.fetchOpImage(op.name),
+                alt: op.name
+            }))
 
-    var atk = parent.append('div')
-    .classed('gradient border-highlight', true)
+            // card body containing the operator name
+            let card_body = utils.create('div', { classList: 'card-footer op-footer no-radius'});
+            card_body.append(utils.create('h6', {
+                classList: 'op-title siege-uppercase',
+                textContent: op.name,
+            }))
 
-    atk.append('a')
-        .attr('href', '#Attackers')
-        .attr('title', 'Jump to attackers')
-        .classed('btn square', true)
-        .append('img')
-        .classed('center img-svg', true)
-        .attr('src', 'resources/atk.svg')
-        .attr('alt', 'ATK');
+            // append everything
+            card_div.append(card_body);
+            card_btn.append(card_div);
+            card_col.append(card_btn);
+            row.append(card_col);
+        }
+        loc.append(row);
+    }
 
-    var def = parent.append('div')
-        .classed('gradient border-highlight mt-3', true)
+    // builds the op modal at ({Element} loc)
+    function buildModal(loc) {
+        let modal = utils.create('div', {
+            classList: 'modal fade',
+            id: 'op-modal',
+            ariaHidden: true,
+            tabindex: -1
+        })
 
-    def.append('a')
-        .attr('href', '#Defenders')
-        .attr('title', 'Jump to defenders')
-        .classed('btn square', true)
-        .append('img')
-        .classed('center img-svg', true)
-        .attr('src', 'resources/def.svg')
-        .attr('alt', 'DEF');
+        let modal_dialog = utils.create('div', {
+            classList: 'modal-dialog modal-dialog-centered modal-dialog-scrollable'
+        })
 
-    var top = parent.append('div')
-        .classed('gradient border-highlight mt-3', true)
+        let modal_content = utils.create('div', {classList: 'modal-content'});
+        let modal_header = utils.create('div', {classList: 'modal-header'})
+        let modal_close = utils.create('div', {
+            classList: 'btn-close btn-close-white',
+            ariaLabel: 'Close'
+        });
+        modal_close.dataset.bsDismiss = 'modal';
 
-    top.append('a')
-        .attr('href', '#')
-        .attr('title', 'Back to top')
-        .classed('btn square', true)
-        .append('img')
-        .classed('center img-svg', true)
-        .attr('src', 'resources/up.svg')
-        .attr('alt', 'TOP');
-}
+        // append it all together
+        modal_header.append(modal_close);
+        modal_content.append(modal_header);
+        modal_content.append(utils.create('div', {
+            classList: 'modal-body',
+            id: 'modal-body'
+        }))
+        modal_dialog.append(modal_content);
+        modal.append(modal_dialog);
+        loc.append(modal);
+    }
+
+    // gets the list used when building navigation arrows
+    function getNavArrowList() {
+        return [{
+            title: 'Attackers',
+            src: 'resources/atk.svg',
+        }, {
+            title: 'Defenders',
+            src: 'resources/def.svg',
+        }, {
+            title: "Top",
+            src: 'resources/up.svg',
+        }];
+    }
+
+})

@@ -9,7 +9,7 @@
                 "mobility": 45,
                 "capacity": 15
             },
-            "ops": ["Sledge", "Thatcher", "Smoke", "Mute"],
+            "ops": ["Sledge", "Thatcher", "Smoke", "Mute", "Tubarao"],
             "team": ["Attacker", "Defender"],
             "type": "Handgun"
         },

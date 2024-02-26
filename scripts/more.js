@@ -7,5 +7,6 @@
 
 // load the navbar
 document.addEventListener("DOMContentLoaded", function() {
-    initNavbar(d3.select('header'), 5);
+    const utils = new Utils();
+    utils.initNavbar(utils.select('#header'), 5);
 })

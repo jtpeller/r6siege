@@ -26,6 +26,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 60px;   /* to account for the navbar */
 }
 
 body {
@@ -34,11 +35,18 @@ body {
     display: flex;
     flex-direction: column;
 	background-color: rgb(18, 19, 20) !important;
-    background-image: url('resources/background.jpg');
+    background-image: url('./resources/background.jpg');
 	color: var(--primary-font-color) !important;
 }
 
-main {
+/* this accounts for the navbar */
+body::before {
+    display: block;
+    content: '';
+    height: 50px
+}
+
+#main {
     min-height: 100%;
 	padding: 15px;
     background-color: var(--bg-color);
@@ -94,6 +102,13 @@ main {
 
 .site-btn-disabled {
     background-color: var(--disabled-color) !important;
+}
+
+.search-btn {
+    border: none;
+    padding: 10px;
+    background-color: var(--button-color);
+    color: var(--primary-font-color);
 }
 
 .center {
@@ -215,6 +230,11 @@ main {
     border-radius: 0 !important;
 }
 
+/* This fixes the jittering when SVGs aren't loaded fast enough */
+#op-imgs {
+    min-height: 4rem !important;
+}
+
 .output-card {
 	background-color: var(--card-bg-color) !important;
 	color: var(--primary-font-color) !important;
@@ -241,14 +261,18 @@ main {
 }
 
 .siege-uppercase {
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: bold;
+    text-transform: uppercase !important;
+    font-style: italic !important;
+    font-weight: bold !important;
 }
 
 .siege-bold {
     text-transform: uppercase;
     font-weight: bold;
+}
+
+.search-icon {
+    width: 25px;
 }
 
 .speed-icon {
@@ -265,6 +289,7 @@ main {
     font-size: 20px;
     padding-top: 1rem;
     border-bottom: 1px solid var(--border-color);
+    color: var(--primary-font-color) !important;
 }
 
 .uppercase {

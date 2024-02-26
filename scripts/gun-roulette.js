@@ -4,250 +4,194 @@
 // =  Author        : jtpeller
 // =  Date          : March 29, 2022
 // =================================================================
+"use strict";
 
-/* GLOBALS */
-let content, header;
-
-// data (embedded on window for ease of access)
-window.primaries = []
-window.secondaries = [];
-window.classes = [];
-window.data = [];
-
-//
-// build the page
-//
 document.addEventListener("DOMContentLoaded", function() {
+    const utils = new Utils();
+
+    // datasets
+    let pri = []
+    let sec = [];
+    let maxes = {};
+    let classes = [];
+    let data = [];
+    let pri_types, sec_types, both_types = [];
+
     // create header
-    header = d3.select('header');
-    initNavbar(header, 1);
+    utils.initNavbar(utils.select('#header'), 1);
 
     // page content
-    content = d3.select('main').append('div');
-	var guns = content.append('div').classed('row', true);
-    addTitle(guns, 'Gun Roulette');     // page title
-    guns.append('p')                    // description
-        .classed('standout', true)
-        .html("Want to play a random gun? Bored of the same ol' guns? Want a new favorite gun? Press your luck!");
+    let content = utils.select('#main');
+    let guns = utils.append(content, 'div', {classList: 'row'});
+    utils.addPageTitle(guns, 'Gun Roulette');     // page title
+
+    // add heading/main content
+    utils.append(guns, 'p', {
+        classList: 'standout',
+        textContent: "Want to play a random gun? Bored of the same ol' guns? Want a new favorite gun? Press your luck!"
+    });
 
 	// load all data w/ d3 utils
 	Promise.all([
-		d3.json('data/primary.json'),
-		d3.json('data/secondary.json')
-	]).then(function(values) {
+		fetch('data/primary.json'),
+		fetch('data/secondary.json')
+	]).then(function (responses) {
+        return Promise.all(responses.map(function(response) {
+            return response.json();
+        }));
+    }).then(function(values) {
 		// set all necessary data
-		window.primaries = values[0].primary
-		window.secondaries = values[1].secondary
+		pri = values[0].primary
+		sec = values[1].secondary
+        
+        // set all other values from this data
+        // on page load, it'll be both primaries/secondaries
+        maxes = utils.setMaxValues(pri, sec);
+        data = [...pri, ...sec];
 
-        setMaxValues(window.primaries, window.secondaries);
+        // extract gun classes
+        [both_types, pri_types, sec_types] = utils.generateSets(structuredClone(pri), structuredClone(sec), "type", false)
+        classes = [...pri_types, ...sec_types]
+
+        // build the page
 		initGuns(guns);
 	})
-})
 
-function initGuns(guns) {
-    let generate_div = guns.append('div');
-    guns.append('hr');
+    function initGuns(guns) {
+        // build generate_div
+        guns.append(buildGenerateDiv());
+        utils.append(guns, 'hr');
 
-    // roulette body
-    let body = guns.append('div').classed('row', true);
+        // build the body
+        let body = utils.append(guns, 'div', {classList: 'row'});
+        body.append(buildFilters());
+        body.append(buildOutput());
 
-    //
-    // filters
-    //
-    let filtercol = body.append('div')
-        .classed('col-sm-12 col-lg-4', true);
+        function buildGenerateDiv() {
+            // create the div where it will sit
+            let generator = utils.create('div')
 
-    let filter_acc = filtercol.append('div')
-        .classed('accordion accordion-flush', true)
-        .attr('id', 'filter-list')
-        .append('div')
-        .classed('accordion-item no-bkgd', true)
+            // create a center div and the button
+            let btn_div = utils.append(generator, 'div', {classList: 'text-center'});
+            utils.append(btn_div, 'button', {
+                classList: 'site-btn w-75 siege-uppercase gradient-transparent border-highlight',
+                id: 'generate',
+                textContent: 'Generate',
+                onclick: () => {
+                    // RNG a new gun & update
+                    let rng = Math.floor(Math.random() * data.length);
+                    let gun = data[rng];
+                    utils.transitionGunCard(utils.select('#output'), gun, isPrimary(gun.name), maxes);
+                }
+            });
 
-    // filter header
-    filter_acc.append('h2')
-        .classed('accordion-header no-border', true)
-        .append('button')
-        .classed('accordion-button siege-uppercase collapsed', true)
-        .attr('type', 'button')
-        .attr('data-bs-toggle', 'collapse')
-        .attr('data-bs-target', '#filters-acc')
-        .attr('aria-expanded', 'false')
-        .attr('aria-controls', 'filters-acc')
-        .text('Filters');
+            return generator;
+        }
 
-    // filter body
-    var filter_content = filter_acc.append('div')
-        .classed('accordion-collapse collapse', true)
-        .attr('id', 'filters-acc')
-        .attr('data-bs-parent', '#filters-list')
+        // builds the filters accordion, populates it, and adds all behaviors
+        function buildFilters() {
+            // add the filters
+            let filtercol = utils.create('div', {classList: 'col-sm-12 col-lg-4'});
+            utils.buildAccordion(filtercol, "Filters");
 
-    let filter_body = filter_content.append('div')
-        .classed('accordion-body', true);
+            let acc_body = filtercol.querySelector('#Filters-body');
 
-    // filter accordion organized into grid
-    var row = filter_body.append('div')
-        .classed('row', true);  // row for filters / op-card
+            // the filter accordion is organized into a grid
+            let row = utils.append(acc_body, 'div', {classList: 'row'});
+            let form = utils.append(row, 'div', {id: 'form'});
 
-    var form = row.append('div')
-        .classed('row', true);  // row inside filters accordion
+            // conditions:
+            // ... build operator side selection
+            utils.addHeader(form, "Operator Side");
+            let type_select = utils.buildSelect({
+                classList: 'form-select bg-dark text-white siege-bold',
+                id: 'gun-type-select',
+                ariaLabel: 'Gun Type Select',
+                onchange: () => {
+                    buildData();            // get new dataset
+                    buildChecklist(utils.select('#gun-class'), classes, true, buildData, 'class');
+                    utils.select('#generate').click();
+                }
+            }, [
+                {value: 3, text: "Both"},
+                {value: 1, text: "Primaries only"},
+                {value: 2, text: "Secondaries only"}
+            ]);
+            form.append(type_select);
 
-    // form for conditions
-    // first: primary/secondary/both selection menu
-    addHeader(form, "Gun Type");
+            // ... build atk or def form
+            utils.buildFilterForm(form, ["Attacker", "Defender"], buildData, "Team", "team");
+            utils.buildFilterForm(form, classes, buildData, "Gun Class", "gun-class");
 
-    let type_select = form.append('select')
-        .classed('form-select bg-dark text-white siege-bold', true)
-        .attr('id', 'gun-type-select')
-        .attr('aria-label', 'Gun Type Select');
+            // separate toggler button from rest of form
+            utils.append(form, 'hr');
 
-    type_select.append('option')
-        .attr('value', '3')
-        .text("Both");
+            // ... build toggle all filters button
+            utils.buildToggleButton(row, buildData);
 
-    type_select.append('option')
-        .attr('value', '1')
-        .text("Primaries only");
+            return filtercol;
+        }
 
-    type_select.append('option')
-        .attr('value', '2')
-        .text('Secondaries only');
+        // creates the output div that holds the gun card
+        function buildOutput() {
+            let output_div = utils.create('div', {classList: 'col', id: 'output'});
+            let gun_div = utils.append(output_div, 'div');
 
-    // on page load, it'll be both primaries/secondaries
-    window.data = [...window.primaries, ...window.secondaries];
-    window.classes = [...primary_types, ...secondary_types];
+            let rng = Math.floor(Math.random() * data.length);
+            let gun = data[rng];
+            utils.buildGunCard(gun_div, gun, isPrimary(gun.name), maxes, true);
 
-    // on user change:
-    type_select.on('change', function() {
-        buildData();        // filter out data
-        buildChecklist(d3.select('#class-form'), window.classes, true, buildData, 'class');
-        d3.select('#generate').node().click();  // force new selection
-    })
+            return output_div;
+        }
 
-    //
-    // side form
-    //
-    addHeader(form, "Team");
-    var team = form.append('div').classed('uppercase', true)
-    buildChecklist(team, ['Attacker', 'Defender'], true, buildData, 'team')
-
-	// gun class form
-    addHeader(form, "Gun Class");
-    let gunclass = form.append('div')
-        .classed('uppercase', true)
-        .attr('id', 'class-form');      // note to me: keep this
-
-    buildChecklist(gunclass, window.classes, true, buildData, 'class', 0);
-
-    // add horizontal line after final filters category
-    form.append('hr');
-
-    // toggle all filters button
-    let submit = row.append('div');
-    submit.append('button')
-        .text('Toggle All Filters')
-        .classed('site-btn w-100 siege-uppercase gradient-transparent border-highlight', true)
-        .on('click', function() {
-            var x = form.selectAll('input[type=checkbox]').property('checked');
-            form.selectAll('input[type=checkbox]').property('checked', !x)  // this makes me feel smart
-            if (x) {    // if x was true, then all the filters have just been unchecked, so data is now empty
-                window.data = [];
-                setEnabled('#generate', false);     // disable button
-            } else {
-                setEnabled('#generate', true);
-                buildData();
+        // builds the dataset based on the user-selected conditions / filters.
+        function buildData() {
+            // get selected gun type (if statement handles first time page loading)
+            let temp = 3;
+            if (utils.select('#gun-type-select') != null) {
+                temp = utils.select('#gun-type-select').value;
             }
-        })
 
-    //
-    // div for the rng'd gun
-    //
-	let main = body.append('div')
-		.classed('col', true);
+            // init data based on type
+            switch (temp) {
+                case '1':   // primary
+                    data = [...pri];
+                    classes = [...pri_types];
+                    break;
+                case '2':   // secondary
+                    data = [...sec];
+                    classes = [...sec_types];
+                    break;
+                default:    // both primary/secondaries
+                    data = [...pri, ...sec];
+                    classes = [...pri_types, ...sec_types];
+            }
+            classes.sort();
+            
+            // filter based on selected attacker/defender
+            let checked = utils.extractCheckedValues(utils.select('#team-form'))
+            utils.filterList(data, checked, 'team', ["Attacker", "Defender"]);
 
-    let output = main.append('div');
-    
-    // generation button
-	let generate = generate_div.append('div')
-        .classed('text-center', true)
-        .append('button')
-        .text('Generate')
-        .classed('site-btn w-75 siege-uppercase gradient-transparent border-highlight', true)
-        .attr('id', 'generate')
-        .on('click', function() {
-            // generate rng for selected guns
-            var rng = Math.floor(Math.random() * window.data.length);
-            var gun = window.data[rng];
-            transitionGunCard(gun, output, isPrimary(gun.name));
-        }.bind(this));
-    
-    // generate a gun on page load.
-    var rng = Math.floor(Math.random() * window.data.length);
-    var gun = window.data[rng];
-    buildGunCard(gun, output, isPrimary(gun.name));
+            // filter based on selected gun class
+            checked = utils.extractCheckedValues(utils.select('#gun-class-form'))
+            utils.filter(data, checked, 'type', classes);
 
-    // make the header a link
-    d3.select(`#gun-name`)
-        .html('')
-        .append('a')
-        .classed('link', true)
-        .html(gun.name + '&#128279;')
-        .attr('href', `guns.html#${gun.name}`);
-    
-    /**
-     * this function builds the dataset based on the selected conditions
-     * and filters the user can modify.
-     */
-    function buildData() {
-        // get selected gun type
-        var temp = type_select.property('value');
-
-        // init data based on type
-        switch (temp) {
-            case '1':   // primary
-                window.data = [...window.primaries];
-                window.classes = [...primary_types];
-                break;
-            case '2':   // secondary
-                window.data = [...window.secondaries];
-                window.classes = [...secondary_types];
-                break;
-            default:    // both primary/secondaries
-                window.data = [...window.primaries, ...window.secondaries];
-                window.classes = [...primary_types, ...secondary_types];
-        }
-        window.classes.sort();
-        
-        // filter based on selected attacker/defender
-        var temp = team.selectAll('input[type=checkbox]')._groups[0];
-        var options = [];
-        for (var i = 0; i < temp.length; i++) {
-            options.push(temp[i].checked);
-        }
-        var list = ["Attacker", "Defender"]
-        filterIncludes(options, 'team', list);
-
-        // filter based on selected gun class
-        var temp = gunclass.selectAll('input[type=checkbox]')._groups[0];
-        var options = [];
-        for (var i = 0; i < temp.length; i++) {
-            options.push(temp[i].checked);
-        }
-        filter(options, 'type', window.classes);
-
-        // enable/disable site button as needed
-        if (window.data.length <= 0) {
-            setEnabled('#generate', false);
-        } else {
-            setEnabled('#generate', true);
+            // enable/disable site button as needed
+            if (data.length <= 0) {
+                utils.setEnabled('#generate', false);
+            } else {
+                utils.setEnabled('#generate', true);
+            }
         }
     }
-}
 
-function isPrimary(gun) {
-    for (var i = 0; i < window.primaries.length; i++) {
-        if (window.primaries[i].name == gun) {
-            return true;
+    // returns true if gun {string} is a primary weapon, false otherwise.
+    function isPrimary(gun) {
+        for (let i = 0; i < pri.length; i++) {
+            if (pri[i].name == gun) {
+                return true;
+            }
         }
+        return false;
     }
-    return false;
-}
+})
