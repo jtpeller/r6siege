@@ -1,18 +1,14 @@
 {
     "atk": [
         {
-            "name": "Recruit",
+            "name": "Striker",
             "gender": "Male",
-            "role": ["Absolute Unit"],
+            "role": ["Support"],
             "speed": 2,
             "primary": [
                 {
-                    "name": "L85A2",
+                    "name": "M4",
                     "type": "Assault Rifle"
-                },
-                {
-                    "name": "Mk 14 EBR",
-                    "type": "Marksman Rifle"
                 },
                 {
                     "name": "M249",
@@ -21,20 +17,16 @@
             ],
             "secondary": [
                 {
-                    "name": "P12",
+                    "name": "5.7 USG",
                     "type": "Handgun"
                 },
                 {
-                    "name": "Super Shorty",
+                    "name": "ITA12S",
                     "type": "Shotgun"
-                },
-                {
-                    "name": "C75 Auto",
-                    "type": "Machine Pistol"
                 }
             ],
-            "gadget": ["Frag Grenade", "Stun Grenade", "Impact EMP Grenade"],
-            "special": ["Breach Charge", "Stun Grenade", "Claymore"]
+            "gadget": ["Breach Charge", "Claymore", "Frag Grenade", "Hard Breach Charge", "Smoke Grenade", "Stun Grenade", "Impact EMP Grenade"],
+            "special": "Gadget Kit"
         },
         {
             "name": "Sledge",
@@ -1000,6 +992,30 @@
             ],
             "gadget": ["Stun Grenade", "Smoke Grenade"],
             "special": "Bu-Gi Auto-Breacher"
+        },
+        {
+            "name": "Deimos",
+            "gender": "Male",
+            "role": ["Intel Gatherer", "Map Control"],
+            "speed": 2,
+            "primary": [
+                {
+                    "name": "AK-74M",
+                    "type": "Assault Rifle"
+                },
+                {
+                    "name": "M590A1",
+                    "type": "Shotgun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": ".44 Vendetta",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": ["Frag Grenade", "Hard Breach Charge"],
+            "special": "Deathmark Tracker"
         }
     ]
 }

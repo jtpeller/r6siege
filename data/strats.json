@@ -4,7 +4,6 @@
         "Attack with shield operators.",
         "Finka-Ash Rush",
         "Wait until the one minute is remaining and then rush site.",
-        "Recruit Rush",
         "Rush in with shotguns.",
         "Sniper rush: Glaz and Kali",
         "Attack with shield operators, but un-equip your shield. Protect your back!"
@@ -18,6 +17,10 @@
         "Hard mode: Damage yourself or get damaged to half health and be aggressive.",
         "Play as you normally would.",
         "Do not use ADS. Hipfire only.",
-        "Play as a rat: prone only."
+        "Play as a rat: prone only.",
+        "Pistols only",
+        "Shotguns only",
+        "Secondary shotguns only",
+        "Machine Pistols only"
     ]
 }

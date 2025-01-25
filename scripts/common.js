@@ -198,7 +198,10 @@ class Utils {
      */
     buildGunCard(loc, gun, pri, maxes, link=false) {
         // card div
-        let card_div = this.append(loc, 'div', {classList: 'card output-card', id: gun.name});
+        let card_div = this.append(loc, 'div', {
+            classList: 'card output-card',
+            id: this.getGunID(gun.name)
+        });
 
         // overview
         let overview = this.append(card_div, 'div', {classList: 'pb-3'});
@@ -226,7 +229,7 @@ class Utils {
             header.innerHTML = '';
             this.append(header, 'a', {
                 classList: 'link',
-                href: `guns.html#${gun.name}`,
+                href: `guns.html#${this.getGunID(gun.name)}`,
                 id: 'gun-name',
                 innerHTML: gun.name + '&#128279;',
             });
@@ -497,7 +500,7 @@ class Utils {
      * @param {string} gun      name of the gun to fetch
      */
     fetchGunImage(gun) {
-        if (gun.includes('.44 Mag')) {
+        if (gun.includes('.44')) {
             gun = gun.slice(1); // remove the pesky punctuation
         }
         return `resources/guns/${gun}.webp`;
@@ -586,6 +589,13 @@ class Utils {
                 }
             }
         }
+    }
+
+    // returns a properly formatted gun name
+    getGunID(gun_name) {
+        let id = gun_name;
+        id = id.replaceAll(' ', '-').replaceAll('.', '');
+        return 'gun-' + id;
     }
 
     /**
@@ -795,7 +805,7 @@ class Utils {
         this.append(name, 'a', {
             classList: 'link',
             innerHTML: gun.name + '&#128279;',
-            href: `guns.html#${gun.name}`,
+            href: `guns.html#${this.getGunID(gun.name)}`,
         })
     
         // update type
@@ -1087,7 +1097,7 @@ class Utils {
 
             // gun img that's also a link
             let card = this.create('div', {classList: 'card center gun-card no-radius'});
-            let link = this.create('a', {href: `guns.html#${gun.name}`})
+            let link = this.create('a', {href: `guns.html#${this.getGunID(gun.name)}`})
             link.append(this.create('img', {
                 classList: 'center card-img-top gun-img',
                 src: this.fetchGunImage(gun.name),
@@ -1144,34 +1154,29 @@ class Utils {
         let special = this.create('div');
         let title = this.create('h3', {classList: 'siege-uppercase subheader'});
 
-        // handle recruit vs specialty ops
-        if (typeof op.special !== "string") {
-            title.textContent = 'Secondary Gadget';
-            special.append(title);
-            this.#buildGadgetList(special, op.special);
-        } else {
-            title.textContent = 'Special';
+        // all ops are "specialty" based now after recruit was reworked.
+        title.textContent = 'Special';
 
-            // card div
-            let card = this.create('div', {classList: 'card gun-card no-radius'});
-            card.append(this.create('img', {
-                classList: 'center card-img-top gun-img',
-                src: this.#fetchSpecialImage(op.name),
-                alt: op.special,
-                title: op.special,
-                loading: 'lazy',
-            }))
+        // card div
+        let card = this.create('div', {classList: 'card gun-card no-radius'});
+        card.append(this.create('img', {
+            classList: 'center card-img-top gun-img',
+            src: this.#fetchSpecialImage(op.name),
+            alt: op.special,
+            title: op.special,
+            loading: 'lazy',
+        }))
 
-            // card body
-            let body = this.create('div', {classList: 'card-body text-center'});
-            body.append(this.create('h6', {
-                classList: 'card-title siege-bold',
-                textContent: op.special
-            }));
-            card.append(body);
-            special.append(title);
-            special.append(card);
-        }
+        // card body
+        let body = this.create('div', {classList: 'card-body text-center'});
+        body.append(this.create('h6', {
+            classList: 'card-title siege-bold',
+            textContent: op.special
+        }));
+        card.append(body);
+        special.append(title);
+        special.append(card);
+        
         loc.innerHTML = '';     // clear it first
         loc.append(special);
     }

@@ -1,14 +1,14 @@
 {
     "def": [
         {
-            "name": "Recruit",
+            "name": "Sentry",
             "gender": "Male",
-            "role": ["Absolute Unit"],
+            "role": ["Support"],
             "speed": 2,
             "primary": [
                 {
-                    "name": "MP5K",
-                    "type": "Submachine Gun"
+                    "name": "Commando 9",
+                    "type": "Assault Rifle"
                 },
                 {
                     "name": "M870",
@@ -17,16 +17,16 @@
             ],
             "secondary": [
                 {
-                    "name": "P9",
-                    "type": "Handgun"
+                    "name": "C75 Auto",
+                    "type": "Machine Pistol"
                 },
                 {
-                    "name": "SMG-11",
-                    "type": "Machine Pistol"
+                    "name": "Super Shorty",
+                    "type": "Shotgun"
                 }
             ],
-            "gadget": ["Nitro Cell", "Impact Grenade", "Proximity Alarm"],
-            "special": ["Bulletproof Camera", "Barbed Wire", "Deployable Shield"]
+            "gadget": ["Barbed Wire", "Bulletproof Camera", "Deployable Shield", "Observation Blocker", "Impact Grenade", "Nitro Cell", "Proximity Alarm"],
+            "special": "Gadget Kit"
         },
         {
             "name": "Smoke",
@@ -979,6 +979,26 @@
             ],
             "gadget": ["Nitro Cell", "Proximity Alarm"],
             "special": "Zoto Canister"
+        },
+        {
+            "name": "Skopos",
+            "gender": "Female",
+            "role": ["Intel Gatherer", "Support"],
+            "speed": 2,
+            "primary": [
+                {
+                    "name": "PCX-33",
+                    "type": "Assault Rifle"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "P229",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": ["Impact Grenade", "Proximity Alarm"],
+            "special": "V10 Pantheon Shells"
         }
     ]
 }

@@ -15,7 +15,12 @@
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="scripts/common.js"></script>
-    <script src="scripts/more.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const utils = new Utils();
+            utils.initNavbar(utils.select('#header'), 5);
+        })
+    </script>
 </head>
 
 <body>
@@ -55,8 +60,12 @@
             <p>Build strat roulette page</p>
             <p>Add comparison pages with charts and whatnot. E.g., Gun Compare, which you could rank each gun by fire rate or something.</p>
         </div>
+        <div>
+            <h4 class="siege-uppercase subheader">Resources</h4>
+            <p>Operator SVG images from: <a href="https://github.com/marcopixel/r6operators/tree/master">r6operators : GitHub : marcopixel</a></p>
+        </div>
         <br>
-        <p><i>Last updated for <b><a href="https://www.ubisoft.com/en-us/game/rainbow-six/siege/game-info/seasons/deepfreeze" target="_blank">Y8S4</a></b></i></p>
+        <p><i>Last updated for <b><a href="https://www.ubisoft.com/en-us/game/rainbow-six/siege/news-updates/seasons/collisionpoint" target="_blank">Y9S4</a></b></i></p>
     </div>
 </body>
 </html>

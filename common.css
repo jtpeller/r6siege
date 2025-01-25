@@ -22,6 +22,8 @@
     --primary-font-color: rgb(232, 230, 227);
 
     --border-radius: 15px;
+    
+    touch-action: manipulation;     /* disable double-tap-to-zoom for better UX */
 }
 
 html {
@@ -31,6 +33,7 @@ html {
 
 body {
     min-height: 100vh;
+    height: fit-content;
     font-family: 'Helvetica', 'Arial', sans-serif;
     display: flex;
     flex-direction: column;

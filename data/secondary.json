@@ -287,6 +287,19 @@
             "type": "Handgun"
         },
         {
+            "name": ".44 Vendetta",
+            "properties": {
+                "damage": 78,
+                "suppressed_dmg": -1,
+                "firerate": -1,
+                "mobility": 45,
+                "capacity": 6
+            },
+            "ops": ["Deimos"],
+            "team": ["Attacker"],
+            "type": "Handgun"
+        },
+        {
             "name": "GONNE-6",
             "properties": {
                 "damage": 10,
