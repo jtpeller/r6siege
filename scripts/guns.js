@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function submit(e) {
             let value = utils.capitalizeFirstLetter(utils.select('#guns-search-bar').value);
             if (data.includes(value)) {
-                location.href = `#${value}`;
+                location.href = '#'+utils.getGunID(value);
             }
         }
 
