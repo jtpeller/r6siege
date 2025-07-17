@@ -35,12 +35,12 @@
             "speed": 1,
             "primary": [
                 {
-                    "name": "M590A1",
-                    "type": "Shotgun"
-                },
-                {
                     "name": "L85A2",
                     "type": "Assault Rifle"
+                },
+                {
+                    "name": "M590A1",
+                    "type": "Shotgun"
                 }
             ],
             "secondary": [
@@ -50,7 +50,7 @@
                 }
             ],
             "gadget": ["Frag Grenade", "Stun Grenade", "Impact EMP Grenade"],
-            "special": "Tactical Breaching Hammer"
+            "special": "Breaching Hammer"
         },
         {
             "name": "Thatcher",
@@ -97,16 +97,17 @@
             ],
             "secondary": [
                 {
-                    "name": "M45 MEUSOC",
+                    "name": "5.7 USG",
                     "type": "Handgun"
                 },
                 {
-                    "name": "5.7 USG",
+                    "name": "M45 MEUSOC",
                     "type": "Handgun"
                 }
+
             ],
             "gadget": ["Breach Charge", "Claymore"],
-            "special": "Breaching Rounds"
+            "special": "Breaching Round"
         },
         {
             "name": "Thermite",
@@ -125,13 +126,14 @@
             ],
             "secondary": [
                 {
-                    "name": "M45 MEUSOC",
+                    "name": "5.7 USG",
                     "type": "Handgun"
                 },
                 {
-                    "name": "5.7 USG",
+                    "name": "M45 MEUSOC",
                     "type": "Handgun"
                 }
+                
             ],
             "gadget": ["Smoke Grenade", "Stun Grenade"],
             "special": "Exothermic Charge"
@@ -211,6 +213,10 @@
                 {
                     "name": "GONNE-6",
                     "type": "Hand Cannon"
+                },
+                {
+                    "name": "Bearing 9",
+                    "type": "Machine Pistol"
                 }
             ],
             "gadget": ["Smoke Grenade", "Frag Grenade", "Claymore"],
@@ -223,16 +229,16 @@
             "speed": 1,
             "primary": [
                 {
-                    "name": "Ballistic Shield",
-                    "type": "Shield"
+                    "name": "AK-12",
+                    "type": "Assault Rifle"
                 },
                 {
                     "name": "6P41",
                     "type": "Light Machine Gun"
                 },
                 {
-                    "name": "AK-12",
-                    "type": "Assault Rifle"
+                    "name": "Ballistic Shield",
+                    "type": "Shield"
                 }
             ],
             "secondary": [
@@ -293,7 +299,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Breach Charge", "Claymore"],
+            "gadget": ["Breach Charge", "Frag Grenade", "Claymore"],
             "special": "Electronics Detector"
         },
         {
@@ -315,20 +321,16 @@
                 {
                     "name": "Mk1 9mm",
                     "type": "Handgun"
-                },
-                {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
                 }
             ],
-            "gadget": ["Stun Grenade", "Hard Breach Charge"],
+            "gadget": ["Stun Grenade", "Claymore"],
             "special": "Skeleton Key"
         },
         {
             "name": "Blackbeard",
             "gender": "Male",
             "role": ["Shield", "Support"],
-            "speed": 2,
+            "speed": 1,
             "primary": [
                 {
                     "name": "MK17 CQB",
@@ -339,13 +341,8 @@
                     "type": "Marksman Rifle"
                 }
             ],
-            "secondary": [
-                {
-                    "name": "D-50",
-                    "type": "Handgun"
-                }
-            ],
-            "gadget": ["Claymore", "Stun Grenade", "Impact EMP Grenade"],
+            "secondary": [],
+            "gadget": ["Claymore", "Frag Grenade"],
             "special": "H.U.L.L. Adaptable Shield"
         },
         
@@ -356,25 +353,25 @@
             "speed": 3,
             "primary": [
                 {
-                    "name": "PARA-308",
-                    "type": "Assault Rifle"
-                },
-                {
                     "name": "M249",
                     "type": "Light Machine Gun"
+                },
+                {
+                    "name": "PARA-308",
+                    "type": "Assault Rifle"
                 }
             ],
             "secondary": [
                 {
-                    "name": "PRB92",
-                    "type": "Handgun"
-                },
-                {
                     "name": "GONNE-6",
                     "type": "Hand Cannon"
+                },
+                {
+                    "name": "PRB92",
+                    "type": "Handgun"
                 }
             ],
-            "gadget": ["Claymore", "Hard Breach Charge"],
+            "gadget": ["Claymore", "Hard Breach Charge", "Impact EMP Grenade"],
             "special": "Tactical Crossbow"
         },
         {
@@ -426,12 +423,12 @@
             ],
             "secondary": [
                 {
-                    "name": "ITA12S",
-                    "type": "Shotgun"
-                },
-                {
                     "name": "USP40",
                     "type": "Handgun"
+                },
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
                 }
             ],
             "gadget": ["Claymore", "Smoke Grenade"],
@@ -482,7 +479,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Breach Charge", "Claymore"],
+            "gadget": ["Claymore", "Hard Breach Charge"],
             "special": "KS79 LIFELINE"
         },
         {
@@ -502,16 +499,16 @@
             ],
             "secondary": [
                 {
+                    "name": "GONNE-6",
+                    "type": "Hand Cannon"
+                },
+                {
                     "name": "SMG-12",
                     "type": "Machine Pistol"
                 },
                 {
                     "name": "C75 Auto",
                     "type": "Machine Pistol"
-                },
-                {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
                 }
             ],
             "gadget": ["Smoke Grenade", "Stun Grenade", "Impact EMP Grenade"],
@@ -544,13 +541,9 @@
                 {
                     "name": "P9",
                     "type": "Handgun"
-                },
-                {
-                    "name": "GONNE-6",
-                    "type": "Hand Cannon"
                 }
             ],
-            "gadget": ["Stun Grenade", "Claymore", "Impact EMP Grenade"],
+            "gadget": ["Stun Grenade", "Claymore", "Frag Grenade"],
             "special": "EE-ONE-D"
         },
         {
@@ -606,7 +599,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Stun Grenade", "Claymore"],
+            "gadget": ["Stun Grenade", "Smoke Grenade", "Claymore"],
             "special": "Breaching Torch"
         },
         {
@@ -750,7 +743,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Claymore", "Breach Charge"],
+            "gadget": ["Claymore", "Breach Charge", "Smoke Grenade"],
             "special": "LV Explosive Lance"
         },
         {
@@ -778,7 +771,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": ["Stun Grenade", "Smoke Grenade"],
+            "gadget": ["Impact EMP Grenade", "Smoke Grenade"],
             "special": "Gemini Replicator"
         },
         {
@@ -878,14 +871,14 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Smoke Grenade", "Claymore", "Impact EMP Grenade"],
+            "gadget": ["Frag Grenade", "Claymore", "Impact EMP Grenade"],
             "special": "Talon-8 Clear Shield"
         },
         {
             "name": "Sens",
             "gender": "Non-binary",
             "role": ["Map Control", "Support"],
-            "speed": 1,
+            "speed": 3,
             "primary": [
                 {
                     "name": "POF-9",
@@ -906,7 +899,7 @@
                     "type": "Hand Cannon"
                 }
             ],
-            "gadget": ["Hard Breach Charge", "Claymore"],
+            "gadget": ["Hard Breach Charge", "Frag Grenade", "Claymore"],
             "special": "R.O.U. Projector System"
         },
         {
@@ -934,7 +927,7 @@
                     "type": "Revolver"
                 }
             ],
-            "gadget": ["Breach Charge", "Claymore", "Hard Breach Charge"],
+            "gadget": ["Impact EMP Grenade", "Claymore", "Hard Breach Charge"],
             "special": "Kawan Hive Launcher"
         },
         {
@@ -984,10 +977,6 @@
                 {
                     "name": "Mk1 9mm",
                     "type": "Handgun"
-                },
-                {
-                    "name": "ITA12S",
-                    "type": "Shotgun"
                 }
             ],
             "gadget": ["Stun Grenade", "Smoke Grenade"],
@@ -1016,6 +1005,37 @@
             ],
             "gadget": ["Frag Grenade", "Hard Breach Charge"],
             "special": "Deathmark Tracker"
+        },
+        {
+            "name": "Rauora",
+            "gender": "Female",
+            "role": ["Support", "Map Control"],
+            "speed": 2,
+            "primary": [
+                {
+                    "name": "417",
+                    "type": "Marksman Rifle"
+                },
+                {
+                    "name": "M249",
+                    "type": "Light Machine Gun"
+                }
+            ],
+            "secondary": [
+                {
+                    "name": "Reaper Mk2",
+                    "type": "Handgun"
+                },
+                {
+                    "name": "GSH-18",
+                    "type": "Handgun"
+                }
+            ],
+            "gadget": [
+                "Smoke Grenade",
+                "Breach Charge"
+            ],
+            "special": "D.O.M. Panel Launcher"
         }
     ]
 }

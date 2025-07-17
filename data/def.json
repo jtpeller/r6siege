@@ -142,7 +142,7 @@
                 }
             ],
             "gadget": ["Nitro Cell", "Deployable Shield", "Observation Blocker"],
-            "special": "Heartbeat Sensor"
+            "special": "Cardiac Sensor"
         },
         {
             "name": "Doc",
@@ -237,7 +237,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Impact Grenade", "Nitro Cell"],
+            "gadget": ["Barbed Wire", "Bulletproof Camera"],
             "special": "Entry Denial Device"
         },
         {
@@ -459,7 +459,7 @@
             "speed": 2,
             "primary": [
                 {
-                    "name": "SIX12",
+                    "name": "SIX12-SD",
                     "type": "Shotgun"
                 },
                 {
@@ -477,7 +477,7 @@
                     "type": "Shotgun"
                 }
             ],
-            "gadget": ["Impact Grenade", "Bulletproof Camera"],
+            "gadget": ["Observation Blocker", "Bulletproof Camera"],
             "special": "Gu"
         },
         {
@@ -501,7 +501,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Barbed Wire", "Deployable Shield", "Observation Blocker"],
+            "gadget": ["Barbed Wire", "Deployable Shield", "Impact Grenade"],
             "special": "Grzmot Mine"
         },
         {
@@ -595,7 +595,7 @@
             "speed": 2,
             "primary": [
                 {
-                    "name": "CCE Shield",
+                    "name": "CCE Shield Mk2",
                     "type": "Shield"
                 }
             ],
@@ -613,8 +613,8 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Barbed Wire", "Impact Grenade", "Deployable Shield"],
-            "special": "CCE Shield"
+            "gadget": ["Barbed Wire", "Impact Grenade"],
+            "special": "CCE Shield Mk2"
         },
         {
             "name": "Kaid",
@@ -665,7 +665,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Barbed Wire", "Nitro Cell"],
+            "gadget": ["Barbed Wire", "Nitro Cell", "Impact Grenade"],
             "special": "Pest Launcher"
         },
         {
@@ -746,12 +746,12 @@
                 }
             ],
             "gadget": ["Impact Grenade", "Proximity Alarm"],
-            "special": "Mag-NET"
+            "special": "Mag-NET System"
         },
         {
             "name": "Oryx",
             "gender": "Male",
-            "role": ["Support"],
+            "role": ["Support", "Roam"],
             "speed": 2,
             "primary": [
                 {
@@ -792,6 +792,10 @@
                 }
             ],
             "secondary": [
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
+                },
                 {
                     "name": "RG15",
                     "type": "Handgun"
@@ -847,9 +851,13 @@
                 {
                     "name": "Q-929",
                     "type": "Handgun"
+                },
+                {
+                    "name": "ITA12S",
+                    "type": "Shotgun"
                 }
             ],
-            "gadget": ["Barbed Wire", "Bulletproof Camera"],
+            "gadget": ["Barbed Wire", "Bulletproof Camera", "Deployable Shield"],
             "special": "Kona Station"
         },
         {
@@ -925,7 +933,7 @@
                     "type": "Machine Pistol"
                 }
             ],
-            "gadget": ["Impact Grenade", "Bulletproof Camera"],
+            "gadget": ["Proximity Alarm", "Bulletproof Camera"],
             "special": "Spec-IO Electro-Sensor"
         },
         {
@@ -953,7 +961,7 @@
                     "type": "Handgun"
                 }
             ],
-            "gadget": ["Bulletproof Camera", "Barbed Wire"],
+            "gadget": ["Bulletproof Camera", "Observation Blocker"],
             "special": "F-NATT Dread Mine"
         },
         {
